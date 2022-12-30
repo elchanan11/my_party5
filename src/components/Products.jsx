@@ -20,8 +20,8 @@ export default function Products(props){
         const getProducts = async () => {
             try {
                 const res = await publicRequest.get(
-                    props.cat ? "/api/product?category="+props.cat
-                        : "/api/product"
+                    props.cat ? "/product?category="+props.cat
+                        : "/product"
                 )
                 console.log(res.data)
                 setProducts(res.data)
