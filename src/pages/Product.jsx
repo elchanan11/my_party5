@@ -149,21 +149,24 @@ const Product = () => {
     const [product,setProduct] = useState({})
     const [quantity,setQuantity] = useState(1)
     const dispatch = useDispatch()
-    const [productName,setProductName] = useState()
-    let postMessage = "הי אני מהאתר ואני מעוניין ב "
+    const [productName,setProductName] = useState("")
+    let postMessageToWatapp = "שלום אני מהאתר ואני מעוניין ב "
 
     useEffect(() => {
         const getProduct = async () => {
             try {
                 const res = await publicRequest.get(`/product/find/${productId}`)
                 setProduct(res.data)
-                setProductName(product.title)
             }catch (err){
                 console.log(err)
             }
         }
         getProduct()
     },[])
+
+    useEffect(()=>{
+        setProductName(product.title)
+    },[product])
 
     const handleAddTOCartClick = () => {
         dispatch(
@@ -175,11 +178,15 @@ const Product = () => {
 
         console.log(productName)
 
-        let url = `https://wa.me/send?phone=${+972539323849}`;
-//  Appending the message to the URL by encoding it
-        url += `&text=${encodeURI(` ${postMessage + " "+productName} ` )}&app_absent=0`;
+//         let url = `https://wa.me/send?phone=${+972539323849}`;
+// //  Appending the message to the URL by encoding it
+//         url += `&text=${encodeURI(` ${postMessage + " "+productName} ` )}&app_absent=0`;
+
+        let url = `https://wa.me/+972539323849?text=${postMessageToWatapp+productName}`
 
         window.open(url);
+
+        setProductName("")
     }
 
     console.log(productId)

@@ -193,7 +193,7 @@ const Cart = () => {
     let productNum = 1
 
     let productName = []
-    let postMessage = "הי אני מהאתר ואני מעוניין ב "
+    let postMessageToWatapp = "שלום אני מהאתר ואני מעוניין ב "
 
     const handleWhatsAppClick = () => {
 
@@ -202,9 +202,11 @@ const Cart = () => {
         })
 
         console.log(productName)
-        let url = `https://wa.me/send?phone=${+972539323849}`;
-//  Appending the message to the URL by encoding it
-        url += `&text=${encodeURI(` ${postMessage + " "+productName} ` )}&app_absent=0`;
+//         let url = `https://wa.me/send?phone=${+972539323849}`;
+// //  Appending the message to the URL by encoding it
+//         url += `&text=${encodeURI(` ${postMessage + " "+productName} ` )}&app_absent=0`;
+
+        let url = `https://wa.me/+972539323849?text=${postMessageToWatapp+productName}`
 
         window.open(url);
         productName = []
