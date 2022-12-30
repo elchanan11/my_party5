@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a9b1bd43.css",
+    "main.js": "/static/js/main.6237888a.js",
+    "static/media/img_9.png": "/static/media/img_9.5ec96544cc1781082d43.png",
+    "static/media/img_5.png": "/static/media/img_5.7b524f7e74916912cbc7.png",
+    "static/media/img_1.png": "/static/media/img_1.530f1d01b0702bd907e1.png",
+    "static/media/img.png": "/static/media/img.a20bf8fd2e141a1cbfa7.png",
+    "static/media/img_12.png": "/static/media/img_12.a97b639a38128143c163.png",
+    "static/media/img_19.png": "/static/media/img_19.a185709817f5c719560d.png",
+    "static/media/img_22.png": "/static/media/img_22.5fddda79322509776ae7.png",
+    "static/media/img_11.png": "/static/media/img_11.518356b3cf3fa3ce8af3.png",
+    "static/media/img_20.png": "/static/media/img_20.43eaedcdd4dcfc4a4f7b.png",
+    "static/media/img_23.png": "/static/media/img_23.cdd93fe4244abf1f465d.png",
+    "static/media/img_10.png": "/static/media/img_10.ed3a8077232c855431ff.png",
+    "static/media/logo.png": "/static/media/logo.348e6791cdd9e2198583.png",
+    "static/media/img_21.png": "/static/media/img_21.df2b818c03353823fccb.png",
+    "static/media/img_7.png": "/static/media/img_7.9bdc081d5f5874c91af4.png",
+    "static/media/slide11.jpg": "/static/media/slide11.f7e35f43d1f74f0ddf4d.jpg",
+    "static/media/img_6.png": "/static/media/img_6.84dc034a2fd915fab1b6.png",
+    "static/media/img_2.png": "/static/media/img_2.79193c326676a1608bbd.png",
+    "static/media/category111.jpg": "/static/media/category111.4ca07bb33454a5a8dd7d.jpg",
+    "static/media/img_8.png": "/static/media/img_8.2253d2d2f7d9a1814608.png",
+    "static/media/product.jpg": "/static/media/product.61857a1b6d119411a50b.jpg",
+    "static/media/img_14.png": "/static/media/img_14.f04ed23f48fe217424d3.png",
+    "static/media/img_17.png": "/static/media/img_17.1b5103da141e0624a97a.png",
+    "static/media/img_15.png": "/static/media/img_15.47c790d50aeede1dcc10.png",
+    "static/media/image_5.jpg": "/static/media/image_5.11d55dbcf3e6676f2d24.jpg",
+    "index.html": "/index.html",
+    "main.a9b1bd43.css.map": "/static/css/main.a9b1bd43.css.map",
+    "main.6237888a.js.map": "/static/js/main.6237888a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a9b1bd43.css",
+    "static/js/main.6237888a.js"
+  ]
+}
