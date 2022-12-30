@@ -3,6 +3,7 @@ import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import ProductItem from "./ProductItem";
 import axios from "axios";
+import {publicRequest} from "../requestMethods";
 
 const Container = styled.div`
   padding: 20px;
@@ -18,9 +19,9 @@ export default function Products(props){
     useEffect(()=>{
         const getProducts = async () => {
             try {
-                const res = await axios.get(
-                    props.cat ? "http://localhost:5000/api/product?category="+props.cat
-                        : "http://localhost:5000/api/product"
+                const res = await publicRequest.get(
+                    props.cat ? "/api/product?category="+props.cat
+                        : "/api/product"
                 )
                 console.log(res.data)
                 setProducts(res.data)
