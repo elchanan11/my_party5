@@ -87,7 +87,7 @@ const MenuLink = styled.div`
   ${mobile({fontsize: '12px' , marginLeft: "6px"})}
 `
 
-export default function Navbar(){
+export default function Navbar(props){
     const navigate = useNavigate();
 
     const quantity = useSelector(state=>state.cart.quantity)
@@ -97,8 +97,12 @@ export default function Navbar(){
 
     useEffect(()=>{
         const fetchUsers = async ()=>{
-            const res =  await publicRequest.get(`/product`)
-            setProducts(res.data)
+            try {
+                const res =  await publicRequest.get(`/product`)
+                setProducts(res.data)
+            }catch (e) {
+                console.log(e)
+            }
         }
         fetchUsers()
     },[])
@@ -119,7 +123,7 @@ export default function Navbar(){
         <Container>
             <Wrapper>
                 <Left>
-                    {<Autocomplete
+                    {props.home && <Autocomplete
                         options={products}
                         getOptionLabel={(option) => option.title}
                         renderInput={(params) =>

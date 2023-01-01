@@ -11,7 +11,7 @@ export default function Home(){
     return(
         <div>
             <Announcment />
-            <Navbar />
+            <Navbar home={"home"}/>
             <Slider />
             <Categories />
             <Products cat={"Reccomanded"}/>
