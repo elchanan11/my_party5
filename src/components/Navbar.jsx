@@ -1,12 +1,17 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import {Search, ShoppingCartOutlined} from "@mui/icons-material";
-import {Badge} from "@mui/material";
+import {Autocomplete, Badge, TextField} from "@mui/material";
 import Logo from '../logo.png'
 import backgroundLogo from '../img_23.png'
 import {mobile} from "../responsive";
 import {useSelector} from "react-redux";
-import {Link} from "react-router-dom";
+import {Link, Redirect, useHistory} from "react-router-dom";
+import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
+import {publicRequest} from "../requestMethods";
+import './navBar.css'
 
 const Container = styled.div`
   min-height: 60px;
@@ -25,8 +30,10 @@ const Wrapper = styled.div`
 `;
 const Left = styled.div`
   flex: 1;
+  height: 30px;
   display: flex;
-  align-items: center;
+  margin-bottom: 21px;
+  padding: 1px;
 `;
 
 const Language = styled.span`
@@ -81,20 +88,53 @@ const MenuLink = styled.div`
 `
 
 export default function Navbar(){
+    const navigate = useNavigate();
+
     const quantity = useSelector(state=>state.cart.quantity)
+
+    const [query,setQuery] = useState("")
+    const [products,setProducts] = useState([])
+
+    useEffect(()=>{
+        const fetchUsers = async ()=>{
+            const res =  await publicRequest.get(`/product`)
+            setProducts(res.data)
+        }
+        fetchUsers()
+    },[])
+
+    useEffect(()=>{
+        const getProduct = async () => {
+            // const res =  await publicRequest.get(`/product/find/${query._id}`)
+             console.log(query)
+             navigate(`/product/${query._id}`)
+        }
+        if (query !== "") {
+            getProduct()
+        }
+
+    },[query])
 
     return(
         <Container>
             <Wrapper>
                 <Left>
-                    <Language >
-                        EN
-                    </Language>
-                    <SearchContainer >
-                        <Input placeholder={'חפש'}>
-                        </Input>
-                        <Search style={{color:"gray" ,fontSize:"16px"}}/>
-                    </SearchContainer>
+                    {<Autocomplete
+                        options={products}
+                        getOptionLabel={(option) => option.title}
+                        renderInput={(params) =>
+                            <TextField
+                                {...params}
+                                label="חפש"
+                                variant="outlined"
+                                style={{padding:0,height:3,margin:0,zIndex:2}}
+                            />
+                        }
+                        isOptionEqualToValue={(option, value) => option.id === value.id}
+                        onChange={(event:any,newVal:string)=>setQuery(newVal)}
+                        sx={{ width: 100,padding:0 }}
+
+                    />}
                 </Left>
                 <Center>
                     <Link to={"/"}>

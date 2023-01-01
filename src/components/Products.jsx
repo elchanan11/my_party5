@@ -10,6 +10,10 @@ const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  text-align: center;
+`
+const NoProducts = styled.span`
+  text-align: center;
   
 `
 
@@ -56,9 +60,13 @@ export default function Products(props){
 
     return(
         <Container>
-            {products.map(productItem=>(
+            {products.length !== 0 ? products.map(productItem=>(
                 <ProductItem key={productItem._id} item={productItem}/>
-            ))}
+            )) :
+                <NoProducts>
+                    אין כרגע מוצרים זמינים בקטגוריה זו
+                </NoProducts>
+            }
         </Container>
     )
 }

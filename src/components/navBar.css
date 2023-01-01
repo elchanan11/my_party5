@@ -1,0 +1,6 @@
+
+/*fixing search box*/
+.css-jvwxjv-MuiAutocomplete-root .MuiOutlinedInput-root{
+    padding: 0;
+    margin: 0;
+}

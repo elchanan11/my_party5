@@ -17,7 +17,7 @@ const Container = styled.div`
 export default function Categories(){
     return(
         <Container>
-            {categoryData.map(item=>(
+            { categoryData.map(item=>(
                 <CategoryItem item={item} key={item.id}/>
             ))}
         </Container>

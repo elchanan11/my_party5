@@ -43,6 +43,7 @@ export default function ProductList(){
     const cat = location.pathname.split('/')[2]
     const categoryTitle = location.state.title
     const [sort,setSort] = useState("newest")
+    const [serchFilter,setSearchFilter] = useState("")
     return(
         <Container>
             <Navbar />
