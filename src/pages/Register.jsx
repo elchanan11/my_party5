@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import {mobile} from "../responsive";
 import backgroundLogo from '../img_23.png'
+import {useState} from "react";
+import {publicRequest} from "../requestMethods";
+import {useNavigate} from "react-router-dom";
 
 const Container = styled.div`
   width: 100vw;
@@ -61,29 +64,79 @@ const Button = styled.button`
 `;
 
 const Register = () => {
+
+    const navigate = useNavigate()
+
+    const [name,setName] = useState()
+    const [email,setEmail] = useState()
+    const [password,setPassword] = useState()
+    const [confirmPassword,setConfirmPassword] = useState()
+    const [isError,setIsError] = useState(false)
+
+    const handleRegisterClick = async (e) =>{
+        e.preventDefault()
+
+        if (password && email && name){
+            if (password === confirmPassword){
+                setIsError(false)
+                try {
+                    await publicRequest.post(
+                        '/auth/register', {userName: name,email:email,password:password}
+                    )
+                    setEmail("")
+                    setPassword("")
+                    setConfirmPassword("")
+                    setName("")
+
+                    navigate('/login')
+
+                }catch (e){
+                    console.log(e)
+                    setIsError(true)
+                }
+
+            }else {
+                setIsError(true)
+            }
+        }
+    }
+
     return (
         <Container>
             <Wrapper>
                 <Title>צור חשבון</Title>
                 <Form>
-                    <Input placeholder="שם" />
-                    <Input placeholder="שם משפחה" />
-                    <Input placeholder="שם משתמש" />
-                    <Input placeholder="אימייל" />
-                    <Input
+                    <Input type={name}  onChange={(e)=>{
+                        setName(e.target.value)
+                    }} placeholder="שם"
+                    />
+
+                    <Input type={email}  onChange={(e)=>{
+                        setEmail(e.target.value)
+                    }} placeholder="אימייל"
+                    />
+
+                    <Input onChange={(e)=>{
+                        setPassword(e.target.value)
+                    }}
                         placeholder="סיסמא"
                         type={"password"}
                     />
-                    <Input
+
+                    <Input onChange={(e)=>{
+                        setConfirmPassword(e.target.value)
+                    }}
                         placeholder="אימות סיסמא"
                         type={"password"}
                     />
+
                     <Agreement>
                         על ידי יצירת חשבון, אני מסכים לעיבוד האישי שלי
                         נתונים בהתאם ל <b>מדיניות הפרטיות</b>
                     </Agreement>
-                    <Button>צור חשבון</Button>
+                    <Button onClick={handleRegisterClick}>צור חשבון</Button>
                 </Form>
+                {isError && <span style={{color:"red",width:"10px"}}>בדוק שהסיסמאות זהות\האימייל איננו קיים במערכת שגיאה</span>}
             </Wrapper>
         </Container>
     );

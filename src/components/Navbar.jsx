@@ -5,13 +5,15 @@ import {Autocomplete, Badge, TextField} from "@mui/material";
 import Logo from '../logo.png'
 import backgroundLogo from '../img_23.png'
 import {mobile} from "../responsive";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {Link, Redirect, useHistory} from "react-router-dom";
 import { Navigate } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 import {publicRequest} from "../requestMethods";
 import './navBar.css'
+import {deleteProducts} from "../redux/cartRedux";
+import {logOut} from "../redux/userRedux";
 
 const Container = styled.div`
   position: sticky;
@@ -79,7 +81,7 @@ const Right = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: flex-end;
   ${mobile({flex:1,justifyContent: 'center',alignItems:"left"})}
 `;
 
@@ -92,11 +94,14 @@ const MenuLink = styled.div`
 
 export default function Navbar(props){
     const navigate = useNavigate();
-
+    const dispatch = useDispatch()
     const quantity = useSelector(state=>state.cart.quantity)
 
     const [query,setQuery] = useState("")
     const [products,setProducts] = useState([])
+
+    const user = useSelector(state => state.user.currentUser)
+    console.log(user)
 
     useEffect(()=>{
         const fetchUsers = async ()=>{
@@ -121,6 +126,17 @@ export default function Navbar(props){
         }
 
     },[query])
+
+    const handleLogOut = () => {
+
+        dispatch(
+            deleteProducts()
+        )
+
+        dispatch(
+            logOut()
+        )
+    }
 
     return(
         <Container>
@@ -149,12 +165,18 @@ export default function Navbar(props){
                     </Link>
                 </Center>
                 <Right>
-                    <MenuLink>
-                        הירשם
-                    </MenuLink>
-                    <MenuLink>
-                        התחבר
-                    </MenuLink>
+                    {user && true ?
+                        <MenuLink onClick={handleLogOut}>
+                        התנתק
+                        </MenuLink>
+                        :
+                        <Link to={'/login'}>
+                            <MenuLink>
+                                התחבר
+                            </MenuLink>
+                        </Link>
+                    }
+
                     <Link to={"/cart"}>
                         <MenuLink>
                             <Badge style={{marginRight:4}} color="primary" badgeContent={quantity}>

@@ -18,9 +18,14 @@ const userRedux = createSlice({
         loginFailure: (state)=>{
             state.isFetching = false;
             state.error = true
+        },
+        logOut: (state)=>{
+            state.currentUser = null
+            state.isFetching = false;
+            state.error = false
         }
     },
 })
 
-export const {loginStart, loginSuccess, loginFailure} = userRedux.actions;
+export const {loginStart, loginSuccess, loginFailure,logOut} = userRedux.actions;
 export default userRedux.reducer;
