@@ -68,7 +68,6 @@ const Icon = styled.div`
 `;
 
 export default function ProductItem(props){
-    console.log(props.item.title)
     const [productName,setProductName] = useState("")
     let postMessageToWatapp = "שלום אני מהאתר ואני מעוניין ב "
 
@@ -77,13 +76,7 @@ export default function ProductItem(props){
     },[props.item])
 
     const handleWhatsappClick = () => {
-
-
-        console.log(productName)
-
         let url = `https://wa.me/+972539323849?text=${postMessageToWatapp+productName}`;
- // Appending the message to the URL by encoding it
- //        url += `&text=${encodeURI(` ${postMessage + " "+productName} ` )}&app_absent=0`;
 
         window.open(url);
 

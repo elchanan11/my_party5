@@ -14,12 +14,15 @@ import {publicRequest} from "../requestMethods";
 import './navBar.css'
 
 const Container = styled.div`
+  position: sticky;
+  top: 2px;
+  z-index: 100;
   min-height: 60px;
   margin-bottom: 5px;
   ${mobile({height: '50px'})}
 `
 const Wrapper = styled.div`
-  background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.9)),
+  background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.93)),
   url(${backgroundLogo}) center;
   
   display: flex;
@@ -76,15 +79,15 @@ const Right = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  ${mobile({flex:2,justifyContent: 'center'})}
+  justify-content: flex-start;
+  ${mobile({flex:1,justifyContent: 'center',alignItems:"left"})}
 `;
 
 const MenuLink = styled.div`
   font-size: 14px;
   cursor: pointer;
-  margin-left: 25px;
-  ${mobile({fontsize: '12px' , marginLeft: "6px"})}
+  margin-right: 7px;
+  ${mobile({fontsize: '12px' })}
 `
 
 export default function Navbar(props){
@@ -154,7 +157,7 @@ export default function Navbar(props){
                     </MenuLink>
                     <Link to={"/cart"}>
                         <MenuLink>
-                            <Badge color="primary" badgeContent={quantity}>
+                            <Badge style={{marginRight:4}} color="primary" badgeContent={quantity}>
                                 <ShoppingCartOutlined />
                             </Badge>
                         </MenuLink>

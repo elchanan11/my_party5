@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Navbar from "../components/Navbar";
 import Slider from "../components/Slider";
 
@@ -8,6 +8,10 @@ import Products from "../components/Products";
 import Footer from "../components/Footer";
 
 export default function Home(){
+    window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+    }
+
     return(
         <div>
             <Announcment />

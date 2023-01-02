@@ -14,9 +14,24 @@ const cartSlice = createSlice({
             state.productQuantity = action.payload.quantity;
             state.products.push(action.payload.product);
             state.total += action.payload.price * action.payload.quantity;
-        }
+        },
+        deleteProducts: (state)=>{
+            state.quantity = 0;
+            state.productQuantity = 0;
+            state.products = [];
+            state.total = 0;
+            state.index = 0;
+        },
+        deleteOneProduct: (state,action)=>{
+            state.quantity = state.quantity - 1;
+            state.productQuantity = state.quantity - 1;
+            state.products.splice(action.payload.index,1);
+            state.total = state.total - action.payload.product.price;
+        },
     },
 })
 
 export const {addProduct} = cartSlice.actions;
+export const {deleteProducts} = cartSlice.actions;
+export const {deleteOneProduct} = cartSlice.actions;
 export default cartSlice.reducer;

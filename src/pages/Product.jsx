@@ -188,8 +188,8 @@ const Product = () => {
     console.log(productId)
     return (
         <Container>
-            <Navbar />
             <Announcement />
+            <Navbar />
             <Wrapper>
                 <ImgContainer>
                     <Image src={product.img} />

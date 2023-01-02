@@ -46,8 +46,8 @@ export default function ProductList(){
     const [serchFilter,setSearchFilter] = useState("")
     return(
         <Container>
-            <Navbar />
             <Announcment />
+            <Navbar />
             <Title>
                 {categoryTitle}
             </Title>
