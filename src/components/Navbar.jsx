@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {Search, ShoppingCartOutlined} from "@mui/icons-material";
 import {Autocomplete, Badge, Menu, TextField} from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
-import Logo from '../logo.png'
+import Logo from '../logo-text.png'
 import backgroundLogo from '../img_23.png'
 import {mobile} from "../responsive";
 import {useDispatch, useSelector} from "react-redux";

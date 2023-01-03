@@ -186,7 +186,7 @@ const Footer = () => {
             <Right>
                 <Title>צור קשר</Title>
                 <ContactItem>
-                    <Room style={{marginRight:"10px",fontSize:"30px"}}/> הרן 20 ,ביתר עילית
+                    <Room style={{marginRight:"10px",fontSize:"30px"}}/> הר"ן 20 ,ביתר עילית
                 </ContactItem>
                 <ContactItem>
                     <Phone style={{marginRight:"10px",fontSize:"30px"}}/> 054-259-5225

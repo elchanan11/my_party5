@@ -20,7 +20,7 @@ const Container = styled.div`
 export default function Announcment(){
     return(
         <Container>
-          Deal!  Free Shipping for new customers!!
+          !ניתן להזמין בלונים מראש ולבוא לאסוף
         </Container>
     )
 }

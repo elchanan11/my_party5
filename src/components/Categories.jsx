@@ -10,8 +10,8 @@ const Container = styled.div`
   align-items: center;
   padding: 0;
   margin: 0;
-  background-color: #f3efef;
-  
+  background-color: #fafaf0;
+
 `
 
 const Wrapper = styled.div`
