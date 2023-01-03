@@ -6,6 +6,8 @@ import Announcment from "../components/Announcment";
 import Categories from "../components/Categories";
 import Products from "../components/Products";
 import Footer from "../components/Footer";
+import {Fab} from "@mui/material";
+import {WhatsApp} from "@mui/icons-material";
 
 export default function Home(){
     window.onbeforeunload = function () {
@@ -20,6 +22,14 @@ export default function Home(){
             <Categories  />
             <Products cat={"Reccomanded"} from={'home'}/>
             <Footer />
+            <Fab size="medium" color="secondary" aria-label="add"  style={{background:"green",cursor:"pointer",zIndex:100, position:"sticky",bottom: 8,left:8}}>
+                <WhatsApp onClick={()=>{
+                    let postMessageToWatapp = "שלום אני מהאתר"
+                        let url = `https://wa.me/+972539323849?text=${postMessageToWatapp}`;
+
+                    window.open(url);}} />
+            </Fab>
+
         </div>
     )
 }
