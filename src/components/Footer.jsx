@@ -26,6 +26,7 @@ const Left = styled.div`
   display: flex;
   flex-direction: column;
   padding: 20px;
+  ${mobile({alignItems: "center"})}
 `;
 
 const Logo = styled.img`
@@ -51,7 +52,8 @@ const SocialIcon = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
   cursor: pointer;
 `;
 
@@ -65,6 +67,7 @@ const Center = styled.div`
 const Title = styled.h3`
   margin-bottom: 30px;
   text-align: right;
+  font-size: 25px;
 `;
 
 const List = styled.ul`
@@ -88,7 +91,7 @@ const Right = styled.div`
   flex-direction: column;
   text-align: right;
   padding: 20px;
-
+  ${mobile({alignItems: "center"})}
 `;
 
 const ContactItem = styled.div`
@@ -96,6 +99,7 @@ const ContactItem = styled.div`
   display: flex;
   justify-content: flex-end;
   text-align: right;
+  font-size: 20px;
 `;
 
 
@@ -133,7 +137,17 @@ const Footer = () => {
                     </a>
                     </SocialIcon>
                     <SocialIcon color="54B435">
-                        <WhatsApp />
+                        <WhatsApp onClick={()=>{
+                            let postMessageToWatapp = "שלום אני מהאתר"
+                            let url = `https://wa.me/+972539323849?text=${postMessageToWatapp}`;
+
+                            window.open(url);}}  />
+                    </SocialIcon>
+                    <SocialIcon color="E26868">
+                        <Instagram onClick={()=>{
+                            let url = `https://instagram.com/hamesibasheli?igshid=NTdlMDg3MTY=`;
+
+                            window.open(url);}}  />
                     </SocialIcon>
                     <SocialIcon
                         color="665A48" >
@@ -171,13 +185,13 @@ const Footer = () => {
             <Right>
                 <Title>צור קשר</Title>
                 <ContactItem>
-                    <Room style={{marginRight:"10px"}}/> הרן 20 ,ביתר עילית
+                    <Room style={{marginRight:"10px",fontSize:"30px"}}/> הרן 20 ,ביתר עילית
                 </ContactItem>
                 <ContactItem>
-                    <Phone style={{marginRight:"10px"}}/> 054-259-5225
+                    <Phone style={{marginRight:"10px",fontSize:"30px"}}/> 054-259-5225
                 </ContactItem>
                 <ContactItem>
-                    <MailOutline style={{marginRight:"10px"}} /> Mypartybb@gmail.com
+                    <MailOutline style={{marginRight:"10px",fontSize:"30px"}} /> Mypartybb@gmail.com
                 </ContactItem>
             </Right>
         </Container>
