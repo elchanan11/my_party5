@@ -90,7 +90,7 @@ const Right = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  ${mobile({flex:1,justifyContent: "space-between",alignItems:"left"})}
+  ${mobile({flex:1,justifyContent: "flex-end",alignItems:"right"})}
 `;
 
 const MenuLink = styled.div`
@@ -100,7 +100,7 @@ const MenuLink = styled.div`
   justify-content: center;
   cursor: pointer;
   margin-right: 7px;
-  ${mobile({fontsize: '12px' })}
+  ${mobile({fontsize: '12px',marginRight:"0px" })}
 `
 
 export default function Navbar(props){
@@ -180,28 +180,28 @@ export default function Navbar(props){
             <Wrapper>
                 <Left>
                     <Link to={"/cart"}>
-                        <MenuLink>
+                        <MenuLink style={{marginLeft:"20px"}}>
                             <Badge style={{marginRight:4}} color="primary" badgeContent={quantity}>
                                 <ShoppingCartOutlined />
                             </Badge>
                         </MenuLink>
                     </Link>
-                    {props.home && <Autocomplete
-                        options={products}
-                        getOptionLabel={(option) => option.title} renderInput={(params) =>
-                            <TextField
-                                {...params}
-                                label="חפש"
-                                size="small"
-                                variant="outlined"
-                                style={{padding:0,height:2,width:"70px",margin:0,zIndex:0,lineHeight:1,marginBottom:"40px",marginLeft:"10px"}}
-                            />
-                        }
-                        isOptionEqualToValue={(option, value) => option.id === value.id}
-                        onChange={(event:any,newVal:string)=>setQuery(newVal)}
-                        sx={{ width: 100,padding:0 }}
+                    {/*{props.home && <Autocomplete*/}
+                    {/*    options={products}*/}
+                    {/*    getOptionLabel={(option) => option.title} renderInput={(params) =>*/}
+                    {/*        <TextField*/}
+                    {/*            {...params}*/}
+                    {/*            label="חפש"*/}
+                    {/*            size="small"*/}
+                    {/*            variant="outlined"*/}
+                    {/*            style={{padding:0,height:2,width:"70px",margin:0,zIndex:0,lineHeight:1,marginBottom:"40px",marginLeft:"10px"}}*/}
+                    {/*        />*/}
+                    {/*    }*/}
+                    {/*    isOptionEqualToValue={(option, value) => option.id === value.id}*/}
+                    {/*    onChange={(event:any,newVal:string)=>setQuery(newVal)}*/}
+                    {/*    sx={{ width: 100,padding:0 }}*/}
 
-                    />}
+                    {/*/>}*/}
                 </Left>
                 <Center>
                     <Link to={"/"}>
@@ -209,17 +209,17 @@ export default function Navbar(props){
                     </Link>
                 </Center>
                 <Right>
-                    {user && true ?
-                        <MenuLink onClick={handleLogOut}>
-                        התנתק
-                        </MenuLink>
-                        :
-                        <Link to={'/login'}>
-                            <MenuLink>
-                                התחבר
-                            </MenuLink>
-                        </Link>
-                    }
+                    {/*{user && true ?*/}
+                    {/*    <MenuLink onClick={handleLogOut}>*/}
+                    {/*    התנתק*/}
+                    {/*    </MenuLink>*/}
+                    {/*    :*/}
+                    {/*    <Link to={'/login'}>*/}
+                    {/*        <MenuLink>*/}
+                    {/*            התחבר*/}
+                    {/*        </MenuLink>*/}
+                    {/*    </Link>*/}
+                    {/*}*/}
 
                     <MenuLink>
                         <MenuIcon
