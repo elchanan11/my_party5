@@ -16,16 +16,19 @@ import {deleteProducts} from "../redux/cartRedux";
 import {logOut} from "../redux/userRedux";
 
 const Container = styled.div`
+  width: 100%;
   position: sticky;
-  top: 2px;
+  box-shadow: 0 4px 2px -2px gray;
+background-color: white;
+  top: 0;
   z-index: 100;
   min-height: 60px;
-  margin-bottom: 5px;
+  
   ${mobile({height: '50px'})}
 `
 const Wrapper = styled.div`
-  background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.93)),
-  url(${backgroundLogo}) center;
+  // background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.93)),
+  // url(${backgroundLogo}) center;
   
   display: flex;
   justify-content: space-between;
@@ -144,13 +147,13 @@ export default function Navbar(props){
                 <Left>
                     {props.home && <Autocomplete
                         options={products}
-                        getOptionLabel={(option) => option.title}
-                        renderInput={(params) =>
+                        getOptionLabel={(option) => option.title} renderInput={(params) =>
                             <TextField
                                 {...params}
                                 label="חפש"
+                                size="small"
                                 variant="outlined"
-                                style={{padding:0,height:3,margin:0,zIndex:2}}
+                                style={{padding:0,height:2,margin:0,zIndex:0,lineHeight:1}}
                             />
                         }
                         isOptionEqualToValue={(option, value) => option.id === value.id}

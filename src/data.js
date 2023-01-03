@@ -67,35 +67,70 @@ export const categoryData = [
     {
         id:2,
         img:category_2,
-        title:"טו באב",
+        title:"!!מבצעים",
         cat: "Love"
     },
     {
         id:3,
         img:category_3,
-        title:"ימי הולדת",
+        title:"בלוני הליום",
         cat: "Birthday"
     },
-    // {
-    //     id:4,
-    //     img:slideimage_1,
-    //     title:"בלונים לאירועים"
-    // },
-    // {
-    //     id:5,
-    //     img:slideimage_1,
-    //     title:"בלונים לאירועים"
-    // },
-    // {
-    //     id:6,
-    //     img:slideimage_1,
-    //     title:"בלונים לאירועים"
-    // },
-    // {
-    //     id:7,
-    //     img:slideimage_1,
-    //     title:"בלונים לאירועים"
-    // },
+    {
+        id:4,
+        img:slideimage_1,
+        title:"בלונים בהדפסה אישית"
+    },
+    {
+        id:5,
+        img:slideimage_1,
+        title:"בלונים לניפוח עצמי"
+    },
+    {
+        id:6,
+        img:slideimage_1,
+        title:"בלונים באריזה"
+    },
+    {
+        id:7,
+        img:slideimage_1,
+        title:"מתנות קטנות"
+    },
+    {
+        id:8,
+        img:slideimage_1,
+        title:"מתנות מיוחדות"
+    },
+    {
+        id:9,
+        img:slideimage_1,
+        title:"מתנות לילדות/נערות"
+    },
+    {
+        id:10,
+        img:slideimage_1,
+        title:"מתנות לנשים"
+    },
+    {
+        id:11,
+        img:slideimage_1,
+        title:"מתנות לגברים"
+    },
+    {
+        id:12,
+        img:slideimage_1,
+        title:"דובים"
+    },
+    {
+        id:13,
+        img:slideimage_1,
+        title:"קופסאות/מוצרי אריזה"
+    },
+    {
+        id:14,
+        img:slideimage_1,
+        title:"מתנות לנשים"
+    },
 
 ]
 

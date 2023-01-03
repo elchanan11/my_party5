@@ -6,6 +6,16 @@ import axios from "axios";
 import {publicRequest} from "../requestMethods";
 
 const Container = styled.div`
+
+  text-align: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  background-color: #fae8e8;
+
+`
+
+const Wrapper = styled.div`
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
@@ -14,6 +24,16 @@ const Container = styled.div`
 `
 const NoProducts = styled.span`
   text-align: center;
+  
+`
+
+const CategoryTitle = styled.h1`
+  color: black;
+  text-align: center;
+  align-items: center;
+  font-size: 35px;
+  margin-bottom: 20px;
+  padding-top: 20px;
   
 `
 
@@ -60,13 +80,21 @@ export default function Products(props){
 
     return(
         <Container>
-            {products.length !== 0 ? products.map(productItem=>(
-                <ProductItem key={productItem._id} item={productItem}/>
-            )) :
-                <NoProducts>
-                    אין כרגע מוצרים זמינים בקטגוריה זו
-                </NoProducts>
+            {props.from === 'home' &&
+                <CategoryTitle>
+                    מוצרים מומלצים
+                </CategoryTitle>
             }
+            <Wrapper>
+                {products.length !== 0 ? products.map(productItem=>(
+                        <ProductItem key={productItem._id} item={productItem}/>
+                    )) :
+                    <NoProducts>
+                        אין כרגע מוצרים זמינים בקטגוריה זו
+                    </NoProducts>
+                }
+            </Wrapper>
         </Container>
+
     )
 }

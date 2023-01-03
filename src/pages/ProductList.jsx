@@ -9,7 +9,7 @@ import {mobile} from "../responsive";
 import {useLocation} from "react-router-dom";
 
 const Container = styled.div`
-  
+  background-color: #fae8e8;
 `
 const Title = styled.h1`
   margin: 5px;

@@ -4,35 +4,63 @@ import {mobile} from "../responsive";
 import {Link} from "react-router-dom";
 
 const Container = styled.div`
+  background-color: #f5fbfd;
+  flex-direction: column;
   flex: 1;
-  margin: 3px;
+  display: flex;
+  align-items: center;
+  min-width: 130px;
+  max-width: 200px;
+  height: 200px;
+  border-style: solid;
+  border-width: 15px 15px 15px 15px;
+  border-color: #FFF;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 0px 8px 1px rgb(196 196 196 / 50%);
+  transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+  margin-top: 0px;
   
-  position: relative;
-  min-width: 280px;
-  
+  --margin-bottom: 0px;
+  --margin-left: 0px;
+  --padding-top: 1%;
+  --padding-right: 0%;
+  margin-bottom: 15px;
+  padding-left: 0%;
+  margin-right: 10px;
+  margin-left: 10px;
+  ${mobile({width: "30%"})}
 `
 const Image = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  ${mobile({maxHeight: '30vh'})}
+  max-width: 100%;
+  height: 85%;
+  border: none;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  flex: 1;
+  
+  ${mobile({})}
+  box-shadow: none;
 `
 const Info = styled.div`
   width: 100%;
   height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
+  
+  
   flex-direction: column;
   align-items: center;
   text-align: center;
   justify-content: center;
+  
 `
 const Title = styled.h1`
-  color: white;
-  margin-bottom: 20px;
   
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
 `
 const Button = styled.button`
   border: none;
@@ -56,7 +84,7 @@ export default function CategoryItem(props){
                 <Image src={props.item.img}/>
                 <Info>
                     <Title>{props.item.title}</Title>
-                    <Button>Shop Now!</Button>
+
                 </Info>
             </Link>
         </Container>

@@ -5,21 +5,47 @@ import CategoryItem from "./CategoryItem";
 import {mobile} from "../responsive";
 
 const Container = styled.div`
-  display: flex;
-  padding: 20px;
+
+  text-align: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  background-color: #f3efef;
   
-  justify-content: space-between;
+`
+
+const Wrapper = styled.div`
+  padding: 20px;
+  display: flex;
   flex-wrap: wrap;
-  background-color: #f5fbfd;
-  ${mobile({padding: '0px',flexDirection:"column"})}
+  justify-content: space-between;
+  text-align: center;
+  
+  ${mobile({padding: '0px'})}
+`
+const CategoryTitle = styled.h1`
+  color: black;
+  text-align: center;
+  align-items: center;
+  font-size: 35px;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  
 `
 
 export default function Categories(){
     return(
         <Container>
-            { categoryData.map(item=>(
-                <CategoryItem item={item} key={item.id}/>
-            ))}
+
+            <CategoryTitle>
+                קטגוריות מוצרים
+            </CategoryTitle>
+            <Wrapper>
+                { categoryData.map(item=>(
+                    <CategoryItem item={item} key={item.id}/>
+                ))}
+            </Wrapper>
         </Container>
+
     )
 }

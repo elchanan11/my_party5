@@ -15,8 +15,9 @@ import {Link} from "react-router-dom";
 
 const Container = styled.div`
   display: flex;
-  background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.9)),
-  url(${backgroundLogo}) center;
+  // background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.9)),
+    // url(${backgroundLogo}) center;
+  background-color: #D6E4E5;
   ${mobile({flexDirection: 'column'})}
 `;
 
