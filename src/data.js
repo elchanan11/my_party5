@@ -25,6 +25,7 @@ import product3 from '../src/img_16.png'
 import product4 from '../src/img_17.png'
 import product5 from '../src/img_19.png'
 import product6 from '../src/img_20.png'
+import bgImg from '../src/bgImg.jpg'
 
 
 
@@ -38,7 +39,7 @@ import product6 from '../src/img_20.png'
 export const slideImages = [
     {
         id:1,
-        img:   slideimage_5,
+        img:   bgImg,
         title: "בובת ברבי",
         desc: "אל תפספס את המוצר הזה!!",
         bg: "F5EDDC" ,

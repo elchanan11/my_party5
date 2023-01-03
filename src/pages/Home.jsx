@@ -8,6 +8,7 @@ import Products from "../components/Products";
 import Footer from "../components/Footer";
 import {Fab} from "@mui/material";
 import {WhatsApp} from "@mui/icons-material";
+import BgImage from "../components/BgImage";
 
 export default function Home(){
     window.onbeforeunload = function () {
@@ -19,6 +20,7 @@ export default function Home(){
             <Announcment />
             <Navbar home={"home"}/>
             {/*<Slider />*/}
+            <BgImage />
             <Categories  />
             <Products cat={"Reccomanded"} from={'home'}/>
             <Footer />

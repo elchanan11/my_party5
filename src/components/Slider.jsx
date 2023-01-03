@@ -10,8 +10,9 @@ const Container = styled.div`
   display: flex;
   position: relative;
   overflow: hidden;
-  max-height: 500px;
-  ${mobile({maxHeight: '250px',marginBottom:"10px"})}
+  max-height: 300px;
+  ${mobile({height: '250px'})}
+  box-shadow: 0 4px 2px -3px gray;
 `
 
 const Arrow = styled.div`
@@ -54,7 +55,7 @@ const ImageContainer = styled.div`
 `
 
 const Image = styled.img`
-  height: 80%;
+  height: 100%;
   width: 100%;
   
   ${mobile({height: '250px',width: "100%", objectFit:"cover"})}
