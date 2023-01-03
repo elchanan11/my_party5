@@ -32,7 +32,7 @@ const Container = styled.div`
 `
 const Image = styled.img`
   max-width: 100%;
-  height: 85%;
+  height: 70%;
   border: none;
   border-radius: 0;
   -webkit-box-shadow: none;

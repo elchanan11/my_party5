@@ -17,6 +17,8 @@ import category_2 from './img_11.png'
 import category_3 from './img_12.png'
 import category_4 from './category111.jpg'
 
+import CategoryItem from './img_25.png';
+
 import product1 from '../src/img_14.png'
 import product2 from '../src/img_15.png'
 import product3 from '../src/img_16.png'
@@ -60,75 +62,75 @@ export const slideImages = [
 export const categoryData = [
     {
         id:1,
-        img:category_1,
+        img:CategoryItem,
         title:"בלונים לאירועים",
         cat: "Baloons"
     },
     {
         id:2,
-        img:category_2,
+        img:CategoryItem,
         title:"!!מבצעים",
         cat: "Love"
     },
     {
         id:3,
-        img:category_3,
+        img:CategoryItem,
         title:"בלוני הליום",
         cat: "Birthday"
     },
     {
         id:4,
-        img:slideimage_1,
+        img:CategoryItem,
         title:"בלונים בהדפסה אישית"
     },
     {
         id:5,
-        img:slideimage_1,
+        img:CategoryItem,
         title:"בלונים לניפוח עצמי"
     },
     {
         id:6,
-        img:slideimage_1,
+        img:CategoryItem,
         title:"בלונים באריזה"
     },
     {
         id:7,
-        img:slideimage_1,
+        img:CategoryItem,
         title:"מתנות קטנות"
     },
     {
         id:8,
-        img:slideimage_1,
+        img:CategoryItem,
         title:"מתנות מיוחדות"
     },
     {
         id:9,
-        img:slideimage_1,
+        img:CategoryItem,
         title:"מתנות לילדות/נערות"
     },
     {
         id:10,
-        img:slideimage_1,
+        img:CategoryItem,
         title:"מתנות לנשים"
     },
     {
         id:11,
-        img:slideimage_1,
+        img:CategoryItem,
         title:"מתנות לגברים"
     },
     {
         id:12,
-        img:slideimage_1,
+        img:CategoryItem,
         title:"דובים"
     },
     {
         id:13,
-        img:slideimage_1,
+        img:CategoryItem,
         title:"קופסאות/מוצרי אריזה"
     },
     {
         id:14,
-        img:slideimage_1,
+        img:CategoryItem,
         title:"מתנות לנשים"
     },
 
