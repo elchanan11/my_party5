@@ -12,7 +12,7 @@ const Container = styled.div`
   align-items: center;
   padding: 0;
   margin: 0;
-  background-color: #fafaf0;
+  background-color: rgb(248, 248, 223);
 
 `
 

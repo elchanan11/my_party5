@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {mobile} from "../responsive";
 import bg from '../bgImg.jpg'
+import bg2 from '../bglogo2.jpg'
 
 const Container = styled.div`
   width: 100%;
@@ -15,12 +16,12 @@ const Container = styled.div`
 `
 
 const ImageContainer = styled.div`
-   background: linear-gradient(rgba(238,232,170,0.6), rgba(255,255,255,0.7)),
-   url(${bg}) bottom;
+   background: repeating-linear-gradient(rgb(255, 245, 210,0.1), rgba(248, 248, 223,0.7)),
+   url(${bg2}) center;
   height: 100%;
   min-height: 255px;
   flex: 1;
-  ${mobile({height: '251px',width: "100%", objectFit:"cover"})}
+  ${mobile({height: '251px',width: "100%",objectFit:"cover"})}
 `
 
 
