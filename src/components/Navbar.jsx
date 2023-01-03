@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import {Search, ShoppingCartOutlined} from "@mui/icons-material";
-import {Autocomplete, Badge, TextField} from "@mui/material";
+import {Autocomplete, Badge, Menu, TextField} from "@mui/material";
+import MenuIcon from '@mui/icons-material/Menu';
 import Logo from '../logo.png'
 import backgroundLogo from '../img_23.png'
 import {mobile} from "../responsive";
@@ -14,6 +15,8 @@ import {publicRequest} from "../requestMethods";
 import './navBar.css'
 import {deleteProducts} from "../redux/cartRedux";
 import {logOut} from "../redux/userRedux";
+import {CSSTransition} from "react-transition-group";
+import {categoryData} from "../data";
 
 const Container = styled.div`
   width: 100%;
@@ -40,8 +43,10 @@ const Left = styled.div`
   flex: 1;
   height: 30px;
   display: flex;
-  margin-bottom: 21px;
   padding: 1px;
+  align-items: center;
+  
+  justify-content: flex-start;
 `;
 
 const Language = styled.span`
@@ -85,11 +90,14 @@ const Right = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  ${mobile({flex:1,justifyContent: 'center',alignItems:"left"})}
+  ${mobile({flex:1,justifyContent: "space-between",alignItems:"left"})}
 `;
 
 const MenuLink = styled.div`
   font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   margin-right: 7px;
   ${mobile({fontsize: '12px' })}
@@ -140,11 +148,44 @@ export default function Navbar(props){
             logOut()
         )
     }
+    /////////////////////////////////for Drop down menu/////////////////////////
+
+        const [isNavVisible, setNavVisibility] = useState(false);
+        const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+        useEffect(() => {
+            const mediaQuery = window.matchMedia("(max-width: 700px)");
+            mediaQuery.addListener(handleMediaQueryChange);
+            handleMediaQueryChange(mediaQuery);
+
+            return () => {
+                mediaQuery.removeListener(handleMediaQueryChange);
+            };
+        }, []);
+
+        const handleMediaQueryChange = (mediaQuery) => {
+            if (mediaQuery.matches) {
+                setIsSmallScreen(true);
+            } else {
+                setIsSmallScreen(false);
+            }
+        };
+
+        const toggleNav = () => {
+            setNavVisibility(!isNavVisible);
+        };
 
     return(
         <Container>
             <Wrapper>
                 <Left>
+                    <Link to={"/cart"}>
+                        <MenuLink>
+                            <Badge style={{marginRight:4}} color="primary" badgeContent={quantity}>
+                                <ShoppingCartOutlined />
+                            </Badge>
+                        </MenuLink>
+                    </Link>
                     {props.home && <Autocomplete
                         options={products}
                         getOptionLabel={(option) => option.title} renderInput={(params) =>
@@ -153,7 +194,7 @@ export default function Navbar(props){
                                 label="חפש"
                                 size="small"
                                 variant="outlined"
-                                style={{padding:0,height:2,margin:0,zIndex:0,lineHeight:1}}
+                                style={{padding:0,height:2,width:"70px",margin:0,zIndex:0,lineHeight:1,marginBottom:"40px",marginLeft:"10px"}}
                             />
                         }
                         isOptionEqualToValue={(option, value) => option.id === value.id}
@@ -164,7 +205,7 @@ export default function Navbar(props){
                 </Left>
                 <Center>
                     <Link to={"/"}>
-                        <Logo1 src={Logo}/>
+                        <Logo1 src={Logo} style={{marginRight:"5px"}}/>
                     </Link>
                 </Center>
                 <Right>
@@ -180,15 +221,36 @@ export default function Navbar(props){
                         </Link>
                     }
 
-                    <Link to={"/cart"}>
-                        <MenuLink>
-                            <Badge style={{marginRight:4}} color="primary" badgeContent={quantity}>
-                                <ShoppingCartOutlined />
-                            </Badge>
-                        </MenuLink>
-                    </Link>
+                    <MenuLink>
+                        <MenuIcon
+                            onClick={toggleNav}
+                            className="Burger"
+                        />
+                    </MenuLink>
                 </Right>
             </Wrapper>
+            <CSSTransition
+                in={isNavVisible}
+                timeout={350}
+                classNames="NavAnimation"
+                unmountOnExit
+            >
+                <nav className="Nav">
+                    {
+                        categoryData.map(catItem=>(
+                            <Link to={
+                                '/products/'+catItem.cat}
+                                  state={{title: catItem.title}}
+                                  style={{textDecoration: 'none'}}
+                                  onClick={toggleNav}
+                            >
+                                {catItem.title}
+                            </Link>
+                        ))
+                    }
+
+                </nav>
+            </CSSTransition>
         </Container>
     )
 }

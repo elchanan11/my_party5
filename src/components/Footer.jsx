@@ -83,6 +83,7 @@ const ListItem = styled.li`
   width: 50%;
   margin-bottom: 10px;
   text-align: right;
+  font-size: 17px;
 `;
 
 const Right = styled.div`

@@ -70,7 +70,7 @@ export const categoryData = [
         id:2,
         img:CategoryItem,
         title:"!!מבצעים",
-        cat: "Love"
+        cat: "Sales"
     },
     {
         id:3,
