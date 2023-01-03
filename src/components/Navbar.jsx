@@ -163,10 +163,17 @@ export default function Navbar(props){
 
         const toggleNav = () => {
             setNavVisibility(!isNavVisible);
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: "smooth"
+            });
         };
 
     return(
-        <Container>
+        <Container
+             style={{position:isNavVisible===true ? "absolute" : "sticky"}}
+        >
             <Wrapper>
                 <Left>
                     <Link to={"/cart"}>
