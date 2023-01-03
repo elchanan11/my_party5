@@ -22,8 +22,8 @@ export default function Home(){
             <Categories  />
             <Products cat={"Reccomanded"} from={'home'}/>
             <Footer />
-            <Fab size="medium" color="secondary" aria-label="add"  style={{background:"green",cursor:"pointer",zIndex:100, position:"sticky",bottom: 8,left:8}}>
-                <WhatsApp onClick={()=>{
+            <Fab size="large" color="secondary" aria-label="add"  style={{background:"green",cursor:"pointer",zIndex:100, position:"sticky",bottom: 10,left:10}}>
+                <WhatsApp style={{width:"70%",height:"70%"}} onClick={()=>{
                     let postMessageToWatapp = "שלום אני מהאתר"
                         let url = `https://wa.me/+972539323849?text=${postMessageToWatapp}`;
 
