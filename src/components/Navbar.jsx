@@ -105,14 +105,13 @@ const MenuLink = styled.div`
 
 export default function Navbar(props){
     const navigate = useNavigate();
-    const dispatch = useDispatch()
+
     const quantity = useSelector(state=>state.cart.quantity)
 
     const [query,setQuery] = useState("")
     const [products,setProducts] = useState([])
 
-    const user = useSelector(state => state.user.currentUser)
-    console.log(user)
+
 
     useEffect(()=>{
         const fetchUsers = async ()=>{
@@ -138,16 +137,7 @@ export default function Navbar(props){
 
     },[query])
 
-    const handleLogOut = () => {
 
-        dispatch(
-            deleteProducts()
-        )
-
-        dispatch(
-            logOut()
-        )
-    }
     /////////////////////////////////for Drop down menu/////////////////////////
 
         const [isNavVisible, setNavVisibility] = useState(false);
@@ -209,18 +199,6 @@ export default function Navbar(props){
                     </Link>
                 </Center>
                 <Right>
-                    {/*{user && true ?*/}
-                    {/*    <MenuLink onClick={handleLogOut}>*/}
-                    {/*    התנתק*/}
-                    {/*    </MenuLink>*/}
-                    {/*    :*/}
-                    {/*    <Link to={'/login'}>*/}
-                    {/*        <MenuLink>*/}
-                    {/*            התחבר*/}
-                    {/*        </MenuLink>*/}
-                    {/*    </Link>*/}
-                    {/*}*/}
-
                     <MenuLink>
                         <MenuIcon
                             onClick={toggleNav}
@@ -238,7 +216,9 @@ export default function Navbar(props){
                 <nav className="Nav">
                     {
                         categoryData.map(catItem=>(
-                            <Link to={
+                            <Link
+                                key={catItem.id}
+                                to={
                                 '/products/'+catItem.cat}
                                   state={{title: catItem.title}}
                                   style={{textDecoration: 'none'}}

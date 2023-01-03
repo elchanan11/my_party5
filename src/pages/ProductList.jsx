@@ -7,6 +7,8 @@ import Products from "../components/Products";
 import Footer from "../components/Footer";
 import {mobile} from "../responsive";
 import {useLocation} from "react-router-dom";
+import {WhatsApp} from "@mui/icons-material";
+import {Fab} from "@mui/material";
 
 const Container = styled.div`
   background-color: #fae8e8;
@@ -71,6 +73,13 @@ export default function ProductList(){
             </FilterContainer>
             <Products cat={cat} sort={sort}/>
             <Footer />
+            <Fab size="large" color="secondary" aria-label="add"  style={{background:"green",cursor:"pointer",zIndex:100, position:"sticky",bottom: 10,left:10}}>
+                <WhatsApp style={{width:"70%",height:"70%"}} onClick={()=>{
+                    let postMessageToWatapp = "שלום אני מהאתר"
+                    let url = `https://wa.me/+972539323849?text=${postMessageToWatapp}`;
+
+                    window.open(url);}} />
+            </Fab>
         </Container>
     )
 }

@@ -9,7 +9,7 @@ const Container = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
-  min-width: 130px;
+  min-width: 180px;
   max-width: 200px;
   height: 200px;
   border-style: solid;
@@ -28,7 +28,7 @@ const Container = styled.div`
   padding-left: 0%;
   margin-right: 10px;
   margin-left: 10px;
-  ${mobile({width: "30%"})}
+  ${mobile({minWidth: "100px"})}
 `
 const Image = styled.img`
   max-width: 100%;

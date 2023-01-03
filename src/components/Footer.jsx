@@ -12,7 +12,11 @@ import {
 import styled from "styled-components";
 import {mobile} from "../responsive";
 import {Link} from "react-router-dom";
-
+import {deleteProducts} from "../redux/cartRedux";
+import {logOut} from "../redux/userRedux";
+import {useDispatch, useSelector} from "react-redux";
+import PersonRemoveIcon from '@mui/icons-material/PersonRemove';
+import PersonAddIcon from '@mui/icons-material/PersonAdd';
 const Container = styled.div`
   display: flex;
   // background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.9)),
@@ -106,6 +110,23 @@ const ContactItem = styled.div`
 
 
 const Footer = () => {
+
+    const dispatch = useDispatch()
+
+    const user = useSelector(state => state.user.currentUser)
+    console.log(user)
+
+    const handleLogOut = () => {
+
+        dispatch(
+            deleteProducts()
+        )
+
+        dispatch(
+            logOut()
+        )
+    }
+
     return (
         <Container>
             <Left>
@@ -116,7 +137,23 @@ const Footer = () => {
                     לקהל לקוחותינו היקרים
                     בימים אלו ניתן לבצע הזמנה דרך הטלפון הוואצאפ או המייל, יש אפשרות להגיע לאסוף מהחנות, בנוסף יש אפשרות למשלוח עד לבית! באיזור ביתר עילית, צור הדסה, מבוא ביתר, ירושלים גילה, בית וגן, בית הכרם, גבעת שאול, קרית משה
                 </Desc>
-                <SocialContainer>
+                <SocialContainer >
+                    {user && true ?
+                        <SocialIcon color="3B5999">
+                            <PersonRemoveIcon onClick={handleLogOut}>
+                                התנתק
+                            </PersonRemoveIcon>
+                        </SocialIcon>
+
+                        :
+                        <SocialIcon color="3B5999">
+                            <Link to={'/login'}>
+                                <PersonAddIcon>
+                                    התחבר
+                                </PersonAddIcon>
+                            </Link>
+                        </SocialIcon>
+                    }
                     <SocialIcon color="3B5999">
                         <a target={"blank"}
                            href={"https://www.facebook.com/pages/category/art/%D7%94%D7%9E%D7%A1%D7%99%D7%91%D7%94-%D7%A9%D7%9C%D7%99-2197659190450858/"}

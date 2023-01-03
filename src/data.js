@@ -132,7 +132,7 @@ export const categoryData = [
     {
         id:14,
         img:CategoryItem,
-        title:"מתנות לנשים"
+        title:"מתנות לנשיםם"
     },
 
 ]
