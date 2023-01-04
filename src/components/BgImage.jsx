@@ -15,9 +15,10 @@ const Container = styled.div`
   //box-shadow: 0 4px 2px -3px gold;
 `
 
-const ImageContainer = styled.div`
-   background: repeating-linear-gradient(rgb(255, 245, 210,0.1), rgba(248, 248, 223,0.7)),
-   url(${bg2}) center;
+const ImageContainer = styled.img`
+   //
+   // background: repeating-linear-gradient(rgb(255, 245, 210,0.1), rgba(248, 248, 223,0.7)),
+   // url(${bg2}) center;
   height: 100%;
   min-height: 255px;
   flex: 1;
@@ -29,7 +30,7 @@ export default function BgImage(){
   return(
         <>
           <Container>
-            <ImageContainer>
+            <ImageContainer src={bg2}>
 
             </ImageContainer>
           </Container>
