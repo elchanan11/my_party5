@@ -1,5 +1,5 @@
 
-import React, { useState} from "react";
+import React, {useEffect,useState} from "react";
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
 import Announcment from "../components/Announcment";
@@ -46,6 +46,15 @@ export default function ProductList(){
     const categoryTitle = location.state.title
     const [sort,setSort] = useState("newest")
     const [serchFilter,setSearchFilter] = useState("")
+
+    useEffect(()=>{
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth"
+        });
+    },[])
+
     return(
         <Container>
             <Announcment />
@@ -73,7 +82,7 @@ export default function ProductList(){
             </FilterContainer>
             <Products cat={cat} sort={sort}/>
             <Footer />
-            <Fab size="large" color="secondary" aria-label="add"  style={{background:"green",cursor:"pointer",zIndex:100, position:"sticky",bottom: 10,left:10}}>
+            <Fab size="large" color="secondary" aria-label="add"  style={{background:"green",cursor:"pointer",zIndex:100, position:"fixed",bottom: 10,left:10}}>
                 <WhatsApp style={{width:"70%",height:"70%"}} onClick={()=>{
                     let postMessageToWatapp = "שלום אני מהאתר"
                     let url = `https://wa.me/+972539323849?text=${postMessageToWatapp}`;

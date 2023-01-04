@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect,useState} from "react";
 import Navbar from "../components/Navbar";
 import Slider from "../components/Slider";
 
@@ -11,12 +11,16 @@ import {WhatsApp} from "@mui/icons-material";
 import BgImage from "../components/BgImage";
 
 export default function Home(){
-    window.onbeforeunload = function () {
-        window.scrollTo(0, 0);
-    }
+    useEffect(()=>{
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth"
+        });
+    },[])
 
     return(
-        <div>
+        <div >
             <Announcment />
             <Navbar home={"home"}/>
             {/*<Slider />*/}
@@ -24,7 +28,7 @@ export default function Home(){
             <Categories  />
             <Products cat={"Reccomanded"} from={'home'}/>
             <Footer />
-            <Fab size="large" color="secondary" aria-label="add"  style={{background:"green",cursor:"pointer",zIndex:100, position:"sticky",bottom: 40,left:10}}>
+            <Fab size="large" color="secondary" aria-label="add"  style={{background:"green",cursor:"pointer",zIndex:100, position:"fixed",bottom: 40,left:10}}>
                 <WhatsApp style={{width:"70%",height:"70%"}} onClick={()=>{
                     let postMessageToWatapp = "שלום אני מהאתר"
                         let url = `https://wa.me/+972539323849?text=${postMessageToWatapp}`;

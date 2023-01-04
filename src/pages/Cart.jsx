@@ -9,7 +9,7 @@ import {Link} from "react-router-dom";
 import {deleteProducts,deleteOneProduct} from "../redux/cartRedux";
 
 
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {addProduct} from "../redux/cartRedux";
 import CartItem from "../components/CartItem";
 
@@ -134,6 +134,15 @@ const Cart = () => {
 
     let productName = []
     let postMessageToWatapp = "שלום אני מהאתר ואני מעוניין ב "
+
+
+    useEffect(()=>{
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth"
+        });
+    },[])
 
     const handleWhatsAppClick = () => {
 

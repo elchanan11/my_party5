@@ -48,16 +48,16 @@ const SocialContainer = styled.div`
 `;
 
 const SocialIcon = styled.div`
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   color: white;
   background-color: #${(props) => props.color};
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 10px;
-  margin-left: 10px;
+  margin-right: 8px;
+  margin-left: 8px;
   cursor: pointer;
 `;
 
