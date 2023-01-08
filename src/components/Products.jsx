@@ -1,5 +1,5 @@
 import {productData} from "../data";
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useMemo, useState} from "react";
 import styled from "styled-components";
 import ProductItem from "./ProductItem";
 import axios from "axios";
@@ -40,7 +40,7 @@ const CategoryTitle = styled.h1`
 export default function Products(props){
     const [products,setProducts] = useState([])
     const [filterProducts, setFilterProducts] = useState([])
-    useEffect(()=>{
+    useMemo(()=>{
         const getProducts = async () => {
             try {
                 const res = await publicRequest.get(
@@ -78,6 +78,26 @@ export default function Products(props){
         console.log(products)
     }, [props.sort])
 
+    // useEffect(()=>{
+    //     setFilterProducts(products)
+    //     if (props.filter !== "" || null){
+    //         console.log(props.filter)
+    //         products.filter(product=>{
+    //             console.log(product.title.includes(props.filter))
+    //              if (product.title.includes(props.filter)){
+    //                  setFilterProducts((prev)=>
+    //                      [...prev,product]
+    //                  )
+    //                  console.log(filterProducts)
+    //              }
+    //         })
+    //
+    //     }else {
+    //         setFilterProducts([products])
+    //     }
+    // },[props.filter],)
+
+
     return(
         <Container>
             {props.from === 'home' &&
@@ -86,9 +106,13 @@ export default function Products(props){
                 </CategoryTitle>
             }
             <Wrapper>
-                {products.length !== 0 ? products.map(productItem=>(
+                {products.length !== 0 ?
+
+                    products.map(
+                    productItem=>(
                         <ProductItem key={productItem._id} item={productItem}/>
-                    )) :
+                    ))
+                    :
                     <NoProducts>
                         אין כרגע מוצרים זמינים בקטגוריה זו
                     </NoProducts>

@@ -65,7 +65,7 @@ export const categoryData = [
         id:1,
         img:CategoryItem,
         title:"בלונים לאירועים",
-        cat: "Baloons"
+        cat: "BalloonsEvents"
     },
     {
         id:2,
@@ -77,64 +77,68 @@ export const categoryData = [
         id:3,
         img:CategoryItem,
         title:"בלוני הליום",
-        cat: "Birthday"
+        cat: "heliumBalloons"
     },
     {
         id:4,
         img:CategoryItem,
-        title:"בלונים בהדפסה אישית"
+        title:"בלונים בהדפסה אישית",
+        cat: "CustomPrintedBalloons"
     },
     {
         id:5,
         img:CategoryItem,
-        title:"בלונים לניפוח עצמי"
+        title:"בלונים לניפוח עצמי",
+        cat: "SelfInflatingBalloons"
     },
     {
         id:6,
         img:CategoryItem,
-        title:"בלונים באריזה"
+        title:"בלונים באריזה",
+        cat: "BalloonsInPackage"
     },
     {
         id:7,
         img:CategoryItem,
-        title:"מתנות קטנות"
+        title:"מתנות קטנות",
+        cat: "SmallGifts"
     },
     {
         id:8,
         img:CategoryItem,
-        title:"מתנות מיוחדות"
+        title:"מתנות מיוחדות",
+        cat: "SpecialGifts"
     },
     {
         id:9,
         img:CategoryItem,
-        title:"מתנות לילדות/נערות"
+        title:"מתנות לילדות/נערות",
+        cat: "GiftsForGirls"
     },
     {
         id:10,
         img:CategoryItem,
-        title:"מתנות לנשים"
+        title:"מתנות לנשים",
+        cat: "GiftsForWomen"
     },
     {
         id:11,
         img:CategoryItem,
-        title:"מתנות לגברים"
+        title:"מתנות לגברים",
+        cat: "GiftsForMen"
     },
     {
         id:12,
         img:CategoryItem,
-        title:"דובים"
+        title:"דובים",
+        cat: "Bears"
     },
     {
         id:13,
         img:CategoryItem,
-        title:"קופסאות/מוצרי אריזה"
+        title:"קופסאות/מוצרי אריזה",
+        cat: "PackagingProducts"
     },
-    {
-        id:14,
-        img:CategoryItem,
-        title:"מתנות לנשיםם"
-    },
-
 ]
 
 export const productData = [

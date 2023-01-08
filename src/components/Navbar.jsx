@@ -104,38 +104,38 @@ const MenuLink = styled.div`
 `
 
 export default function Navbar(props){
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const quantity = useSelector(state=>state.cart.quantity)
 
-    const [query,setQuery] = useState("")
-    const [products,setProducts] = useState([])
+    // const [query,setQuery] = useState("")
+    // const [products,setProducts] = useState([])
 
 
 
-    useEffect(()=>{
-        const fetchUsers = async ()=>{
-            try {
-                const res =  await publicRequest.get(`/product`)
-                setProducts(res.data)
-            }catch (e) {
-                console.log(e)
-            }
-        }
-        fetchUsers()
-    },[])
+    // useEffect(()=>{
+    //     const fetchUsers = async ()=>{
+    //         try {
+    //             const res =  await publicRequest.get(`/product`)
+    //             setProducts(res.data)
+    //         }catch (e) {
+    //             console.log(e)
+    //         }
+    //     }
+    //     fetchUsers()
+    // },[])
 
-    useEffect(()=>{
-        const getProduct = async () => {
-            // const res =  await publicRequest.get(`/product/find/${query._id}`)
-             console.log(query)
-             navigate(`/product/${query._id}`)
-        }
-        if (query !== "") {
-            getProduct()
-        }
-
-    },[query])
+    // useEffect(()=>{
+    //     const getProduct = async () => {
+    //         // const res =  await publicRequest.get(`/product/find/${query._id}`)
+    //          console.log(query)
+    //          navigate(`/product/${query._id}`)
+    //     }
+    //     if (query !== "") {
+    //         getProduct()
+    //     }
+    //
+    // },[query])
 
 
     /////////////////////////////////for Drop down menu/////////////////////////
@@ -183,22 +183,7 @@ export default function Navbar(props){
                             </Badge>
                         </MenuLink>
                     </Link>
-                    {/*{props.home && <Autocomplete*/}
-                    {/*    options={products}*/}
-                    {/*    getOptionLabel={(option) => option.title} renderInput={(params) =>*/}
-                    {/*        <TextField*/}
-                    {/*            {...params}*/}
-                    {/*            label="חפש"*/}
-                    {/*            size="small"*/}
-                    {/*            variant="outlined"*/}
-                    {/*            style={{padding:0,height:2,width:"70px",margin:0,zIndex:0,lineHeight:1,marginBottom:"40px",marginLeft:"10px"}}*/}
-                    {/*        />*/}
-                    {/*    }*/}
-                    {/*    isOptionEqualToValue={(option, value) => option.id === value.id}*/}
-                    {/*    onChange={(event:any,newVal:string)=>setQuery(newVal)}*/}
-                    {/*    sx={{ width: 100,padding:0 }}*/}
 
-                    {/*/>}*/}
                 </Left>
                 <Center>
                     <Link to={"/"}>
