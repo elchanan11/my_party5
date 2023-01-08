@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const BASE_URL ="https://myparty55.herokuapp.com/api/"
-const TOKEN = JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser.accessToken
+const TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYmFlNzYxOGNhM2NhMzU4MjQxMDhmMyIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NzMxOTMzMzEsImV4cCI6MTY3MzQ1MjUzMX0.C5UVEpSB-WyMINO61V5UfOFgHq-ybdV39SGIArnRzrI"
 export const publicRequest = axios.create({
     baseURL:BASE_URL
 })

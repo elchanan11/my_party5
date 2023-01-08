@@ -139,6 +139,48 @@ export const categoryData = [
         title:"קופסאות/מוצרי אריזה",
         cat: "PackagingProducts"
     },
+    {
+        id:14,
+        img:CategoryItem,
+        title:"אביזרים ליום הולדת",
+        cat: "BirthdayAccessories"
+    },
+    {
+        id:15,
+        img:CategoryItem,
+        title:"חד פעמי לימי הולדת",
+        cat: "DisposableForBirthdays"
+    },
+    {
+        id:16,
+        img:CategoryItem,
+        title:"הדפסת מדבקות",
+        cat: "PrintingStickers"
+    },
+    {
+        id:17,
+        img:CategoryItem,
+        title:"דף סוכר לעוגה",
+        cat: "SugarSheetForCake"
+    },
+    {
+        id:18,
+        img:CategoryItem,
+        title:"שוקולדים",
+        cat: "Chocolates"
+    },
+    {
+        id:19,
+        img:CategoryItem,
+        title:"שמפניות (18+)",
+        cat: "Champagnes"
+    },
+    {
+        id:20,
+        img:CategoryItem,
+        title:"כוסות יין ושמפניה",
+        cat: "GlassesOfWine"
+    },
 ]
 
 export const productData = [
