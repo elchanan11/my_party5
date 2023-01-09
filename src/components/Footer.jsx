@@ -199,26 +199,7 @@ const Footer = () => {
                 </SocialContainer>
             </Left>
             <Center>
-                <Title>קישורים</Title>
-                <List>
 
-                    <ListItem>
-                        <Link to={'/'}>
-                            בית
-                        </Link>
-                    </ListItem>
-                    <ListItem>
-                        <Link to={'/register'}>
-                            הירשם
-                        </Link>
-                    </ListItem>
-                    <ListItem>
-                        <Link to={'/login'}>
-                            התחבר
-                        </Link>
-                    </ListItem>
-                    <ListItem>Terms</ListItem>
-                </List>
             </Center>
             <Right>
                 <Title>צור קשר</Title>

@@ -115,8 +115,6 @@ const Login = () => {
                     {isFieldEmpty && <FieldEmpty>
                         אנא מלא את כל השדות
                     </FieldEmpty>}
-                    <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
-                    <Link>CREATE A NEW ACCOUNT</Link>
                 </Form>
             </Wrapper>
         </Container>
