@@ -8,8 +8,9 @@ import {useDispatch} from "react-redux";
 const Product = styled.div`
   display: flex;
   justify-content: space-between;
-  
-  ${mobile({flexDirection: "column"})}
+  margin-bottom: 10px;
+  background-color: #f6e9e9;
+  ${mobile({flexDirection: "column", marginBottom: "0"})}
 `;
 
 const ProductDetail = styled.div`
@@ -115,7 +116,7 @@ export default function CartItem(props){
                         <b>Product:</b> {props.cartItem?.title}
                     </ProductName>
                     <ProductId>
-                        <b>ID:</b> <div style={{width:"3px"}}>{props.cartItem?._id}</div>
+                        <b>ID:</b> <div style={{width:"3px"}}>{props.cartItem?._id.substring(0,12)}...</div>
                     </ProductId>
                 </Details>
             </ProductDetail>

@@ -18,6 +18,7 @@ const Info = styled.div`
   justify-content: center;
   transition: all 0.5s ease;
   cursor: pointer;
+  
 `;
 
 const Container = styled.div`
@@ -97,12 +98,12 @@ export default function ProductItem(props){
     }
 
     const handleImageLoded  = () =>{
-        alert('imageloded')
+        console.log('imageloded')
     }
     return(
         <Container>
             <Circle/>
-            <Image src={props.item.img} onLoad={handleImageLoded}/>
+            <Image loading="lazy" src={props.item.img} onLoad={handleImageLoded}/>
             <Info>
                 <Icon onClick={handleAddTOCartClick}>
                     <ShoppingCartOutlined />
