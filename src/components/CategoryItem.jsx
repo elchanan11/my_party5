@@ -28,7 +28,7 @@ const Container = styled.div`
   padding-left: 0%;
   margin-right: 10px;
   margin-left: 10px;
-  ${mobile({minWidth: "100px"})}
+  ${mobile({minWidth: "150px"})}
 `
 const Image = styled.img`
   max-width: 100%;

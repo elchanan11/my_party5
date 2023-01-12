@@ -22,9 +22,18 @@ const Wrapper = styled.div`
   justify-content: space-between;
   text-align: center;
 `
-const NoProducts = styled.span`
+const NoProductsContainer = styled.span`
+  display: flex;
+  align-items: center;
   text-align: center;
-  
+  justify-content: center;
+`
+
+const NoProducts = styled.span`
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 `
 
 const CategoryTitle = styled.h1`
@@ -113,9 +122,11 @@ export default function Products(props){
                         <ProductItem key={productItem._id} item={productItem}/>
                     ))
                     :
-                    <NoProducts>
-                        אין כרגע מוצרים זמינים בקטגוריה זו
-                    </NoProducts>
+                    <NoProductsContainer>
+                        <NoProducts>
+                            אין כרגע מוצרים זמינים בקטגוריה זו
+                        </NoProducts>
+                    </NoProductsContainer>
                 }
             </Wrapper>
         </Container>

@@ -8,6 +8,7 @@ import {useDispatch} from "react-redux";
 const Product = styled.div`
   display: flex;
   justify-content: space-between;
+  
   ${mobile({flexDirection: "column"})}
 `;
 

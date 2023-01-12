@@ -69,8 +69,13 @@ const Icon = styled.div`
 `;
 
 export default function ProductItem(props){
+
     const [productName,setProductName] = useState("")
     let postMessageToWatapp = "שלום אני מהאתר ואני מעוניין ב "
+    const dispatch = useDispatch()
+    const product = props.item
+    const [quantity,setQuantity] = useState(1)
+    const [isImageLoaded, setIsImageLoaded] = useState(false)
 
     useEffect(()=>{
         setProductName(props.item.title)
@@ -84,19 +89,20 @@ export default function ProductItem(props){
         setProductName("")
     }
 
-    const dispatch = useDispatch()
-    const product = props.item
-    const [quantity,setQuantity] = useState(1)
     const handleAddTOCartClick = () => {
         console.log('s')
         dispatch(
             addProduct({product, quantity,price: parseInt(product.price)})
         )
     }
+
+    const handleImageLoded  = () =>{
+        alert('imageloded')
+    }
     return(
         <Container>
             <Circle/>
-            <Image src={props.item.img}/>
+            <Image src={props.item.img} onLoad={handleImageLoded}/>
             <Info>
                 <Icon onClick={handleAddTOCartClick}>
                     <ShoppingCartOutlined />

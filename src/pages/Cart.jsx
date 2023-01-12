@@ -13,7 +13,9 @@ import {useEffect, useState} from "react";
 import {addProduct} from "../redux/cartRedux";
 import CartItem from "../components/CartItem";
 
-const Container = styled.div``;
+const Container = styled.div`
+  background-color: #f3ecec;
+`;
 
 const Wrapper = styled.div`
   padding: 20px;

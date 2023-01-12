@@ -13,7 +13,9 @@ import {addProduct} from "../redux/cartRedux";
 import {useDispatch} from "react-redux";
 import Loading from "../components/Loading";
 
-const Container = styled.div``;
+const Container = styled.div`
+  background-color: #f3ecec;
+`;
 
 const Wrapper = styled.div`
   padding: 50px;
@@ -40,6 +42,8 @@ const Image = styled.img`
 
 const InfoContainer = styled.div`
   flex: 1;
+  display: flex;
+  flex-direction: column;
   padding: 0px 50px;
   ${mobile({padding: '10px'})}
 
@@ -61,6 +65,7 @@ const Price = styled.span`
   font-weight: 100;
   font-size: 40px;
   text-align: center;
+  
 `;
 
 const FilterContainer = styled.div`
@@ -124,6 +129,7 @@ const Amount = styled.span`
 const IconContainer = styled.div`
   display: flex;
   align-items: center;
+  
   ${mobile({justifyContent: "center"})}
 `
 
