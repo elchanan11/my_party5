@@ -8,20 +8,22 @@ import {useDispatch} from "react-redux";
 const Product = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
   max-width: 850px;
   background-color: #f6e9e9;
-  ${mobile({flexDirection: "column", marginBottom: "0"})}
+  ${mobile({flexDirection: "column"})}
 `;
 
 const ProductDetail = styled.div`
   flex: 2;
   display: flex;
+  
 `;
 
 const Image = styled.img`
   width: 200px;
   max-height: 300px;
+  
 `;
 
 const Details = styled.div`
@@ -69,7 +71,7 @@ const ProductAmount = styled.div`
 const ProductPrice = styled.div`
   font-size: 30px;
   font-weight: 200;
-  ${mobile({marginBottom: "20px"})}
+  ${mobile({marginBottom: "0px"})}
 `;
 
 const Button = styled.button`
