@@ -11,6 +11,7 @@ import axios from "axios";
 import {publicRequest} from "../requestMethods";
 import {addProduct} from "../redux/cartRedux";
 import {useDispatch} from "react-redux";
+import Loading from "../components/Loading";
 
 const Container = styled.div``;
 
@@ -151,6 +152,7 @@ const Product = () => {
     const dispatch = useDispatch()
     const [productName,setProductName] = useState("")
     let postMessageToWatapp = "שלום אני מהאתר ואני מעוניין ב "
+    const [imageIsLoaded,setImageIsLoaded] = useState(false)
 
     useEffect(() => {
         const getProduct = async () => {
@@ -185,14 +187,21 @@ const Product = () => {
         setProductName("")
     }
 
+    const handleImageLoded = () => {
+        setImageIsLoaded(
+            true
+        )
+    }
+
     console.log(productId)
     return (
         <Container>
+            {!imageIsLoaded && <Loading />}
             <Announcement />
             <Navbar />
             <Wrapper>
                 <ImgContainer>
-                    <Image src={product.img} />
+                    <Image src={product.img} onLoad={handleImageLoded}/>
                     *התמונה להמחשה בלבד
                 </ImgContainer>
                 <InfoContainer>
@@ -210,10 +219,7 @@ const Product = () => {
                 </InfoContainer>
                 <IconContainer>
                     <Icon color={"7DCE13"} onClick={handleWhatsAppClick}>
-                        {/*<a href=`https://wa.me/+972539323849?text=${encodeURI(`היי, אני מהאתר ואני מעוניין ב: `)}&app_absent=0` target="_blank">*/}
                             <WhatsApp/>
-
-                        {/*</a>*/}
                     </Icon>
                     <Icon color={"0002A1"} onClick={handleAddTOCartClick}>
                         <ShoppingCartOutlined />

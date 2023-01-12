@@ -24,7 +24,7 @@ const Container = styled.div`
   box-shadow: 0 4px 2px -2px gray;
 background-color: white;
   top: 0;
-  z-index: 100;
+  z-index: 99;
   min-height: 60px;
   
   ${mobile({height: '50px'})}

@@ -19,6 +19,7 @@ import PersonRemoveIcon from '@mui/icons-material/PersonRemove';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 const Container = styled.div`
   display: flex;
+  z-index: 4;
   // background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.9)),
     // url(${backgroundLogo}) center;
   background-color: #D6E4E5;
@@ -29,6 +30,7 @@ const Left = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
+  
   padding: 20px;
   ${mobile({alignItems: "center"})}
 `;
