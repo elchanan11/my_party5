@@ -15,40 +15,49 @@ import {
     Routes, Navigate,
 } from 'react-router-dom'
 import {useSelector} from "react-redux";
+import styled from "styled-components";
+
+const Container = styled.div`
+  height: 100%;
+  width: 100%;
+`
 
 const App = () => {
     const user = useSelector(state => state.user.currentUser)
 
   return(
     <>
-        <Router>
-            <Routes>
-                <Route exact path="/" element={
-                    <Home />
-                }
-                />
-                <Route path="/products/:category" element={
-                    <ProductList />
-                }
-                />
-                <Route path="/product/:productName" element={
-                    <Product />
-                }
-                />
-                <Route path="/cart" element={
-                    <Cart />
-                }
-                />
-                <Route path="/login" element={
-                    user ? <Navigate to={'/'}/> : <Login />
-                }
-                />
-                <Route path="/register" element={
-                    user ? <Navigate to={'/'}/> : <Register />
-                }
-                />
-            </Routes>
-        </Router>
+        <Container>
+            <Router>
+                <Routes>
+                    <Route exact path="/" element={
+                        <Home />
+                    }
+                    />
+                    <Route path="/products/:category" element={
+                        <ProductList />
+                    }
+                    />
+                    <Route path="/product/:productName" element={
+                        <Product />
+                    }
+                    />
+                    <Route path="/cart" element={
+                        <Cart />
+                    }
+                    />
+                    <Route path="/login" element={
+                        user ? <Navigate to={'/'}/> : <Login />
+                    }
+                    />
+                    <Route path="/register" element={
+                        user ? <Navigate to={'/'}/> : <Register />
+                    }
+                    />
+                </Routes>
+            </Router>
+        </Container>
+
       {/*<Home />*/}
       {/* <ProductList />*/}
       {/* <Product />*/}

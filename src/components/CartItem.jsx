@@ -9,6 +9,7 @@ const Product = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
+  max-width: 850px;
   background-color: #f6e9e9;
   ${mobile({flexDirection: "column", marginBottom: "0"})}
 `;
@@ -92,22 +93,7 @@ export default function CartItem(props){
 
     return(
         <Product >
-            <ProductNum >
-                <DeleteOutline
-                    onClick={()=>{
-                        dispatch(
-                            deleteOneProduct(
-                                {product:props.cartItem,
-                                    index:props.index,
-                                    price: parseInt(props.cartItem.price
-                                    )
-                                }
-                            )
-                        )
-                    }}
-                    style={{cursor:"pointer"}}
-                />
-            </ProductNum>
+
             <ProductDetail>
                 <Image
                     src={props.cartItem?.img}/>
@@ -126,6 +112,22 @@ export default function CartItem(props){
                 </ProductAmountContainer>
                 <ProductPrice>₪ {props.cartItem?.price}</ProductPrice>
             </PriceDetail>
+            <ProductNum >
+                <DeleteOutline
+                    onClick={()=>{
+                        dispatch(
+                            deleteOneProduct(
+                                {product:props.cartItem,
+                                    index:props.index,
+                                    price: parseInt(props.cartItem.price
+                                    )
+                                }
+                            )
+                        )
+                    }}
+                    style={{cursor:"pointer"}}
+                />
+            </ProductNum>
         </Product>
     )
 }

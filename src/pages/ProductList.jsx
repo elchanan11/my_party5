@@ -91,25 +91,25 @@ export default function ProductList(){
                     </Select>
                 </Filter>
 
-                {<Autocomplete
-                    options={products}
-                    getOptionLabel={(option) => option.title} renderInput={(params) =>
-                        <TextField
-                            {...params}
-                            label="חפש"
-                            size="small"
-                            variant="outlined"
-                            onChange={(e)=>{setQuery(e.target.value)}}
-                            style={{padding:0,height:2,width:"70px",margin:0,zIndex:0,marginBottom:"40px",marginRight:"4px"}}
-                        />
-                    }
-                    isOptionEqualToValue={(option, value) => option.id === value.id}
-                    //onChange={(event:any,newVal:string)=>setQuery(newVal)}
-                    sx={{ width: 100,padding:0 }}
+                {/*{<Autocomplete*/}
+                {/*    options={products}*/}
+                {/*    getOptionLabel={(option) => option.title} renderInput={(params) =>*/}
+                {/*        <TextField*/}
+                {/*            {...params}*/}
+                {/*            label="חפש"*/}
+                {/*            size="small"*/}
+                {/*            variant="outlined"*/}
+                {/*            onChange={(e)=>{setQuery(e.target.value)}}*/}
+                {/*            style={{padding:0,height:2,width:"70px",margin:0,zIndex:0,marginBottom:"40px",marginRight:"4px"}}*/}
+                {/*        />*/}
+                {/*    }*/}
+                {/*    isOptionEqualToValue={(option, value) => option.id === value.id}*/}
+                {/*    //onChange={(event:any,newVal:string)=>setQuery(newVal)}*/}
+                {/*    sx={{ width: 100,padding:0 }}*/}
 
-                />}
+                {/*/>}*/}
             </FilterContainer>
-            <Products cat={cat} sort={sort} filter={query}/>
+            <Products cat={cat} sort={sort} />
             <Footer />
             <Fab size="large" color="secondary" aria-label="add"  style={{background:"green",cursor:"pointer",zIndex:100, position:"fixed",bottom: 10,left:10}}>
                 <WhatsApp style={{width:"70%",height:"70%"}} onClick={()=>{
