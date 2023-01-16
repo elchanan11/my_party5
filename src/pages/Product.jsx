@@ -32,7 +32,12 @@ const ImgContainer = styled.div`
   text-align: right;
   font-size: 12px;
   justify-content: flex-start;
+  
 `;
+
+const ImageNote = styled.span`
+  
+`
 
 const Image = styled.img`
   width: 100%;
@@ -217,7 +222,9 @@ const Product = () => {
             <Wrapper>
                 <ImgContainer>
                     <Image src={product.img} onLoad={handleImageLoded}/>
-                    *התמונה להמחשה בלבד
+                    <ImageNote>
+                        *התמונה להמחשה בלבד
+                    </ImageNote>
                 </ImgContainer>
                 <InfoAndIconContainer>
                     <InfoContainer>
