@@ -10,7 +10,7 @@ import {
     Twitter, WhatsApp,
 } from "@mui/icons-material";
 import styled from "styled-components";
-import {mobile} from "../responsive";
+import {mobile, tablet} from "../responsive";
 import {Link} from "react-router-dom";
 import {deleteProducts} from "../redux/cartRedux";
 import {logOut} from "../redux/userRedux";
@@ -23,6 +23,7 @@ const Container = styled.div`
   // background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.9)),
     // url(${backgroundLogo}) center;
   background-color: #D6E4E5;
+  ${tablet({flexDirection: 'column'})}
   ${mobile({flexDirection: 'column'})}
 `;
 
@@ -32,16 +33,19 @@ const Left = styled.div`
   flex-direction: column;
   
   padding: 20px;
+  ${tablet({alignItems: "center"})}
   ${mobile({alignItems: "center"})}
 `;
 
 const Logo = styled.img`
   width: 200px;
+  ${tablet({marginBottom: '20px'})}
   ${mobile({marginBottom: '20px'})}
 `;
 
 const Desc = styled.p`
   margin: 20px 0px;
+  ${tablet({display: 'none'})}
   ${mobile({display: 'none'})}
 `;
 
@@ -66,8 +70,8 @@ const SocialIcon = styled.div`
 const Center = styled.div`
   flex: 1;
   padding: 20px;
+  ${tablet({display: 'none'})}
   ${mobile({display: 'none'})}
-
 `;
 
 const Title = styled.h3`
@@ -98,6 +102,7 @@ const Right = styled.div`
   flex-direction: column;
   text-align: right;
   padding: 20px;
+  ${tablet({alignItems: "center"})}
   ${mobile({alignItems: "center"})}
 `;
 

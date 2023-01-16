@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Announcment from "../components/Announcment";
-import {mobile} from "../responsive";
+import {mobile, tablet} from "../responsive";
 import {useDispatch, useSelector} from "react-redux";
 import {Link} from "react-router-dom";
 import {deleteProducts,deleteOneProduct} from "../redux/cartRedux";
@@ -56,6 +56,7 @@ const TopText = styled.span`
 const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
+  ${tablet({flexDirection: "column"})}
   ${mobile({flexDirection: "column"})}
 `;
 

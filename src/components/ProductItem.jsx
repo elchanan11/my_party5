@@ -4,6 +4,7 @@ import {Search, ShoppingCartOutlined, Style, WhatsApp} from "@mui/icons-material
 import {Link} from "react-router-dom";
 import {addProduct} from "../redux/cartRedux";
 import {useDispatch} from "react-redux";
+import {mobile} from "../responsive";
 const Info = styled.div`
   opacity: 0;
   width: 100%;
@@ -24,7 +25,7 @@ const Info = styled.div`
 const Container = styled.div`
   flex: 1;
   margin: 5px;
-  min-width: 280px;
+  min-width: 350px;
 
   height: 350px;
   display: flex;
@@ -33,6 +34,7 @@ const Container = styled.div`
   background-color: #f3ecec;
   position: relative;
 
+  ${mobile({minWidth:"280px"})}
   &:hover ${Info} {
     opacity: 1;
   }

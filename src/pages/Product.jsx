@@ -4,7 +4,7 @@ import Announcement from "../components/Announcment";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import productPic from '../product.jpg'
-import {mobile} from "../responsive";
+import {mobile, tablet} from "../responsive";
 import {useLocation} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axios from "axios";
@@ -26,9 +26,12 @@ const Wrapper = styled.div`
 
 const ImgContainer = styled.div`
   flex: 1;
+  display: flex;
+  flex-direction: column;
   color: gray;
   text-align: right;
   font-size: 12px;
+  justify-content: flex-start;
 `;
 
 const Image = styled.img`
@@ -36,16 +39,21 @@ const Image = styled.img`
   max-width: 400px;
   max-height: 450px;
   height: 90vh;
-  
   ${mobile({height: '80%'})}
 `;
+const InfoAndIconContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    ${mobile({flexDirection:"column"})}
+`
 
 const InfoContainer = styled.div`
-  flex: 1;
+  flex: 0.5;
   display: flex;
   flex-direction: column;
   padding: 0px 50px;
   ${mobile({padding: '10px'})}
+  ${tablet({padding:0})}
 
 `;
 
@@ -129,7 +137,8 @@ const Amount = styled.span`
 const IconContainer = styled.div`
   display: flex;
   align-items: center;
-  
+  justify-content: center;
+  flex: 1;
   ${mobile({justifyContent: "center"})}
 `
 
@@ -210,27 +219,29 @@ const Product = () => {
                     <Image src={product.img} onLoad={handleImageLoded}/>
                     *התמונה להמחשה בלבד
                 </ImgContainer>
-                <InfoContainer>
-                    <Title>{product.title}</Title>
-                    <Desc>
-                        {product.desc}
-                    </Desc>
-                    <Price>₪ {product.price}</Price>
-                    <AddContainer>
-                        <AmountContainer>
+                <InfoAndIconContainer>
+                    <InfoContainer>
+                        <Title>{product.title}</Title>
+                        <Desc>
+                            {product.desc}
+                        </Desc>
+                        <Price>₪ {product.price}</Price>
+                        <AddContainer>
+                            <AmountContainer>
 
-                        </AmountContainer>
-                    </AddContainer>
+                            </AmountContainer>
+                        </AddContainer>
+                    </InfoContainer>
 
-                </InfoContainer>
-                <IconContainer>
-                    <Icon color={"7DCE13"} onClick={handleWhatsAppClick}>
+                    <IconContainer>
+                        <Icon color={"7DCE13"} onClick={handleWhatsAppClick}>
                             <WhatsApp/>
-                    </Icon>
-                    <Icon color={"0002A1"} onClick={handleAddTOCartClick}>
-                        <ShoppingCartOutlined />
-                    </Icon>
-                </IconContainer>
+                        </Icon>
+                        <Icon color={"0002A1"} onClick={handleAddTOCartClick}>
+                            <ShoppingCartOutlined />
+                        </Icon>
+                    </IconContainer>
+                </InfoAndIconContainer>
             </Wrapper>
             <Footer />
         </Container>
