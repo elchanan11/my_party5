@@ -29,7 +29,7 @@ const ImgContainer = styled.div`
   display: flex;
   flex-direction: column;
   color: gray;
-  text-align: right;
+  text-align: center;
   font-size: 12px;
   justify-content: flex-start;
   
