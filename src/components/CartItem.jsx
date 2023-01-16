@@ -104,7 +104,7 @@ export default function CartItem(props){
                         <b>Product:</b> {props.cartItem?.title}
                     </ProductName>
                     <ProductId>
-                        <b>ID:</b> <div style={{width:"3px"}}>{props.cartItem?._id.substring(0,12)}...</div>
+                        <b>ID:</b> <div style={{width:"3px"}}>{props.cartItem?._id.substring(0,8)}...</div>
                     </ProductId>
                 </Details>
             </ProductDetail>

@@ -10,7 +10,7 @@ import {
     Twitter, WhatsApp,
 } from "@mui/icons-material";
 import styled from "styled-components";
-import {mobile, tablet} from "../responsive";
+import {mobile, mobileMini, tablet} from "../responsive";
 import {Link} from "react-router-dom";
 import {deleteProducts} from "../redux/cartRedux";
 import {logOut} from "../redux/userRedux";
@@ -51,6 +51,7 @@ const Desc = styled.p`
 
 const SocialContainer = styled.div`
   display: flex;
+  
 `;
 
 const SocialIcon = styled.div`
@@ -65,6 +66,7 @@ const SocialIcon = styled.div`
   margin-right: 8px;
   margin-left: 8px;
   cursor: pointer;
+  ${mobileMini({width:"32px",height:"32px",marginLeft:"5px",marginRight:"5px"})}
 `;
 
 const Center = styled.div`
