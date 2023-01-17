@@ -14,7 +14,8 @@ const Container = styled.div`
   flex-direction: column;
 `;
 const Title = styled.h1`
-  font-size: 60px;
+  font-size: 30px;
+  text-align: center;
   margin-bottom: 20px;
 `;
 
@@ -30,6 +31,7 @@ const InputContainer = styled.div`
   height: 40px;
   background-color: white;
   display: flex;
+  
   justify-content: space-between;
   border: 1px solid lightgray;
   ${mobile({ width: "80%" })}
@@ -51,7 +53,7 @@ const Button = styled.button`
 
 const Newsletter = () => {
     const [email,setEmail] = useState("")
-    const [desc,setDesc] = useState("קבלו עדכונים חמים על המוצרים החדשים שלנו")
+    const [desc,setDesc] = useState("הצטרפו לניוזלטר ותהנו מרעיונות למתנות, השראות למסיבות ומבצעים")
     const [isSubmitted,setIsSubmitted] = useState(false)
     const [submitDone,setSubmitDone] = useState(false)
 
@@ -81,7 +83,12 @@ const Newsletter = () => {
     }
     return (
         <Container>
-            <Title>Newsletter</Title>
+            <Title style={{marginBottom:"0"}}>
+               רוצים להיות מעודכנים במבצעים החמים
+            </Title>
+            <Title >
+                ?שלנו
+            </Title>
             <Desc>{desc}</Desc>
             <form
                 onSubmit={handleSubmit}
