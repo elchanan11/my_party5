@@ -14,14 +14,16 @@ const Container = styled.div`
   flex-direction: column;
 `;
 const Title = styled.h1`
-  font-size: 30px;
+  font-size: 40px;
   text-align: center;
-  margin-bottom: 20px;
+  margin: 5px;
+  margin-bottom: 25px;
 `;
 
 const Desc = styled.div`
   font-size: 24px;
   font-weight: 300;
+  text-align: center;
   margin-bottom: 20px;
   ${mobile({ textAlign: "center" })}
 `;
@@ -84,10 +86,7 @@ const Newsletter = () => {
     return (
         <Container>
             <Title style={{marginBottom:"0"}}>
-               רוצים להיות מעודכנים במבצעים החמים
-            </Title>
-            <Title >
-                ?שלנו
+               התעדכנו במבצעים החמים שלנו
             </Title>
             <Desc>{desc}</Desc>
             <form
