@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import styled from "styled-components";
 import { ArrowLeftOutlined, ArrowRightOutlined} from "@mui/icons-material";
-import {slideImages} from '../data'
+ import {slideImages} from '../data'
 import {mobile} from "../responsive";
 
 const Container = styled.div`

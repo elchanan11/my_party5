@@ -9,6 +9,7 @@ import Footer from "../components/Footer";
 import {Fab} from "@mui/material";
 import {WhatsApp} from "@mui/icons-material";
 import BgImage from "../components/BgImage";
+import Newsletter from "../components/NewsLetter";
 
 export default function Home(){
     useEffect(()=>{
@@ -27,6 +28,7 @@ export default function Home(){
             <BgImage />
             <Categories  />
             <Products cat={"Reccomanded"} from={'home'}/>
+            <Newsletter />
             <Footer />
             <Fab size="large" color="secondary" aria-label="add"  style={{background:"green",cursor:"pointer",zIndex:100, position:"fixed",bottom: 40,left:10}}>
                 <WhatsApp style={{width:"70%",height:"70%"}} onClick={()=>{

@@ -4,7 +4,6 @@ import {Search, ShoppingCartOutlined} from "@mui/icons-material";
 import {Autocomplete, Badge, Menu, TextField} from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import Logo from '../logo-text.png'
-import backgroundLogo from '../img_23.png'
 import {mobile} from "../responsive";
 import {useDispatch, useSelector} from "react-redux";
 import {Link, Redirect, useHistory} from "react-router-dom";
@@ -30,8 +29,6 @@ background-color: white;
   ${mobile({height: '50px'})}
 `
 const Wrapper = styled.div`
-  // background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.93)),
-  // url(${backgroundLogo}) center;
   
   display: flex;
   justify-content: space-between;

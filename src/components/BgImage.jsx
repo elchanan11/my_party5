@@ -1,8 +1,6 @@
 import styled from "styled-components";
 import {mobile} from "../responsive";
-import bg from '../bgImg.jpg'
 import bg2 from '../bglogo2.jpg'
-import bg3 from '../bglogo3.jpg'
 
 const Container = styled.div`
   width: 100%;

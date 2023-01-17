@@ -1,8 +1,6 @@
 import styled from "styled-components";
-import Logo from '../img_8.png'
 import {mobile} from "../responsive";
 import {useState} from "react";
-import backgroundLogo from '../img_23.png'
 import {login} from "../redux/apiCalls";
 import {useDispatch, useSelector} from "react-redux";
 import {publicRequest} from "../requestMethods";
@@ -14,8 +12,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.9)),
-  url(${backgroundLogo}) center;
+  
 `;
 
 const Wrapper = styled.div`

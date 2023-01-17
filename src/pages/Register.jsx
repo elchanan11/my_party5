@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import {mobile} from "../responsive";
-import backgroundLogo from '../img_23.png'
 import {useState} from "react";
 import {publicRequest} from "../requestMethods";
 import {useNavigate} from "react-router-dom";
@@ -13,8 +12,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.9)),
-  url(${backgroundLogo}) center;
+  
 `;
 
 const Wrapper = styled.div`
