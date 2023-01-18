@@ -199,6 +199,7 @@ const Icon = styled.div`
 `;
 
 const Product = () => {
+
     const location = useLocation()
     const productId = location.pathname.split('/')[2]
     const [product,setProduct] = useState({})
@@ -206,9 +207,9 @@ const Product = () => {
     const dispatch = useDispatch()
     const [productName,setProductName] = useState("")
     const [otherProducts,setOtherProducts] = useState([])
-    const [twoProducts,setTwoProducts] = useState([])
     let postMessageToWatapp = "שלום אני מהאתר ואני מעוניין ב "
     const [imageIsLoaded,setImageIsLoaded] = useState(false)
+
 
 
     useEffect(() => {
@@ -223,45 +224,25 @@ const Product = () => {
         getProduct()
     },[])
 
-    useMemo(()=>{
+    useEffect(()=>{
        const getOtherProducts = async () =>{
-           // const productCat = product.category[0]
-           // console.log(productCat)
-           try {
-               const res = await publicRequest.get(
-                   product.category ? `/product?category=${ product.category[0]}`
-                       : "/product"
-               )
-               // setOtherProducts(res.data.splice(2,res.data.length-2))
-               setOtherProducts(res.data)
 
+           if (product?.category){
+               const productCat = product?.category[0];
+               try {
+                   const res = await publicRequest.get(
+                       product.category && `/product?category=${ product.category[0]}`
 
-               // if (otherProducts.length > 2){
-               //     console.log("inside if")
-               //
-               //     setOtherProducts(otherProducts.splice(2,otherProducts.length-2))
-               //
-               //     console.log(otherProducts)
-               // }
-           }catch (err){
-               console.log(err)
+                   )
+                   setOtherProducts(res.data)
+               }catch (err){
+                   console.log(err)
+               }
            }
+
        }
        getOtherProducts()
-    },[])
-
-    useEffect(()=>{
-        console.log('l')
-        if (otherProducts.length > 1){
-            let random0 = Math.floor(Math.random() * otherProducts.length)+1;
-            setTwoProducts(  [...twoProducts, otherProducts[random0]]);
-            let random1 = Math.floor(Math.random() * otherProducts.length)+1;
-            setTwoProducts(  [...twoProducts, otherProducts[random1]]);
-            console.log(twoProducts)
-        }
-
     },[product])
-
 
     useEffect(()=>{
         setProductName(product.title)
@@ -326,19 +307,24 @@ const Product = () => {
                     </IconContainer>
                 </InfoAndIconContainer>
             </Wrapper>
-            <OtherProductsContainer>
-                <RecomanedProducts>
-                    מומלצים עבורך
-                </RecomanedProducts>
-                <OtherProductsWrapper>
-                    {
-                        otherProducts.filter(item=>item._id!==productId).slice(0,otherProducts.length/2).map(
-                            (productItem,index)=>(
-                                <ProductItem key={productItem._id} item={productItem} id={productItem._id} />
-                            ))
-                    }
-                </OtherProductsWrapper>
-            </OtherProductsContainer>
+            {
+                otherProducts.length > 1
+                &&
+                <OtherProductsContainer>
+                    <RecomanedProducts>
+                        מומלצים עבורך
+                    </RecomanedProducts>
+                    <OtherProductsWrapper>
+                        {
+                            otherProducts.filter(item=>item._id!==productId).slice(0,otherProducts.length/2).map(
+                                (productItem,index)=>(
+                                    <ProductItem key={productItem._id} item={productItem} id={productItem._id} />
+                                ))
+                        }
+                    </OtherProductsWrapper>
+                </OtherProductsContainer>
+            }
+
             <Footer />
         </Container>
     );
