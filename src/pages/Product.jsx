@@ -38,7 +38,7 @@ const OtherProductsWrapper = styled.div`
 `;
 
 const RecomanedProducts = styled.h1`
-  font-size: 30px;
+  font-size: 35px;
   font-weight: 600;
   margin-top: 40px;
   padding: 20px;
@@ -77,6 +77,9 @@ const Image = styled.img`
 `;
 const InfoAndIconContainer = styled.div`
     display: flex;
+  flex: 0.5;
+  justify-content: flex-start;
+  align-items: center;
     flex-direction: column;
     ${mobile({flexDirection:"column"})}
 `
@@ -84,6 +87,8 @@ const InfoAndIconContainer = styled.div`
 const InfoContainer = styled.div`
   flex: 0.5;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   padding: 0px 50px;
   ${mobile({padding: '10px'})}
