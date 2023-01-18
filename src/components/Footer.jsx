@@ -123,7 +123,6 @@ const Footer = () => {
     const dispatch = useDispatch()
 
     const user = useSelector(state => state.user.currentUser)
-    console.log(user)
 
     const handleLogOut = () => {
 

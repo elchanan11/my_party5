@@ -28,7 +28,7 @@ const App = () => {
   return(
     <>
         <Container>
-            <Router>
+            <Router forceRefresh={true}>
                 <Routes>
                     <Route exact path="/" element={
                         <Home />

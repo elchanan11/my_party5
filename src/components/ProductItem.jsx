@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import {Search, ShoppingCartOutlined, Style, WhatsApp} from "@mui/icons-material";
-import {Link} from "react-router-dom";
+import {Link, useHistory, useNavigate, useParams} from "react-router-dom";
 import {addProduct} from "../redux/cartRedux";
 import {useDispatch} from "react-redux";
 import {mobile} from "../responsive";
@@ -76,13 +76,16 @@ export default function ProductItem(props){
     const [productName,setProductName] = useState("")
     let postMessageToWatapp = "שלום אני מהאתר ואני מעוניין ב "
     const dispatch = useDispatch()
-    const product = props.item
+    const [product,setProduct] = useState(props.item)
     const [quantity,setQuantity] = useState(1)
     const [isImageLoaded, setIsImageLoaded] = useState(false)
+    const navigate = useNavigate()
+    let param = useParams()
 
     useEffect(()=>{
         setProductName(props.item.title)
-    },[props.item])
+        setProduct(props.item)
+    },[props.id,param])
 
     const handleWhatsappClick = () => {
         let url = `https://wa.me/+972539323849?text=${postMessageToWatapp+productName}`;
@@ -110,7 +113,13 @@ export default function ProductItem(props){
                 <Icon onClick={handleAddTOCartClick}>
                     <ShoppingCartOutlined />
                 </Icon>
-                <Link to={`/product/${props.item._id}`}
+                <Link
+                    reloadDocument
+
+                    to={{
+                        pathname:`/product/${props.item._id}`,
+                        state: {}
+                    }}
                       style={{textDecoration: 'none'}}
                 >
                     <Icon >

@@ -12,10 +12,39 @@ import {publicRequest} from "../requestMethods";
 import {addProduct} from "../redux/cartRedux";
 import {useDispatch} from "react-redux";
 import Loading from "../components/Loading";
+import {useMemo} from "react";
+import ProductItem from "../components/ProductItem";
+import React from "react";
 
 const Container = styled.div`
   background-color: #f3ecec;
 `;
+
+const OtherProductsContainer = styled.div`
+
+  text-align: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  background-color: #fae8e8;
+
+`
+const OtherProductsWrapper = styled.div`
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: center;
+`;
+
+const RecomanedProducts = styled.h1`
+  font-size: 30px;
+  font-weight: 600;
+  margin-top: 40px;
+  padding: 20px;
+  padding-top: 40px;
+`
+
 
 const Wrapper = styled.div`
   padding: 50px;
@@ -171,8 +200,11 @@ const Product = () => {
     const [quantity,setQuantity] = useState(1)
     const dispatch = useDispatch()
     const [productName,setProductName] = useState("")
+    const [otherProducts,setOtherProducts] = useState([])
+    const [twoProducts,setTwoProducts] = useState([])
     let postMessageToWatapp = "שלום אני מהאתר ואני מעוניין ב "
     const [imageIsLoaded,setImageIsLoaded] = useState(false)
+
 
     useEffect(() => {
         const getProduct = async () => {
@@ -185,6 +217,46 @@ const Product = () => {
         }
         getProduct()
     },[])
+
+    useMemo(()=>{
+       const getOtherProducts = async () =>{
+           // const productCat = product.category[0]
+           // console.log(productCat)
+           try {
+               const res = await publicRequest.get(
+                   product.category ? `/product?category=${ product.category[0]}`
+                       : "/product"
+               )
+               // setOtherProducts(res.data.splice(2,res.data.length-2))
+               setOtherProducts(res.data)
+
+
+               // if (otherProducts.length > 2){
+               //     console.log("inside if")
+               //
+               //     setOtherProducts(otherProducts.splice(2,otherProducts.length-2))
+               //
+               //     console.log(otherProducts)
+               // }
+           }catch (err){
+               console.log(err)
+           }
+       }
+       getOtherProducts()
+    },[])
+
+    useEffect(()=>{
+        console.log('l')
+        if (otherProducts.length > 1){
+            let random0 = Math.floor(Math.random() * otherProducts.length)+1;
+            setTwoProducts(  [...twoProducts, otherProducts[random0]]);
+            let random1 = Math.floor(Math.random() * otherProducts.length)+1;
+            setTwoProducts(  [...twoProducts, otherProducts[random1]]);
+            console.log(twoProducts)
+        }
+
+    },[product])
+
 
     useEffect(()=>{
         setProductName(product.title)
@@ -213,7 +285,6 @@ const Product = () => {
         )
     }
 
-    console.log(productId)
     return (
         <Container>
             {!imageIsLoaded && <Loading />}
@@ -250,6 +321,19 @@ const Product = () => {
                     </IconContainer>
                 </InfoAndIconContainer>
             </Wrapper>
+            <OtherProductsContainer>
+                <RecomanedProducts>
+                    מומלצים עבורך
+                </RecomanedProducts>
+                <OtherProductsWrapper>
+                    {
+                        otherProducts.filter(item=>item._id!==productId).slice(0,otherProducts.length/2).map(
+                            (productItem,index)=>(
+                                <ProductItem key={productItem._id} item={productItem} id={productItem._id} />
+                            ))
+                    }
+                </OtherProductsWrapper>
+            </OtherProductsContainer>
             <Footer />
         </Container>
     );

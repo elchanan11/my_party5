@@ -56,7 +56,6 @@ export default function Products(props){
                     props.cat ? "/product?category="+props.cat
                         : "/product"
                 )
-                console.log(res.data)
                 setProducts(res.data)
             }catch (err){
                 console.log(err)
@@ -79,12 +78,10 @@ export default function Products(props){
                 [...prev].sort((a,b) => a.price - b.price)
             )
         }else {
-            console.log(props.sort)
             setProducts((prev) =>
                 [...prev].sort((a,b) => b.price - a.price)
             )
         }
-        console.log(products)
     }, [props.sort])
 
     // useEffect(()=>{
@@ -119,7 +116,7 @@ export default function Products(props){
 
                     products.map(
                     productItem=>(
-                        <ProductItem key={productItem._id} item={productItem}/>
+                        <ProductItem key={productItem._id} item={productItem} />
                     ))
                     :
                     <NoProductsContainer>
