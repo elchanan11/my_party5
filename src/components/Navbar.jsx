@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useMemo, useState} from "react";
 import styled from "styled-components";
 import {Search, ShoppingCartOutlined} from "@mui/icons-material";
-import {Autocomplete, Badge, Menu, TextField} from "@mui/material";
+import {Autocomplete, Badge, CircularProgress, Menu, TextField} from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import Logo from '../logo-text.png'
 import {mobile} from "../responsive";
@@ -104,6 +104,23 @@ export default function Navbar(props){
     // const navigate = useNavigate();
 
     const quantity = useSelector(state=>state.cart.quantity)
+    const [quantityValue,setQuanValue] = useState(quantity)
+    const [loding,setLoading] = useState(false)
+
+    useEffect(() => {
+        const makeAnimation = () =>{
+            setQuanValue(quantity)
+            setLoading(true)
+            console.log(loding)
+            setTimeout (()=>{
+                setLoading(false)
+            },1500)
+        }
+        if (quantityValue !== quantity){
+            makeAnimation()
+        }
+    }
+    , [quantity]);
 
     // const [query,setQuery] = useState("")
     // const [products,setProducts] = useState([])
@@ -175,9 +192,15 @@ export default function Navbar(props){
                 <Left>
                     <Link to={"/cart"}>
                         <MenuLink style={{marginLeft:"20px"}}>
-                            <Badge style={{marginRight:4}} color="primary" badgeContent={quantity}>
-                                <ShoppingCartOutlined />
-                            </Badge>
+                        {
+                            !loding ?
+                                    <Badge style={{marginRight:4}} color="primary" badgeContent={quantityValue}>
+                                        <ShoppingCartOutlined />
+                                   </Badge>
+                                :
+                                <CircularProgress size="2rem" />
+
+                        }
                         </MenuLink>
                     </Link>
 
