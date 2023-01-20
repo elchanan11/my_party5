@@ -1,6 +1,6 @@
 import React, {useEffect, useMemo, useState} from "react";
 import styled from "styled-components";
-import {Search, ShoppingCartOutlined} from "@mui/icons-material";
+import {Search, ShoppingCartOutlined, WhatsApp} from "@mui/icons-material";
 import {Autocomplete, Badge, CircularProgress, Menu, TextField} from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import Logo from '../logo-text.png'
@@ -106,6 +106,7 @@ export default function Navbar(props){
     const quantity = useSelector(state=>state.cart.quantity)
     const [quantityValue,setQuanValue] = useState(quantity)
     const [loding,setLoading] = useState(false)
+    let postMessageToWatapp = "שלום אני מהאתר "
 
     useEffect(() => {
         const makeAnimation = () =>{
@@ -184,6 +185,13 @@ export default function Navbar(props){
             });
         };
 
+    const handleWhatsappClick = (e) => {
+        e.stopPropagation();
+        let url = `https://wa.me/+972539323849?text=${postMessageToWatapp}`;
+
+        window.open(url);
+    }
+
     return(
         <Container
              style={{position:isNavVisible===true ? "absolute" : "sticky"}}
@@ -211,6 +219,9 @@ export default function Navbar(props){
                     </Link>
                 </Center>
                 <Right>
+                    <MenuLink style={{marginRight:"10px"}} onClick={handleWhatsappClick}>
+                        <WhatsApp />
+                    </MenuLink>
                     <MenuLink>
                         <MenuIcon
                             onClick={toggleNav}
