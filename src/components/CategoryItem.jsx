@@ -4,7 +4,7 @@ import {mobile} from "../responsive";
 import {Link} from "react-router-dom";
 
 const Container = styled.div`
-  background-color: #f5fbfd;
+  background-color: wheat;
   flex-direction: column;
   position: relative;
   flex: 1;
@@ -14,13 +14,13 @@ const Container = styled.div`
   max-width: 200px;
   height: 200px;
   border-style: solid;
-  border-width: 15px 15px 15px 15px;
-  border-color: #FFF;
+  border-width: 10px 10px 10px 10px;
+  border-color: wheat;
   //border-radius: 10px 10px 10px 10px;
   box-shadow: 0px 0px 8px 1px rgb(196 196 196 / 50%);
   transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
   margin-top: 0px;
-  
+
   margin-bottom: 15px;
   padding-left: 0%;
   margin-right: 10px;
@@ -28,7 +28,7 @@ const Container = styled.div`
   ${mobile({minWidth: "110px"})}
 `
 const Image = styled.img`
-  max-width: 100%;
+  width: 150px;
   height: 200px;
   max-height: 100%;
   
