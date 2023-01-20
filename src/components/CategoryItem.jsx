@@ -55,15 +55,15 @@ const Title = styled.h1`
   line-height: 1;
   font-size: 20px;
   font-weight: 600;
-  color: wheat;
+  color: white;
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   text-align: center;
   justify-content: center;
-  background-color: black;
-  opacity: 0.6;
+  background-color: #d89f9f;
+  opacity: 0.9;
 `
 
 
