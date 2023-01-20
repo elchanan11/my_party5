@@ -1,5 +1,8 @@
 
 import CategoryItem from './img_25.png';
+import girlsGift from '../src/images/girlsGift.jpg'
+import choklates from '../src/images/cokolates.jpg'
+import baloons from '../src/images/baloons.jpg'
 
 
 
@@ -34,7 +37,7 @@ export const slideImages = [
 export const categoryData = [
     {
         id:1,
-        img:CategoryItem,
+        img:baloons,
         title:"בלונים לאירועים",
         cat: "BalloonsEvents"
     },
@@ -82,7 +85,7 @@ export const categoryData = [
     },
     {
         id:9,
-        img:CategoryItem,
+        img:girlsGift,
         title:"מתנות לילדות/נערות",
         cat: "GiftsForGirls"
     },
@@ -136,7 +139,7 @@ export const categoryData = [
     },
     {
         id:18,
-        img:CategoryItem,
+        img:choklates,
         title:"שוקולדים",
         cat: "Chocolates"
     },
