@@ -99,7 +99,7 @@ const InfoContainer = styled.div`
 const Title = styled.h1`
   text-align: center;
   font-weight: 600;
-  font-size: 50px;
+  font-size: 35px;
 `;
 
 const Desc = styled.p`
