@@ -119,7 +119,8 @@ export default function ProductItem(props){
         setProduct(props.item)
     },[props.id,param])
 
-    const handleWhatsappClick = () => {
+    const handleWhatsappClick = (e) => {
+        e.stopPropagation();
         let url = `https://wa.me/+972539323849?text=${postMessageToWatapp+productName}`;
 
         window.open(url);
@@ -127,8 +128,8 @@ export default function ProductItem(props){
         setProductName("")
     }
 
-    const handleAddTOCartClick = () => {
-        console.log('s')
+    const handleAddTOCartClick = (e) => {
+        e.stopPropagation()
         dispatch(
             addProduct({product, quantity,price: parseInt(product.price)})
         )
@@ -141,6 +142,11 @@ export default function ProductItem(props){
     const handleImageClicked = () =>{
         navigate(`/product/${props.item._id}`)
     }
+
+    const handleSearchClick = (e) =>{
+        e.stopPropagation()
+        navigate(`/product/${props.item._id}`)
+    }
     return(
         <Container onClick={handleImageClicked}>
             <Circle />
@@ -149,18 +155,10 @@ export default function ProductItem(props){
                 <Icon onClick={handleAddTOCartClick}>
                     <ShoppingCartOutlined />
                 </Icon>
-                <Link
-                    reloadDocument
-                    to={{
-                        pathname:`/product/${props.item._id}`,
-                        state: {}
-                    }}
-                      style={{textDecoration: 'none'}}
-                >
-                    <Icon >
-                        <Search />
-                    </Icon>
-                </Link>
+
+                <Icon >
+                    <Search onClick={handleSearchClick}/>
+                </Icon>
 
                 <Icon onClick={handleWhatsappClick}>
                     <WhatsApp />
