@@ -6,6 +6,7 @@ import {Link} from "react-router-dom";
 const Container = styled.div`
   background-color: #f5fbfd;
   flex-direction: column;
+  position: relative;
   flex: 1;
   display: flex;
   align-items: center;
@@ -15,15 +16,11 @@ const Container = styled.div`
   border-style: solid;
   border-width: 15px 15px 15px 15px;
   border-color: #FFF;
-  border-radius: 10px 10px 10px 10px;
+  //border-radius: 10px 10px 10px 10px;
   box-shadow: 0px 0px 8px 1px rgb(196 196 196 / 50%);
   transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
   margin-top: 0px;
   
-  --margin-bottom: 0px;
-  --margin-left: 0px;
-  --padding-top: 1%;
-  --padding-right: 0%;
   margin-bottom: 15px;
   padding-left: 0%;
   margin-right: 10px;
@@ -32,22 +29,19 @@ const Container = styled.div`
 `
 const Image = styled.img`
   max-width: 100%;
-  height: 70%;
-  max-height: 180px;
+  height: 200px;
+  max-height: 100%;
+  
   border: none;
   border-radius: 0;
-  -webkit-box-shadow: none;
   box-shadow: none;
   flex: 1;
-  
   ${mobile({})}
   box-shadow: none;
 `
 const Info = styled.div`
   width: 100%;
   height: 100%;
-  
-  
   flex-direction: column;
   align-items: center;
   text-align: center;
@@ -55,24 +49,23 @@ const Info = styled.div`
   
 `
 const Title = styled.h1`
-  
   padding: 0;
   margin: 0;
+  height: 50px;
   line-height: 1;
   font-size: 20px;
   font-weight: 600;
-  color: black;
+  color: wheat;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  justify-content: center;
+  background-color: black;
+  opacity: 0.6;
 `
-const Button = styled.button`
-  border: none;
-  padding: 10px;
-  background-color: #EFEFEF;
-  opacity: 0.8;
-  color: black;
-  
-  cursor: pointer;
-  font-weight: 600;
-`
+
 
 export default function CategoryItem(props){
     return(
@@ -83,10 +76,10 @@ export default function CategoryItem(props){
                   style={{textDecoration: 'none'}}
             >
                 <Image src={props.item.img}/>
-                <Info>
+                {/*<Info>*/}
                     <Title>{props.item.title}</Title>
 
-                </Info>
+                {/*</Info>*/}
             </Link>
         </Container>
     )
