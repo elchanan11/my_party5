@@ -24,14 +24,15 @@ const Info = styled.div`
 const TitleContainer = styled.div`
   opacity: 0;
   width: 100%;
-  height: 100%;
+  height: 60px;
   position: absolute;
   bottom: 0;
   left: 0;
-  
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.2);
   z-index: 3;
   display: flex;
-  
+  align-items: center;
   text-align: center;
   justify-content: center;
   transition: all 0.5s ease;
@@ -42,10 +43,9 @@ const TitleContainer = styled.div`
 const Title = styled.h3`
   bottom: 0;
   left: 0;
-  margin-top: 180px;
   width: 80%;
   color: #e5faf2;
-  
+  position: absolute;
   padding-top: 30px;
   //background-color: #e9f5f5;
 `
@@ -66,10 +66,10 @@ const Container = styled.div`
   &:hover ${Info} {
     opacity: 1;
   }
-  // &:hover ${TitleContainer} {
-  //   opacity: 1;
-  //
-  // }
+  &:hover ${TitleContainer} {
+    opacity: 1;
+
+  }
 `;
 
 const Circle = styled.div`
@@ -164,11 +164,11 @@ export default function ProductItem(props){
                     <WhatsApp />
                 </Icon>
             </Info>
-            {/*<TitleContainer>*/}
-            {/*    <Title>*/}
-            {/*        בלונים יפים מיוחדים נאים מתוקים*/}
-            {/*    </Title>*/}
-            {/*</TitleContainer>*/}
+            <TitleContainer>
+                {/*<Title>*/}
+                {product.title}
+                {/*</Title>*/}
+            </TitleContainer>
 
         </Container>
     )
