@@ -37,7 +37,7 @@ const TitleContainer = styled.div`
   justify-content: center;
   transition: all 0.5s ease;
   cursor: pointer;
-  
+  font-size: 20px;
 `;
 
 const Title = styled.h3`
