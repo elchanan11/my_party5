@@ -4,6 +4,7 @@ import styled from "styled-components";
 import ProductItem from "./ProductItem";
 import axios from "axios";
 import {publicRequest} from "../requestMethods";
+import {mobile} from "../responsive";
 
 const Container = styled.div`
 
@@ -46,9 +47,29 @@ const CategoryTitle = styled.h1`
   
 `
 
+const InputWrapper = styled.div`
+  margin: 5px 20px;
+  display: flex;
+  text-align: right;
+  ${mobile({margin: '2px 20px'})}
+`
+const Input = styled.input`
+  background-color: #fae8e8;
+  width: 100px;
+  height: 35px;
+  color: black;
+  border: 1px solid gray;
+  text-align: right;
+  
+`
+
 export default function Products(props){
     const [products,setProducts] = useState([])
-    const [filterProducts, setFilterProducts] = useState([])
+    const [updatedProducts,setUpdatedProducts] = useState([])
+    const [filteredPro,setFilteredPro] = useState([])
+    const [query,setQuery] = useState("")
+    const [itemsFilter,setItemsFilter] = useState("")
+
     useMemo(()=>{
         const getProducts = async () => {
             try {
@@ -61,7 +82,6 @@ export default function Products(props){
                 console.log(err)
             }
         }
-
         getProducts()
     },[props.cat])
 
@@ -85,23 +105,28 @@ export default function Products(props){
     }, [props.sort])
 
     // useEffect(()=>{
-    //     setFilterProducts(products)
-    //     if (props.filter !== "" || null){
-    //         console.log(props.filter)
-    //         products.filter(product=>{
-    //             console.log(product.title.includes(props.filter))
-    //              if (product.title.includes(props.filter)){
-    //                  setFilterProducts((prev)=>
-    //                      [...prev,product]
-    //                  )
-    //                  console.log(filterProducts)
-    //              }
+    //     console.log(itemsFilter)
+    //     setUpdatedProducts(products)
+    //     if (itemsFilter !== ""){
+    //         updatedProducts.map((item,index) =>{
+    //             if (!item.title.includes(itemsFilter)){
+    //                 console.log(false)
+    //                 updatedProducts.splice(index,1)
+    //             }
     //         })
-    //
-    //     }else {
-    //         setFilterProducts([products])
     //     }
-    // },[props.filter],)
+    //     console.log(updatedProducts)
+    // },[itemsFilter])
+    //
+    // useEffect(()=>{
+    //     setItemsFilter(query)
+    // },[query])
+    //
+    //
+    // const handleInputChange = async (e)=>{
+    //     await setQuery(e.target.value)
+    // }
+
 
 
     return(
@@ -111,6 +136,15 @@ export default function Products(props){
                     מוצרים מומלצים
                 </CategoryTitle>
             }
+            {/*{*/}
+            {/*    props.fromProductsList &&*/}
+            {/*    <InputWrapper>*/}
+            {/*        <Input*/}
+            {/*            placeholder={"חפש"}*/}
+            {/*            onChange={handleInputChange}*/}
+            {/*        />*/}
+            {/*    </InputWrapper>*/}
+            {/*}*/}
             <Wrapper>
                 {products.length !== 0 ?
 

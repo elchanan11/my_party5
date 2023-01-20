@@ -105,17 +105,21 @@ export default function ProductItem(props){
     const handleImageLoded  = () =>{
         console.log('imageloded')
     }
+
+    const handleImageClicked = () =>{
+        console.log("imageClicked")
+        navigate(`/product/${props.item._id}`)
+    }
     return(
-        <Container>
-            <Circle/>
-            <Image loading="lazy" src={props.item.img} onLoad={handleImageLoded}/>
+        <Container onClick={handleImageClicked}>
+            <Circle />
+            <Image loading="lazy" src={props.item.img} onLoad={handleImageLoded} />
             <Info>
                 <Icon onClick={handleAddTOCartClick}>
                     <ShoppingCartOutlined />
                 </Icon>
                 <Link
                     reloadDocument
-
                     to={{
                         pathname:`/product/${props.item._id}`,
                         state: {}
