@@ -250,6 +250,14 @@ const Product = () => {
         setProductName(product.title)
     },[product])
 
+    useEffect(()=>{
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth"
+        });
+    },[])
+
     const handleAddTOCartClick = () => {
         dispatch(
             addProduct({product, quantity,price: parseInt(product.price)})

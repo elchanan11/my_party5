@@ -5,7 +5,7 @@ import {CircularProgress, LinearProgress} from "@mui/material";
 const Container = styled.div`
   height: 100%;
   width: 100%;
-  background-color: #f3ecec;
+  background-color:  #${props=> props? props.color : "f3ecec"};
   z-index: 100;
   position: absolute;
   
@@ -19,10 +19,10 @@ const LoadContainer = styled.div`
   justify-content: center;
 `
 
-const Loading = () => {
+const Loading = (props) => {
     return(
         <>
-            <Container>
+            <Container color={props.color}>
                 <LoadContainer>
                     <CircularProgress  color="inherit"/>
                 </LoadContainer>

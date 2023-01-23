@@ -151,7 +151,7 @@ export default function Products(props){
             {/*}*/}
             {
                 !fetchingProducts ?
-                    <Loading /> :
+                    <Loading color={"fae8e8"}/> :
                     <Wrapper>
                         {products.length !== 0 ?
 

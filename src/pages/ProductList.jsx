@@ -87,6 +87,13 @@ export default function ProductList(){
     //     await setQuery(e.target.value)
     // }
 
+    useEffect(()=>{
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth"
+        });
+    },[])
     const handleSort = (e) =>{
         setSort(e.target.value)
     }
