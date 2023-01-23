@@ -5,6 +5,7 @@ import ProductItem from "./ProductItem";
 import axios from "axios";
 import {publicRequest} from "../requestMethods";
 import {mobile} from "../responsive";
+import Loading from "./Loading";
 
 const Container = styled.div`
 
@@ -65,6 +66,7 @@ const Input = styled.input`
 
 export default function Products(props){
     const [products,setProducts] = useState([])
+    const [fetchingProducts,setFetchingProducts] = useState(false)
     const [updatedProducts,setUpdatedProducts] = useState([])
     const [filteredPro,setFilteredPro] = useState([])
     const [query,setQuery] = useState("")
@@ -78,6 +80,7 @@ export default function Products(props){
                         : "/product"
                 )
                 setProducts(res.data)
+                setFetchingProducts(true)
             }catch (err){
                 console.log(err)
             }
@@ -130,6 +133,7 @@ export default function Products(props){
 
 
     return(
+
         <Container>
             {props.from === 'home' &&
                 <CategoryTitle>
@@ -145,21 +149,26 @@ export default function Products(props){
             {/*        />*/}
             {/*    </InputWrapper>*/}
             {/*}*/}
-            <Wrapper>
-                {products.length !== 0 ?
+            {
+                !fetchingProducts ?
+                    <Loading /> :
+                    <Wrapper>
+                        {products.length !== 0 ?
 
-                    products.map(
-                    productItem=>(
-                        <ProductItem key={productItem._id} item={productItem} />
-                    ))
-                    :
-                    <NoProductsContainer>
-                        <NoProducts>
-                            אין כרגע מוצרים זמינים בקטגוריה זו
-                        </NoProducts>
-                    </NoProductsContainer>
-                }
-            </Wrapper>
+                            products.map(
+                                productItem=>(
+                                    <ProductItem key={productItem._id} item={productItem} />
+                                ))
+                            :
+                            <NoProductsContainer>
+                                <NoProducts>
+                                    אין כרגע מוצרים זמינים בקטגוריה זו
+                                </NoProducts>
+                            </NoProductsContainer>
+                        }
+                    </Wrapper>
+            }
+
         </Container>
 
     )

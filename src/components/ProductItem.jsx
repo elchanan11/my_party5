@@ -5,6 +5,7 @@ import {Link, useHistory, useNavigate, useParams} from "react-router-dom";
 import {addProduct} from "../redux/cartRedux";
 import {useDispatch} from "react-redux";
 import {mobile} from "../responsive";
+import {Skeleton} from "@mui/material";
 const Info = styled.div`
   opacity: 0;
   width: 100%;
@@ -72,6 +73,11 @@ const Container = styled.div`
   }
 `;
 
+const Wrapper = styled.div`
+  margin: 0;
+  padding: 0;
+`
+
 const Circle = styled.div`
   width: 200px;
   height: 200px;
@@ -137,6 +143,7 @@ export default function ProductItem(props){
 
     const handleImageLoded  = () =>{
         console.log('imageloded')
+        setIsImageLoaded(true)
     }
 
     const handleImageClicked = () =>{
