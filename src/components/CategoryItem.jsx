@@ -127,7 +127,7 @@ const Title = styled.h1`
   margin-top: 5px;
   ${tablet({fontSize:"30px"})}
   ${leptop({fontSize:"30px"})}
-  ${mobile({fontSize:"20px"})}
+  ${mobile({fontSize:"16px"})}
 `
 
 export default function CategoryItem(props){
