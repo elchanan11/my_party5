@@ -13,6 +13,8 @@ const Container = styled.div`
   padding: 0;
   margin: 0;
   background-color: rgb(248, 248, 223);
+  padding-bottom: 60px;
+  padding-top: 40px;
 
 `
 
@@ -30,7 +32,7 @@ const CategoryTitle = styled.h1`
   text-align: center;
   align-items: center;
   font-size: 35px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   padding-top: 20px;
   
 `

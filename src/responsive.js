@@ -25,3 +25,12 @@ export const tablet = (props) =>{
         }
     `
 }
+
+export const leptop = (props) =>{
+
+    return css`
+        @media only screen and (min-width: 870px) {
+          ${props}
+        }
+    `
+}
