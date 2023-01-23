@@ -224,7 +224,15 @@ const Product = () => {
             }
         }
         getProduct()
-    },[])
+    },[productId])
+
+    useEffect(()=>{
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth"
+        });
+    },[productId])
 
     useEffect(()=>{
        const getOtherProducts = async () =>{
@@ -249,14 +257,6 @@ const Product = () => {
     useEffect(()=>{
         setProductName(product.title)
     },[product])
-
-    useEffect(()=>{
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: "smooth"
-        });
-    },[])
 
     const handleAddTOCartClick = () => {
         dispatch(
