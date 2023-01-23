@@ -100,6 +100,7 @@ const Title = styled.h1`
   text-align: center;
   font-weight: 600;
   font-size: 35px;
+  padding-top: 15px;
 `;
 
 const Desc = styled.p`
@@ -178,6 +179,7 @@ const IconContainer = styled.div`
   align-items: center;
   justify-content: center;
   flex: 1;
+  padding-top: 20px;
   ${mobile({justifyContent: "center"})}
 `
 

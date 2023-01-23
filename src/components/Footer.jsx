@@ -31,8 +31,7 @@ const Left = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  
-  padding: 20px;
+  padding: 50px 20px;
   ${tablet({alignItems: "center"})}
   ${mobile({alignItems: "center"})}
 `;
