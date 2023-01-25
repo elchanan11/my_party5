@@ -215,7 +215,7 @@ export default function Navbar(props){
                 </Left>
                 <Center>
                     <Link to={"/"}>
-                        <Logo1 src={Logo} style={{marginRight:"5px"}}/>
+                        <Logo1 src={Logo} style={{marginRight:"5px"}} alt={"לוגו"}/>
                     </Link>
                 </Center>
                 <Right>

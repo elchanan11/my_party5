@@ -32,7 +32,7 @@ export default function BgImage(){
   return(
         <>
           <Container>
-            <ImageContainer src={bg2}>
+            <ImageContainer src={bg2} alt={"תמונת מסך בית"}>
 
             </ImageContainer>
           </Container>

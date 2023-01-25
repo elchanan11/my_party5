@@ -138,7 +138,7 @@ export default function CategoryItem(props){
                   state={{title: props.item.title}}
                   style={{textDecoration: 'none'}}
             >
-                <Image src={props.item.img} alt={product.title}/>
+                <Image src={props.item.img} alt={props.item.title}/>
                 {/*<Info>*/}
                     <Title>{props.item.title}</Title>
 
