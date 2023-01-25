@@ -75,7 +75,7 @@ const Center = styled.div`
   ${mobile({display: 'none'})}
 `;
 
-const Title = styled.h3`
+const Title = styled.h1`
   margin-bottom: 30px;
   text-align: right;
   font-size: 25px;
@@ -154,8 +154,8 @@ const Footer = () => {
 
                         :
                         <SocialIcon color="3B5999">
-                            <Link to={'/login'}>
-                                <PersonAddIcon aria-label={'log in'}>
+                            <Link to={'/login'} aria-label={'log in'}>
+                                <PersonAddIcon >
                                     התחבר
                                 </PersonAddIcon>
                             </Link>

@@ -99,7 +99,7 @@ const Newsletter = () => {
                         placeholder="email.email@gmail.com"
                         type={"email"}
                     />
-                    <Button type={"submit"} enabled={isSubmitted} name={'submit email'}>
+                    <Button type={"submit"} enabled={isSubmitted} aria-label={'submit email'}>
                         {
                             !isSubmitted ? <Send color="neutral"/> :
                                 <CircularProgress color={"inherit"}/>
