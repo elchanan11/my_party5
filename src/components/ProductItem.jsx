@@ -157,7 +157,7 @@ export default function ProductItem(props){
     return(
         <Container onClick={handleImageClicked}>
             <Circle />
-            <Image loading="lazy" src={props.item.img} onLoad={handleImageLoded} />
+            <Image loading="lazy" src={props.item.img} onLoad={handleImageLoded} alt={`${props.item.title}`}/>
             <Info>
                 <Icon onClick={handleAddTOCartClick}>
                     <ShoppingCartOutlined />

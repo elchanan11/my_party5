@@ -288,7 +288,7 @@ const Product = () => {
             <Navbar />
             <Wrapper>
                 <ImgContainer>
-                    <Image src={product.img} onLoad={handleImageLoded}/>
+                    <Image src={product.img} onLoad={handleImageLoded} alt={product.title}/>
                     <ImageNote>
                         *התמונה להמחשה בלבד
                     </ImageNote>
