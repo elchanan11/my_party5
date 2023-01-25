@@ -202,7 +202,7 @@ export default function Navbar(props){
                         <MenuLink style={{marginLeft:"20px"}}>
                         {
                             !loding ?
-                                    <Badge style={{marginRight:4}} color="primary" badgeContent={quantityValue}>
+                                    <Badge style={{marginRight:4}} color="primary" badgeContent={quantityValue} aria-label='Go to cart'>
                                         <ShoppingCartOutlined />
                                    </Badge>
                                 :
@@ -214,18 +214,19 @@ export default function Navbar(props){
 
                 </Left>
                 <Center>
-                    <Link to={"/"}>
+                    <Link to={"/"} aria-label='Back to home page'>
                         <Logo1 src={Logo} style={{marginRight:"5px"}} alt={"לוגו"}/>
                     </Link>
                 </Center>
                 <Right>
                     <MenuLink style={{marginRight:"10px"}} onClick={handleWhatsappClick}>
-                        <WhatsApp />
+                        <WhatsApp aria-label='Contact us in whatsapp'/>
                     </MenuLink>
                     <MenuLink>
                         <MenuIcon
                             onClick={toggleNav}
                             className="Burger"
+                            aria-label='open navigation bar'
                         />
                     </MenuLink>
                 </Right>
@@ -246,6 +247,7 @@ export default function Navbar(props){
                                   state={{title: catItem.title}}
                                   style={{textDecoration: 'none'}}
                                   onClick={toggleNav}
+                                aria-label={`${catItem.title}`}
                             >
                                 {catItem.title}
                             </Link>

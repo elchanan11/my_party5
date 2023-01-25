@@ -137,7 +137,7 @@ const Footer = () => {
     return (
         <Container>
             <Left>
-                <Link to={'/'}>
+                <Link to={'/'} aria-label='to Home page'>
                     <Logo src={logo} alt={"logo"}/>
                 </Link>
                 <Desc>
@@ -147,7 +147,7 @@ const Footer = () => {
                 <SocialContainer >
                     {user && true ?
                         <SocialIcon color="3B5999">
-                            <PersonRemoveIcon onClick={handleLogOut}>
+                            <PersonRemoveIcon onClick={handleLogOut} aria-label={'logout'}>
                                 התנתק
                             </PersonRemoveIcon>
                         </SocialIcon>
@@ -155,7 +155,7 @@ const Footer = () => {
                         :
                         <SocialIcon color="3B5999">
                             <Link to={'/login'}>
-                                <PersonAddIcon>
+                                <PersonAddIcon aria-label={'log in'}>
                                     התחבר
                                 </PersonAddIcon>
                             </Link>
@@ -163,6 +163,7 @@ const Footer = () => {
                     }
                     <SocialIcon color="3B5999">
                         <a target={"blank"}
+                           aria-label={'facebook link'}
                            href={"https://www.facebook.com/pages/category/art/%D7%94%D7%9E%D7%A1%D7%99%D7%91%D7%94-%D7%A9%D7%9C%D7%99-2197659190450858/"}
                            style={{color:"#fff"}}
                         >
@@ -170,26 +171,26 @@ const Footer = () => {
                         </a>
                     </SocialIcon>
                     <SocialIcon color="A4BE7B">
-                        <a style={{color:"#fff"}} href="tel:+972542595225">
+                        <a style={{color:"#fff"}} href="tel:+972542595225" aria-label={'our telephone'}>
                             <Phone />
                         </a>
                     </SocialIcon>
                     <SocialIcon
                         color="E60023"
                     >
-                    <a style={{color:"#fff"}} href="mailto:Mypartybb@gmail.com">
+                    <a style={{color:"#fff"}} href="mailto:Mypartybb@gmail.com" aria-label={'our mail'}>
                         <Mail />
                     </a>
                     </SocialIcon>
                     <SocialIcon color="54B435">
-                        <WhatsApp onClick={()=>{
+                        <WhatsApp aria-label={'whatsapp link'} onClick={()=>{
                             let postMessageToWatapp = "שלום אני מהאתר"
                             let url = `https://wa.me/+972539323849?text=${postMessageToWatapp}`;
 
                             window.open(url);}}  />
                     </SocialIcon>
                     <SocialIcon color="E26868">
-                        <Instagram onClick={()=>{
+                        <Instagram aria-label={'instagram link'} onClick={()=>{
                             let url = `https://instagram.com/hamesibasheli?igshid=NTdlMDg3MTY=`;
 
                             window.open(url);}}  />
@@ -197,6 +198,7 @@ const Footer = () => {
                     <SocialIcon
                         color="665A48" >
                         <a target={"blank"}
+                           aria-label={'location link'}
                            href={"https://www.google.com/maps/place/%D7%94%D7%9E%D7%A1%D7%99%D7%91%D7%94+%D7%A9%D7%9C%D7%99%E2%80%AD/@31.7031666,35.1201339,17z/data=!3m1!4b1!4m5!3m4!1s0x1502db8f10675105:0x8c5f377bd6bf6a3a!8m2!3d31.7031666!4d35.1179452"}
                            style={{color:"#fff"}}
                         >
