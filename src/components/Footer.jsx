@@ -138,7 +138,7 @@ const Footer = () => {
         <Container>
             <Left>
                 <Link to={'/'}>
-                    <Logo src={logo}/>
+                    <Logo src={logo} alt={"logo"}/>
                 </Link>
                 <Desc>
                     לקהל לקוחותינו היקרים
