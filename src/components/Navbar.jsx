@@ -86,15 +86,15 @@ const Right = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  ${mobile({flex:1,justifyContent: "flex-end",alignItems:"right"})}
+  justify-content: space-between;
+  ${mobile({flex:1,alignItems:"right"})}
 `;
 
 const MenuLink = styled.div`
   font-size: 14px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   cursor: pointer;
   margin-right: 7px;
   ${mobile({fontsize: '12px',marginRight:"0px" })}
@@ -219,8 +219,8 @@ export default function Navbar(props){
                     </Link>
                 </Center>
                 <Right>
-                    <MenuLink style={{marginRight:"10px"}} onClick={handleWhatsappClick}>
-                        <WhatsApp aria-label='Contact us in whatsapp'/>
+                    <MenuLink style={{marginLeft:"5px"}} onClick={handleWhatsappClick}>
+                        <WhatsApp style={{backgroundColor:"green",color:"white",borderRadius:"50%",fontSize:"25px",padding:"3px"}} size="large" aria-label='Contact us in whatsapp'/>
                     </MenuLink>
                     <MenuLink>
                         <MenuIcon

@@ -2,52 +2,118 @@ import React from "react";
 import styled from "styled-components";
 import {leptop, mobile, tablet} from "../responsive";
 import {Link} from "react-router-dom";
-//
+
+const Container = styled.div`
+  width: 150px;
+  height: 200px;
+  background-color: rgb(248, 248, 223);
+  flex-direction: column;
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  
+  max-width: 200px;
+  height: 200px;
+  
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0px 0px 8px 1px rgb(196 196 196 / 50%);
+  transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+  margin-top: 0px;
+
+  margin-bottom: 15px;
+  padding-left: 0%;
+  margin-right: 20px;
+  margin-left: 20px;
+  ${mobile({minWidth: "110px"})}
+`
+const Image = styled.img`
+  width: 155px;
+  height: 200px;
+  max-height: 100%;
+
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  flex: 1;
+  ${mobile({})}
+  box-shadow: none;
+`
+const Info = styled.div`
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+
+`
+const Title = styled.h1`
+  width: 155px;
+  padding: 0;
+  margin: 0;
+  height: 50px;
+  line-height: 1;
+  font-size: 20px;
+  font-weight: 600;
+  color: wheat;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  justify-content: center;
+  background-color: black;
+  opacity: 0.6;
+`
+
+
+
+
 // const Container = styled.div`
-//   background-color: wheat;
+//   background-color: rgb(248, 248, 223);
 //   flex-direction: column;
 //   position: relative;
 //   flex: 1;
 //   display: flex;
 //   align-items: center;
-//   min-width: 180px;
-//   max-width: 200px;
 //   height: 200px;
 //   border-style: solid;
-//   border-width: 10px 10px 10px 10px;
-//   border-color: wheat;
+//   border-width: 1px;
+//   border-color: rgb(248, 248, 223);
 //   //border-radius: 10px 10px 10px 10px;
-//   box-shadow: 0px 0px 8px 1px rgb(196 196 196 / 50%);
+//   //box-shadow: 0px 0px 8px 1px rgb(196 196 196 / 50%);
 //   transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
 //   margin-top: 0px;
 //
-//   margin-bottom: 15px;
+//   margin-bottom: 20px;
 //   padding-left: 0%;
 //   margin-right: 10px;
 //   margin-left: 10px;
-//   ${mobile({minWidth: "110px"})}
+//
+//
+//   ${tablet({height:"255px",marginBottom:"50px"})}
+//   ${leptop({height:"305px"})}
+//   ${mobile({height: "205px",marginBottom:"20px"})}
 // `
+//
 // const Image = styled.img`
 //   width: 150px;
-//   height: 200px;
+//   height: 150px;
 //   max-height: 100%;
 //
 //   border: none;
-//   border-radius: 0;
+//   border-radius: 50%;
 //   box-shadow: none;
 //   flex: 1;
-//   ${mobile({})}
 //   box-shadow: none;
-// `
-// const Info = styled.div`
-//   width: 100%;
-//   height: 100%;
-//   flex-direction: column;
-//   align-items: center;
-//   text-align: center;
-//   justify-content: center;
 //
+//   ${tablet({height: "200px", width:"200px"})}
+//   ${leptop({height:"250px",width:"250px"})}
+//   ${mobile({height: "150px", width:"150px"})}
 // `
+//
 // const Title = styled.h1`
 //   padding: 0;
 //   margin: 0;
@@ -62,73 +128,12 @@ import {Link} from "react-router-dom";
 //   right: 0;
 //   text-align: center;
 //   justify-content: center;
-//   background-color: black;
-//   opacity: 0.6;
+//   color: black;
+//   margin-top: 5px;
+//   ${tablet({fontSize:"30px"})}
+//   ${leptop({fontSize:"30px"})}
+//   ${mobile({fontSize:"16px"})}
 // `
-
-const Container = styled.div`
-  background-color: rgb(248, 248, 223);
-  flex-direction: column;
-  position: relative;
-  flex: 1;
-  display: flex;
-  align-items: center;
-  height: 200px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: rgb(248, 248, 223);
-  //border-radius: 10px 10px 10px 10px;
-  //box-shadow: 0px 0px 8px 1px rgb(196 196 196 / 50%);
-  transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
-  margin-top: 0px;
-
-  margin-bottom: 20px;
-  padding-left: 0%;
-  margin-right: 10px;
-  margin-left: 10px;
-  
-  
-  ${tablet({height:"255px",marginBottom:"50px"})}
-  ${leptop({height:"305px"})}
-  ${mobile({height: "205px",marginBottom:"20px"})}
-`
-
-const Image = styled.img`
-  width: 150px;
-  height: 150px;
-  max-height: 100%;
-
-  border: none;
-  border-radius: 50%;
-  box-shadow: none;
-  flex: 1;
-  box-shadow: none;
-  
-  ${tablet({height: "200px", width:"200px"})}
-  ${leptop({height:"250px",width:"250px"})}
-  ${mobile({height: "150px", width:"150px"})}
-`
-
-const Title = styled.h1`
-  padding: 0;
-  margin: 0;
-  height: 50px;
-  line-height: 1;
-  font-size: 20px;
-  font-weight: 600;
-  color: wheat;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  text-align: center;
-  justify-content: center;
-  color: black;
-  margin-top: 5px;
-  ${tablet({fontSize:"30px"})}
-  ${leptop({fontSize:"30px"})}
-  ${mobile({fontSize:"16px"})}
-`
 
 export default function CategoryItem(props){
     return(
