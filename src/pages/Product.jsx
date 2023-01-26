@@ -254,6 +254,7 @@ const Product = () => {
            }
 
        }
+       console.log(product)
        getOtherProducts()
     },[product])
 
@@ -298,6 +299,9 @@ const Product = () => {
                 </ImgContainer>
                 <InfoAndIconContainer>
                     <InfoContainer>
+                        <Desc style={{margin:"5px", color:"red"}}>
+                            {!product.inStock && "חסר במלאי"}
+                        </Desc>
                         <Title>{product.title}</Title>
                         <Desc>
                             {product.desc}
@@ -318,6 +322,9 @@ const Product = () => {
                             <ShoppingCartOutlined />
                         </Icon>
                     </IconContainer>
+                    <Desc style={{margin:"5px", color:"red"}}>
+                        {!product.inStock && "חסר במלאי"}
+                    </Desc>
                 </InfoAndIconContainer>
             </Wrapper>
             {
