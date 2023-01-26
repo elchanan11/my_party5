@@ -205,6 +205,7 @@ const Product = () => {
     const location = useLocation()
     const productId = location.pathname.split('/')[2]
     const [product,setProduct] = useState({})
+    const [pageLink,setPageLink] = useState(null)
     const [quantity,setQuantity] = useState(1)
     const dispatch = useDispatch()
     const [productName,setProductName] = useState("")
@@ -232,6 +233,8 @@ const Product = () => {
             left: 0,
             behavior: "smooth"
         });
+        setPageLink(window.location.href)
+        console.log(pageLink)
     },[productId])
 
     useEffect(()=>{
@@ -268,7 +271,7 @@ const Product = () => {
 
         console.log(productName)
 
-        let url = `https://wa.me/+972539323849?text=${postMessageToWatapp+productName}`
+        let url = `https://wa.me/+972539323849?text=${postMessageToWatapp+ productName +`  \n` + pageLink}`
 
         window.open(url);
 
