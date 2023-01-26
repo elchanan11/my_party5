@@ -111,10 +111,28 @@ const Desc = styled.p`
 
 const Price = styled.span`
   font-weight: 100;
+  font-size: 25px;
+  text-align: center;
+  text-decoration: line-through;
+`;
+
+const UpdatedPrice = styled.span`
+  font-weight: 100;
   font-size: 40px;
   text-align: center;
   
 `;
+
+const PriceContainer = styled.span`
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+`;
+
 
 const FilterContainer = styled.div`
   width: 50%;
@@ -306,7 +324,15 @@ const Product = () => {
                         <Desc>
                             {product.desc}
                         </Desc>
-                        <Price>₪ {product.price}</Price>
+                        {
+                            product?.price === product.updatedPrice ?
+                                <UpdatedPrice>₪ {product?.price}</UpdatedPrice> :
+                                <PriceContainer>
+                                    <Price>₪{product?.price}</Price>
+                                    <UpdatedPrice>₪ {product?.updatedPrice}</UpdatedPrice>
+                                </PriceContainer>
+
+                        }
                         <AddContainer>
                             <AmountContainer>
 
