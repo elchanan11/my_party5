@@ -12,21 +12,19 @@ const Container = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
-  
-  max-width: 200px;
-  height: 200px;
-  
   justify-content: center;
   text-align: center;
-  box-shadow: 0px 0px 8px 1px rgb(196 196 196 / 50%);
-  transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+  
+  height: 200px;
+  
+  
   margin-top: 0px;
 
   margin-bottom: 15px;
   padding-left: 0%;
   margin-right: 20px;
   margin-left: 20px;
-  ${mobile({minWidth: "110px"})}
+  
 `
 const Image = styled.img`
   width: 155px;
@@ -35,15 +33,15 @@ const Image = styled.img`
 
   border: none;
   border-radius: 0;
-  box-shadow: none;
+  box-shadow: 0px 0px 8px 1px rgb(196 196 196 / 50%);
+  transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+
   flex: 1;
-  ${mobile({})}
-  box-shadow: none;
 `
 const Info = styled.div`
   width: 100%;
   height: 100%;
-  flex-direction: column;
+  display: flex;
   align-items: center;
   text-align: center;
   justify-content: center;
@@ -51,17 +49,16 @@ const Info = styled.div`
 `
 const Title = styled.h1`
   width: 155px;
+  max-height: 100%;
+  height: 50px;
   padding: 0;
   margin: 0;
-  height: 50px;
   line-height: 1;
   font-size: 20px;
   font-weight: 600;
   color: wheat;
   position: absolute;
   bottom: 0;
-  left: 0;
-  right: 0;
   text-align: center;
   justify-content: center;
   background-color: black;
@@ -144,10 +141,10 @@ export default function CategoryItem(props){
                   style={{textDecoration: 'none'}}
             >
                 <Image src={props.item.img} alt={props.item.title}/>
-                {/*<Info>*/}
+                <Info>
                     <Title>{props.item.title}</Title>
 
-                {/*</Info>*/}
+                </Info>
             </Link>
         </Container>
     )
