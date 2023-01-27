@@ -1,10 +1,11 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import styled from "styled-components";
-import {categoryData} from '../data'
+import {categoryData, mainCategories, subCategiries} from '../data'
 import CategoryItem from "./CategoryItem";
 import {mobile} from "../responsive";
 import {WhatsApp} from "@mui/icons-material";
 import {Fab} from "@mui/material";
+import {useLocation} from "react-router-dom";
 
 const Container = styled.div`
 
@@ -31,21 +32,42 @@ const CategoryTitle = styled.h1`
   color: black;
   text-align: center;
   align-items: center;
-  font-size: 35px;
-  margin-bottom: 50px;
-  padding-top: 20px;
-  
+  font-size: 45px;
+  margin-bottom: 40px;
 `
 
 export default function Categories(){
+
+    const [subCtegories,setSubCategories] = useState([])
+    const [subCategoryTitle,setSubCategoryTitle] = useState({})
+    const location = useLocation()
+    const subCategory = location.pathname.split('/')[2]
+
+
+    useEffect(()=>{
+            setSubCategories(subCategiries.filter(item=>{
+                return(
+                    item.subCat === subCategory
+                )
+            }))
+            setSubCategoryTitle(mainCategories.filter(item=>{
+                return(
+                    item.cat === subCategory
+                )
+            }))
+        console.log(subCategoryTitle)
+        }
+        , [subCategory])
+
+    console.log(subCategory)
     return(
         <Container>
 
             <CategoryTitle>
-                קטגוריות מוצרים
+                {subCategoryTitle[0]?.title ? subCategoryTitle[0]?.title : "תת קטגוריה"}
             </CategoryTitle>
             <Wrapper>
-                { categoryData.map(item=>(
+                { subCtegories.map(item=>(
                     <CategoryItem item={item} key={item.id}/>
                 ))}
             </Wrapper>

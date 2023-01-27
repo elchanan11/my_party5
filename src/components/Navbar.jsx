@@ -100,6 +100,20 @@ const MenuLink = styled.div`
   ${mobile({fontsize: '12px',marginRight:"0px" })}
 `
 
+
+const WhatsappLink = styled.div`
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  padding: 7px;
+  background-color: #54B435;
+  justify-content: space-between;
+  cursor: pointer;
+  margin-right: 7px;
+  ${mobile({fontsize: '12px',marginRight:"0px" })}
+`
+
 export default function Navbar(props){
     // const navigate = useNavigate();
 
@@ -219,9 +233,12 @@ export default function Navbar(props){
                     </Link>
                 </Center>
                 <Right>
-                    <MenuLink style={{marginLeft:"5px"}} onClick={handleWhatsappClick}>
-                        <WhatsApp style={{backgroundColor:"green",color:"white",borderRadius:"50%",fontSize:"25px",padding:"3px"}} size="large" aria-label='Contact us in whatsapp'/>
-                    </MenuLink>
+                    <WhatsappLink
+                        onClick={handleWhatsappClick}
+                    >
+                        <WhatsApp style={{color:"#fff"}} aria-label={'whatsapp link'} />
+                    </WhatsappLink>
+
                     <MenuLink>
                         <MenuIcon
                             onClick={toggleNav}

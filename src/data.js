@@ -34,6 +34,269 @@ export const slideImages = [
     // },
 ]
 
+export const mainCategories = [
+    {
+        id:1,
+        img:baloons,
+        title:"בלונים",
+        cat: "MainBalloonsEvents"
+    },
+    {
+        id:2,
+        img:CategoryItem,
+        title:"מתנות",
+        cat: "MainGifts"
+    },
+    {
+        id:3,
+        img:CategoryItem,
+        title:"הכל למסיבה",
+        cat: "MainForParty"
+    },
+    {
+        id:4,
+        img:CategoryItem,
+        title:"הכל לעוגה",
+        cat: "MainForCake"
+    },
+    {
+        id:5,
+        img:CategoryItem,
+        title:"פרלינים שוקולד",
+        cat: "MainChokolates"
+    },
+    {
+        id:6,
+        img:CategoryItem,
+        title:"מארזים",
+        cat: "MBoxes"
+    },
+    {
+        id:7,
+        img:CategoryItem,
+        title:"מבצעים",
+        cat: "MainSales"
+    },
+    {
+        id:8,
+        img:CategoryItem,
+        title:"שונות",
+        cat: "MainExtra"
+    },
+]
+
+
+export const subCategiries = [
+    {
+        id:1,
+        img:baloons,
+        title:"זרי בלוני הליום",
+        cat: "HeliumBalloonGarlands",
+        subCat: "MainBalloonsEvents"
+    },
+    {
+        id:2,
+        img:CategoryItem,
+        title:"בלוני בועה עם כיתוב",
+        cat: "BubbleBalloonsInscription",
+        subCat: "MainBalloonsEvents"
+    },
+    {
+        id:3,
+        img:CategoryItem,
+        title:"בללונים לניפוח עצמי",
+        cat: "SelfInflatingBalloons",
+        subCat: "MainBalloonsEvents"
+    },
+    {
+        id:4,
+        img:CategoryItem,
+        title:"שקיות בלונים",
+        cat: "BalloonBags",
+        subCat: "MainBalloonsEvents"
+    },
+    {
+        id:5,
+        img:CategoryItem,
+        title:"מארז בלון פורח",
+        cat: "HotAirBalloonCase",
+        subCat: "MainBalloonsEvents"
+    },
+    {
+        id:6,
+        img:CategoryItem,
+        title:"ציוד לבלונים",
+        cat: "EquipmentForBalloons",
+        subCat: "MainBalloonsEvents"
+    },
+    {
+        id:7,
+        img:CategoryItem,
+        title:"מתנות קטנות",
+        cat: "SmallGifts",
+        subCat: "MainGifts"
+    },
+    {
+        id:8,
+        img:CategoryItem,
+        title:"מתנות בהדפסה אישית",
+        cat: "PersonalizedPrintedGifts",
+        subCat: "MainGifts"
+    },
+    {
+        id:9,
+        img:girlsGift,
+        title:"מתנות לנערות",
+        cat: "GiftsForGirls",
+        subCat: "MainGifts"
+    },
+    {
+        id:10,
+        img:CategoryItem,
+        title:"מתנות לאישה",
+        cat: "GiftsForWomen",
+        subCat: "MainGifts"
+    },
+    {
+        id:11,
+        img:CategoryItem,
+        title:"מתנות לגבר",
+        cat: "GiftsForMen",
+        subCat: "MainGifts"
+    },
+    {
+        id:12,
+        img:CategoryItem,
+        title:"מתנות למשפחה",
+        cat: "giftsForTheFamily",
+        subCat: "MainGifts"
+    },
+    {
+        id:13,
+        img:CategoryItem,
+        title:"מתנות ליומולדת",
+        cat: "birthdayPresents",
+        subCat: "MainGifts"
+    },
+    {
+        id:14,
+        img:CategoryItem,
+        title:"מתנות ללידה",
+        cat: "giftsForBirth",
+        subCat: "MainGifts"
+    },
+    {
+        id:15,
+        img:CategoryItem,
+        title:"מתנות לנהג חדש",
+        cat: "GiftsForNewDriver",
+        subCat: "MainGifts"
+    },
+    {
+        id:16,
+        img:CategoryItem,
+        title:"מתנות אהבה",
+        cat: "giftsLove",
+        subCat: "MainGifts"
+    },
+    {
+        id:17,
+        img:CategoryItem,
+        title:"מתנות לאירוסין",
+        cat: "EngagementGifts",
+        subCat: "MainGifts"
+    },
+    {
+        id:18,
+        img:CategoryItem,
+        title:"דף סוכר לעוגה",
+        cat: "SugarSheetForCake",
+        subCat: "MainForCake"
+    },
+    {
+        id:19,
+        img:CategoryItem,
+        title:"דף סוכר לעוגה חלאקה",
+        cat: "SugarSheetForCakeHalaka",
+        subCat: "MainForCake"
+    },
+    {
+        id:20,
+        img:CategoryItem,
+        title:"דף טרנספר",
+        cat: "TransferPage",
+        subCat: "MainForCake"
+    },
+    {
+        id:21,
+        img:CategoryItem,
+        title:"קישוטים לעוגה",
+        cat: "CakeDecorations",
+        subCat: "MainForCake"
+    },
+    {
+        id:22,
+        img:CategoryItem,
+        title:"נרות לעוגה",
+        cat: "CakeCandles",
+        subCat: "MainForCake"
+    },
+    {
+        id:23,
+        img:CategoryItem,
+        title:"חד פעמי לפי צבעים",
+        cat: "ForkByColors",
+        subCat: "MainForParty"
+    },
+    {
+        id:24,
+        img:CategoryItem,
+        title:"חד פעמי מותגים",
+        cat: "specialFork",
+        subCat: "MainForParty"
+    },
+    {
+        id:25,
+        img:CategoryItem,
+        title:"וילונות פרנזים",
+        cat: "FringeCurtains",
+        subCat: "MainForParty"
+    },
+    {
+        id:26,
+        img:CategoryItem,
+        title:"דגלונים",
+        cat: "pennants",
+        subCat: "MainForParty"
+    },
+    {
+        id:27,
+        img:CategoryItem,
+        title:"קונפטי",
+        cat: "Confetti",
+        subCat: "MainForParty"
+    },
+    {
+        id:28,
+        img:CategoryItem,
+        title:"זוהרים למסיבה",
+        cat: "GlamorousParty",
+        subCat: "MainForParty"
+    },
+    {
+        id:29,
+        img:CategoryItem,
+        title:"זיקוקים",
+        cat: "fireworks",
+        subCat: "MainForParty"
+    },
+]
+
+
+
+
+
+
 export const categoryData = [
     {
         id:1,

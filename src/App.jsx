@@ -16,6 +16,7 @@ import {
 } from 'react-router-dom'
 import {useSelector} from "react-redux";
 import styled from "styled-components";
+import SubCategory from "./pages/SubCategory";
 
 const Container = styled.div`
   height: 100%;
@@ -32,6 +33,10 @@ const App = () => {
                 <Routes>
                     <Route exact path="/" element={
                         <Home />
+                    }
+                    />
+                    <Route exact path="/subCategory/:subCategoryName" element={
+                        <SubCategory />
                     }
                     />
                     <Route path="/products/:category" element={
