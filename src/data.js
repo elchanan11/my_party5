@@ -290,6 +290,34 @@ export const subCategiries = [
         cat: "fireworks",
         subCat: "MainForParty"
     },
+    {
+        id:30,
+        img:baloons,
+        title:`"פרלינים "פרלין`,
+        cat: "pralinesPraline",
+        subCat: "MainChokolates"
+    },
+    {
+        id:31,
+        img:CategoryItem,
+        title:`פרלינים בלגיים "houser" `,
+        cat: "BelgianPralines",
+        subCat: "MainChokolates"
+    },
+    {
+        id:32,
+        img:CategoryItem,
+        title:"מארזי שוקולד",
+        cat: "ChocolateBoxes",
+        subCat: "MainChokolates"
+    },
+    {
+        id:33,
+        img:CategoryItem,
+        title:"שקיות שוקולד",
+        cat: "ChocolateBags",
+        subCat: "MainChokolates"
+    },
 ]
 
 
