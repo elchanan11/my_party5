@@ -103,8 +103,8 @@ const Right = styled.div`
   flex-direction: column;
   text-align: right;
   padding: 20px;
-  ${tablet({alignItems: "center"})}
-  ${mobile({alignItems: "center"})}
+  ${tablet({alignItems: "center",paddingTop:"5px"})}
+  ${mobile({alignItems: "center",paddingTop:"5px"})}
 `;
 
 const ContactItem = styled.div`
@@ -119,7 +119,7 @@ const DeveloperDetails = styled.div`
   flex-direction: column;
   width: 100%;
   padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
   text-align: center;
   justify-content: center;
   direction: rtl;
@@ -275,7 +275,7 @@ const Footer = () => {
                 <DevIconContainer>
                     <DevIcon>
                         <WhatsApp aria-label={'whatsapp link'} onClick={()=>{
-                            let postMessageToWatapp = "שלום אני מהאתר"
+                            let postMessageToWatapp = "שלום אני מאתר המסיבה שלי ורציתי לשוחח בנושא.."
                             let url = `https://wa.me/+972539323849?text=${postMessageToWatapp}`;
 
                             window.open(url);}}  />
