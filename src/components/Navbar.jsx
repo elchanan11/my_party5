@@ -124,12 +124,21 @@ export default function Navbar(props){
 
     useEffect(() => {
         const makeAnimation = () =>{
+            // setQuanValue(quantity)
+            // setLoading(true)
+            // console.log(loding)
+            // setTimeout (()=>{
+            //     setLoading(false)
+            // },1500)
             setQuanValue(quantity)
             setLoading(true)
+            setBadgeAnimation("large")
             console.log(loding)
             setTimeout (()=>{
+                setBadgeAnimation("medium")
                 setLoading(false)
             },1500)
+
         }
         if (quantityValue !== quantity){
             makeAnimation()
@@ -171,6 +180,7 @@ export default function Navbar(props){
 
         const [isNavVisible, setNavVisibility] = useState(false);
         const [isSmallScreen, setIsSmallScreen] = useState(false);
+        const [badgeAnimation,setBadgeAnimation] = useState("medium")
 
         useEffect(() => {
             const mediaQuery = window.matchMedia("(max-width: 700px)");
@@ -215,12 +225,12 @@ export default function Navbar(props){
                     <Link to={"/cart"}>
                         <MenuLink style={{marginLeft:"20px"}}>
                         {
-                            !loding ?
+                            // !loding ?
                                     <Badge style={{marginRight:4}} color="primary" badgeContent={quantityValue} aria-label='Go to cart'>
-                                        <ShoppingCartOutlined />
-                                   </Badge>
-                                :
-                                <CircularProgress size="2rem" />
+                                        <ShoppingCartOutlined fontSize={badgeAnimation} />
+                                    </Badge>
+                                // :
+                                // <CircularProgress size="2rem" />
 
                         }
                         </MenuLink>

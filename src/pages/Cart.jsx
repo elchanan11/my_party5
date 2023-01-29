@@ -101,8 +101,8 @@ const IconConainer = styled.div`
 `
 
 const Icon = styled.div`
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   cursor: pointer;
   color: white;
@@ -121,6 +121,7 @@ const Note = styled.p`
   justify-content: center;
   font-size: 10px;
   font-weight: 20;
+  padding-top: 5px;
   color: gray;
 `
 const SummaryItemText = styled.span``;
@@ -207,10 +208,10 @@ const Cart = () => {
                         </SummaryItem>
                         <IconConainer>
                             <Icon color={'82CD47'} onClick={handleWhatsAppClick}>
-                                {<WhatsApp />}
+                                {<WhatsApp fontSize={"large"}/>}
                             </Icon>
                             <Icon color={'E60023'}>
-                                {<Mail />}
+                                {<Mail fontSize={"large"}/>}
                             </Icon>
                         </IconConainer>
                         <Note>

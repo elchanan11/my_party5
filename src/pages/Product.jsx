@@ -10,7 +10,7 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import {publicRequest} from "../requestMethods";
 import {addProduct} from "../redux/cartRedux";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import Loading from "../components/Loading";
 import {useMemo} from "react";
 import ProductItem from "../components/ProductItem";
@@ -222,6 +222,7 @@ const Icon = styled.div`
 const Product = () => {
 
     const location = useLocation()
+    const cart = useSelector(state=>state.cart)
     const productId = location.pathname.split('/')[2]
     const [product,setProduct] = useState({})
     const [pageLink,setPageLink] = useState(null)
@@ -282,9 +283,12 @@ const Product = () => {
     },[product])
 
     const handleAddTOCartClick = () => {
-        dispatch(
-            addProduct({product, quantity,price: parseInt(product.price)})
-        )
+        const itemFound = cart.products.some(item=> item._id === product._id)
+        if (!itemFound){
+            dispatch(
+                addProduct({product, quantity,price: parseInt(product.price)})
+            )
+        }
     }
 
     const handleWhatsAppClick = () => {
@@ -364,7 +368,7 @@ const Product = () => {
                         </RecomanedProducts>
                         <OtherProductsWrapper>
                             {
-                                otherProducts.filter(item=>item._id!==productId).slice(0,otherProducts.length/2).map(
+                                otherProducts.filter(item=>item._id!==productId).slice(0,2).map(
                                     (productItem,index)=>(
                                         <ProductItem key={productItem._id} item={productItem} id={productItem._id} />
                                     ))

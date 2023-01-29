@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {Search, ShoppingCartOutlined, Style, WhatsApp} from "@mui/icons-material";
 import {Link, useHistory, useNavigate, useParams} from "react-router-dom";
 import {addProduct} from "../redux/cartRedux";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {mobile} from "../responsive";
 import {Skeleton} from "@mui/material";
 const Info = styled.div`
@@ -117,6 +117,7 @@ export default function ProductItem(props){
     const [product,setProduct] = useState(props.item)
     const [quantity,setQuantity] = useState(1)
     const [isImageLoaded, setIsImageLoaded] = useState(false)
+    const cart = useSelector(state=>state.cart)
     const navigate = useNavigate()
     let param = useParams()
 
@@ -136,9 +137,12 @@ export default function ProductItem(props){
 
     const handleAddTOCartClick = (e) => {
         e.stopPropagation()
-        dispatch(
-            addProduct({product, quantity,price: parseInt(product.price)})
-        )
+        const itemFound = cart.products.some(item=> item._id === product._id)
+        if (!itemFound) {
+            dispatch(
+                addProduct({product, quantity, price: parseInt(product.price)})
+            )
+        }
     }
 
     const handleImageLoded  = () =>{
