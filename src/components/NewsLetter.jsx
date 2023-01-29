@@ -4,6 +4,7 @@ import { mobile } from "../responsive";
 import {useState} from "react";
 import {publicRequest} from "../requestMethods";
 import {CircularProgress} from "@mui/material";
+import DoneOutlineIcon from '@mui/icons-material/DoneOutline';
 
 const Container = styled.div`
   height: 60vh;
@@ -14,6 +15,7 @@ const Container = styled.div`
   flex-direction: column;
 `;
 const Title = styled.h1`
+  direction: rtl;
   font-size: 40px;
   text-align: center;
   margin: 5px;
@@ -52,6 +54,20 @@ const Button = styled.button`
   background-color: #9fc0c0;
   color: white;
 `;
+const IconContainer = styled.button`
+  font-size: 60px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #D6E4E5;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border: white;
+`;
 
 const Newsletter = () => {
     const [email,setEmail] = useState("")
@@ -63,14 +79,13 @@ const Newsletter = () => {
         e.preventDefault()
         console.log(email)
         if (email !== ""){
-            setIsSubmitted(true)
             try {
                 const res = await publicRequest.post("/newsLetter/", {email:email})
                 console.log(res.data)
-                setIsSubmitted(false)
                 setEmail("")
                 if (res.data === "success"){
                     setDesc("!אנחנו מודים לך על הצטרפותך")
+                    setIsSubmitted(true)
                 }else {
                     setDesc("!אנא שנית במועד מאוחר יותר")
                 }
@@ -86,26 +101,39 @@ const Newsletter = () => {
     return (
         <Container>
             <Title style={{marginBottom:"0"}}>
-               התעדכנו במבצעים החמים שלנו
+                {
+                    isSubmitted ? "אנחנו מודים לך על הצטרפותך!" : "התעדכנו במבצעים החמים שלנו"
+                }
+
             </Title>
-            <Desc>{desc}</Desc>
+            {
+                !isSubmitted && <Desc>{desc}</Desc>
+            }
             <form
                 onSubmit={handleSubmit}
                 style={{border:"0.5px solid lightgray"}}>
-                <InputContainer>
-                    <Input
-                        value={email}
-                        onChange={e=>setEmail(e.target.value)}
-                        placeholder="email.email@gmail.com"
-                        type={"email"}
-                    />
-                    <Button type={"submit"} enabled={isSubmitted} aria-label={'submit email'}>
-                        {
-                            !isSubmitted ? <Send color="neutral"/> :
-                                <CircularProgress color={"inherit"}/>
-                        }
-                    </Button>
-                </InputContainer>
+                {
+                    isSubmitted ?
+                        <IconContainer>
+                            < DoneOutlineIcon />
+                        </IconContainer> :
+                        <InputContainer style={{fontSize :"60px"}}>
+                            <Input
+                                value={email}
+                                onChange={e=>setEmail(e.target.value)}
+                                placeholder="email.email@gmail.com"
+                                type={"email"}
+                            />
+                            <Button type={"submit"} enabled={isSubmitted} aria-label={'submit email'}>
+                                {
+                                    !isSubmitted ? <Send color="neutral"/> :
+                                        <CircularProgress color={"inherit"}/>
+                                }
+                            </Button>
+                        </InputContainer>
+                }
+
+
             </form>
         </Container>
     );
