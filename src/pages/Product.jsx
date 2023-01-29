@@ -18,6 +18,7 @@ import React from "react";
 
 const Container = styled.div`
   background-color: #f3ecec;
+  
 `;
 
 const OtherProductsContainer = styled.div`
@@ -48,7 +49,7 @@ const RecomanedProducts = styled.h1`
 
 const Wrapper = styled.div`
   padding: 50px;
-  display: flex;
+  display:${props => (props.display === "true" ? "flex" : `none`)};
   ${mobile({flexDirection: 'column', padding: "10px"})}
 
 `;
@@ -304,75 +305,79 @@ const Product = () => {
     }
 
     return (
-        <Container>
-            {!imageIsLoaded && <Loading />}
-            <Announcement />
-            <Navbar />
-            <Wrapper>
-                <ImgContainer>
-                    <Image src={product.img} onLoad={handleImageLoded} alt={product.title}/>
-                    <ImageNote>
-                        *התמונה להמחשה בלבד
-                    </ImageNote>
-                </ImgContainer>
-                <InfoAndIconContainer>
-                    <InfoContainer>
+        <>
+            <Container>
+                <Announcement />
+                <Navbar />
+                {!imageIsLoaded && <Loading color={"f3ecec"}/>}
+                <Wrapper display={imageIsLoaded.toString()}>
+                    <ImgContainer>
+                        <Image src={product.img} onLoad={handleImageLoded} alt={product.title}/>
+                        <ImageNote>
+                            *התמונה להמחשה בלבד
+                        </ImageNote>
+                    </ImgContainer>
+                    <InfoAndIconContainer>
+                        <InfoContainer>
+                            <Desc style={{margin:"5px", color:"red"}}>
+                                {!product.inStock && "חסר במלאי"}
+                            </Desc>
+                            <Title style={{direction:"rtl"}}>{product.title}</Title>
+                            <Desc style={{direction:"rtl"}}>
+                                {product.desc}
+                            </Desc>
+                            {
+                                product?.price === product.updatedPrice ?
+                                    <UpdatedPrice>₪ {product?.price}</UpdatedPrice> :
+                                    <PriceContainer>
+                                        <Price>₪{product?.price}</Price>
+                                        <UpdatedPrice>₪ {product?.updatedPrice}</UpdatedPrice>
+                                    </PriceContainer>
+
+                            }
+                            <AddContainer>
+                                <AmountContainer>
+
+                                </AmountContainer>
+                            </AddContainer>
+                        </InfoContainer>
+
+                        <IconContainer>
+                            <Icon color={"7DCE13"} onClick={handleWhatsAppClick}>
+                                <WhatsApp/>
+                            </Icon>
+                            <Icon color={"0002A1"} onClick={handleAddTOCartClick}>
+                                <ShoppingCartOutlined />
+                            </Icon>
+                        </IconContainer>
                         <Desc style={{margin:"5px", color:"red"}}>
                             {!product.inStock && "חסר במלאי"}
                         </Desc>
-                        <Title style={{direction:"rtl"}}>{product.title}</Title>
-                        <Desc style={{direction:"rtl"}}>
-                            {product.desc}
-                        </Desc>
-                        {
-                            product?.price === product.updatedPrice ?
-                                <UpdatedPrice>₪ {product?.price}</UpdatedPrice> :
-                                <PriceContainer>
-                                    <Price>₪{product?.price}</Price>
-                                    <UpdatedPrice>₪ {product?.updatedPrice}</UpdatedPrice>
-                                </PriceContainer>
+                    </InfoAndIconContainer>
+                </Wrapper>
+                {
+                    otherProducts.length > 1
+                    &&
+                    <OtherProductsContainer>
+                        <RecomanedProducts>
+                            מומלצים עבורך
+                        </RecomanedProducts>
+                        <OtherProductsWrapper>
+                            {
+                                otherProducts.filter(item=>item._id!==productId).slice(0,otherProducts.length/2).map(
+                                    (productItem,index)=>(
+                                        <ProductItem key={productItem._id} item={productItem} id={productItem._id} />
+                                    ))
+                            }
+                        </OtherProductsWrapper>
+                    </OtherProductsContainer>
+                }
+                {
+                    imageIsLoaded && <Footer />
+                }
+            </Container>
+        </>
 
-                        }
-                        <AddContainer>
-                            <AmountContainer>
-
-                            </AmountContainer>
-                        </AddContainer>
-                    </InfoContainer>
-
-                    <IconContainer>
-                        <Icon color={"7DCE13"} onClick={handleWhatsAppClick}>
-                            <WhatsApp/>
-                        </Icon>
-                        <Icon color={"0002A1"} onClick={handleAddTOCartClick}>
-                            <ShoppingCartOutlined />
-                        </Icon>
-                    </IconContainer>
-                    <Desc style={{margin:"5px", color:"red"}}>
-                        {!product.inStock && "חסר במלאי"}
-                    </Desc>
-                </InfoAndIconContainer>
-            </Wrapper>
-            {
-                otherProducts.length > 1
-                &&
-                <OtherProductsContainer>
-                    <RecomanedProducts>
-                        מומלצים עבורך
-                    </RecomanedProducts>
-                    <OtherProductsWrapper>
-                        {
-                            otherProducts.filter(item=>item._id!==productId).slice(0,otherProducts.length/2).map(
-                                (productItem,index)=>(
-                                    <ProductItem key={productItem._id} item={productItem} id={productItem._id} />
-                                ))
-                        }
-                    </OtherProductsWrapper>
-                </OtherProductsContainer>
-            }
-
-            <Footer />
-        </Container>
     );
 };
 
