@@ -320,8 +320,8 @@ const Product = () => {
                         <Desc style={{margin:"5px", color:"red"}}>
                             {!product.inStock && "חסר במלאי"}
                         </Desc>
-                        <Title>{product.title}</Title>
-                        <Desc>
+                        <Title style={{direction:"rtl"}}>{product.title}</Title>
+                        <Desc style={{direction:"rtl"}}>
                             {product.desc}
                         </Desc>
                         {

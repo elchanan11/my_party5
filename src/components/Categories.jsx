@@ -30,6 +30,7 @@ const Wrapper = styled.div`
 `
 const CategoryTitle = styled.h1`
   color: black;
+  direction: rtl;
   text-align: center;
   align-items: center;
   font-size: 45px;
@@ -63,7 +64,7 @@ export default function Categories(){
     return(
         <Container>
 
-            <CategoryTitle>
+            <CategoryTitle style={{direction:"rtl"}}>
                 {subCategoryTitle[0]?.title ? subCategoryTitle[0]?.title : "תת קטגוריה"}
             </CategoryTitle>
             <Wrapper>
