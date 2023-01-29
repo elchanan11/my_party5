@@ -293,7 +293,7 @@ export const subCategiries = [
     {
         id:30,
         img:baloons,
-        title:`"פרלינים "פרלין`,
+        title:`פרלינים "פרלין"`,
         cat: "pralinesPraline",
         subCat: "MainChokolates"
     },

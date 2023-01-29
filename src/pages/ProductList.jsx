@@ -14,6 +14,9 @@ const Container = styled.div`
   background-color: #fae8e8;
 `
 const Title = styled.h1`
+  padding-top: 45px;
+  padding-bottom: 35px;
+  font-size: 38px;
   margin: 5px;
   right: 0;
   text-align: center;
@@ -102,7 +105,7 @@ export default function ProductList(){
         <Container>
             <Announcment />
             <Navbar />
-            <Title>
+            <Title style={{direction:"rtl"}}>
                 {categoryTitle}
             </Title>
             <FilterContainer>
