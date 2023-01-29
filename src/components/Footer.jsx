@@ -267,7 +267,7 @@ const Footer = () => {
             </Container>
             <DeveloperDetails>
                 <DeveloperDetailsTitle >
-                    עוצב ופותח ב ❤️ על ידי WebEL
+                    האתר נבנה ועוצב ב ❤️ על ידי WebEL
                 </DeveloperDetailsTitle>
                 <DeveloperDetailsDets>
                     לשיחת ייעוץ ראשונית לחץ:
@@ -281,7 +281,7 @@ const Footer = () => {
                             window.open(url);}}  />
                     </DevIcon>
                     <DevIcon>
-                        <a style={{color:"#fff"}} href="tel:+972542595225" aria-label={'our telephone'}>
+                        <a style={{color:"#fff"}} href="tel:+972539323849" aria-label={'our telephone'}>
                             <Phone />
                         </a>
                     </DevIcon>
