@@ -15,7 +15,7 @@ import './navBar.css'
 import {deleteProducts} from "../redux/cartRedux";
 import {logOut} from "../redux/userRedux";
 import {CSSTransition} from "react-transition-group";
-import {categoryData} from "../data";
+import {categoryData, mainCategories} from "../data";
 
 const Container = styled.div`
   width: 100%;
@@ -256,11 +256,11 @@ export default function Navbar(props){
             >
                 <nav className="Nav">
                     {
-                        categoryData.map(catItem=>(
+                        mainCategories.map(catItem=>(
                             <Link
                                 key={catItem.id}
                                 to={
-                                '/products/'+catItem.cat}
+                                    '/subCategory/'+catItem.cat}
                                   state={{title: catItem.title}}
                                   style={{textDecoration: 'none'}}
                                   onClick={toggleNav}
