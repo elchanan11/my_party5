@@ -41,14 +41,12 @@ const TitleContainer = styled.div`
   font-size: 20px;
 `;
 
-const Title = styled.h3`
-  bottom: 0;
-  left: 0;
-  width: 80%;
-  color: #e5faf2;
-  position: absolute;
-  padding-top: 30px;
-  //background-color: #e9f5f5;
+const Title = styled.h2`
+  font-weight: 500;
+  font-size: 20px;
+`
+const Price = styled.div`
+  font-size: 15px;
 `
 
 const Container = styled.div`
@@ -180,7 +178,12 @@ export default function ProductItem(props){
             {/*    {product.title}*/}
             {/*    /!*</Title>*!/*/}
             {/*</TitleContainer>*/}
-            {product.title}
+            <Title>
+                {product.title}
+            </Title>
+            <Price>
+                {product.price}₪
+            </Price>
         </Container>
     )
 }
