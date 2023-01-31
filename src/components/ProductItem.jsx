@@ -55,7 +55,7 @@ const Container = styled.div`
   flex: 1;
   margin: 5px;
   min-width: 350px;
-
+flex-direction: column;
   height: 350px;
   display: flex;
   align-items: center;
@@ -180,7 +180,7 @@ export default function ProductItem(props){
                 {product.title}
                 {/*</Title>*/}
             </TitleContainer>
-
+            {product.title}
         </Container>
     )
 }

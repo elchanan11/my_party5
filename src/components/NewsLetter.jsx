@@ -5,10 +5,12 @@ import {useState} from "react";
 import {publicRequest} from "../requestMethods";
 import {CircularProgress} from "@mui/material";
 import DoneOutlineIcon from '@mui/icons-material/DoneOutline';
+import './newsLetter.css'
 
 const Container = styled.div`
   height: 60vh;
-  background-color: #fdfdfd;
+  //background-color: #fdfdfd;
+  background-color: #DAEAF1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -98,23 +100,24 @@ const Newsletter = () => {
             }
         }
     }
+
+
     return (
         <Container>
-            <Title style={{marginBottom:"0"}}>
+            <Title className={"lineUp"} style={{marginBottom:"0"}}>
                 {
                     isSubmitted ? "אנחנו מודים לך על הצטרפותך!" : "התעדכנו במבצעים החמים שלנו"
                 }
-
             </Title>
             {
-                !isSubmitted && <Desc>{desc}</Desc>
+                !isSubmitted && <Desc className={"lineUp"}>{desc}</Desc>
             }
             <form
                 onSubmit={handleSubmit}
                 style={{border:"0.5px solid lightgray"}}>
                 {
                     isSubmitted ?
-                        <IconContainer>
+                        <IconContainer >
                             < DoneOutlineIcon />
                         </IconContainer> :
                         <InputContainer style={{fontSize :"60px"}}>

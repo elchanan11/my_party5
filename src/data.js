@@ -3,6 +3,7 @@ import CategoryItem from './img_25.png';
 import girlsGift from '../src/images/girlsGift.jpg'
 import choklates from '../src/images/cokolates.jpg'
 import baloons from '../src/images/baloons.jpg'
+import gift from './Giftim.jpg'
 
 
 
@@ -317,6 +318,13 @@ export const subCategiries = [
         title:"שקיות שוקולד",
         cat: "ChocolateBags",
         subCat: "MainChokolates"
+    },
+    {
+        id:34,
+
+        title:"מומלצים",
+        cat: "Reccomanded",
+        subCat: "Reccomanded"
     },
 ]
 

@@ -107,7 +107,7 @@ const WhatsappLink = styled.div`
   align-items: center;
   border-radius: 50%;
   padding: 7px;
-  background-color: #54B435;
+  background-color: #fff;
   justify-content: space-between;
   cursor: pointer;
   margin-right: 7px;
@@ -246,7 +246,7 @@ export default function Navbar(props){
                     <WhatsappLink
                         onClick={handleWhatsappClick}
                     >
-                        <WhatsApp style={{color:"#fff"}} aria-label={'whatsapp link'} />
+                        <WhatsApp style={{color:"green"}} aria-label={'whatsapp link'} />
                     </WhatsappLink>
 
                     <MenuLink>
