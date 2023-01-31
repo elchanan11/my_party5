@@ -175,11 +175,11 @@ export default function ProductItem(props){
                     <WhatsApp />
                 </Icon>
             </Info>
-            <TitleContainer>
-                {/*<Title>*/}
-                {product.title}
-                {/*</Title>*/}
-            </TitleContainer>
+            {/*<TitleContainer>*/}
+            {/*    /!*<Title>*!/*/}
+            {/*    {product.title}*/}
+            {/*    /!*</Title>*!/*/}
+            {/*</TitleContainer>*/}
             {product.title}
         </Container>
     )
