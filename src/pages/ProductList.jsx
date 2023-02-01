@@ -9,6 +9,7 @@ import {mobile} from "../responsive";
 import {useLocation, useNavigate} from "react-router-dom";
 import {WhatsApp} from "@mui/icons-material";
 import {Autocomplete, Fab, TextField} from "@mui/material";
+import {subCategiries} from "../data";
 
 const Container = styled.div`
   background-color: #fae8e8;
@@ -65,7 +66,13 @@ const Input = styled.input`
 export default function ProductList(){
     const location = useLocation()
     const cat = location.pathname.split('/')[2]
-    const categoryTitle = location.state.title
+    // const categoryTitle = location.state.title
+    const category = subCategiries.filter(item=>{
+        return(
+            item.cat === cat
+        )
+    })
+    console.log(category)
     const [sort,setSort] = useState("newest")
 
 
@@ -106,7 +113,7 @@ export default function ProductList(){
             <Announcment />
             <Navbar />
             <Title style={{direction:"rtl"}}>
-                {categoryTitle}
+                {category[0]?.title}
             </Title>
             <FilterContainer>
                 <Filter>

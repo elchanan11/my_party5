@@ -54,7 +54,7 @@ const Button = styled.button`
   flex: 1;
   border: none;
   cursor: pointer;
-  background-color: #e8cd6d;
+  background-color: #F3D1AAFF;
   color: white;
 `;
 const IconContainer = styled.button`

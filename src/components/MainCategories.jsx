@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import {categoryData, mainCategories} from '../data'
 import CategoryItem from "./CategoryItem";
-import {mobile} from "../responsive";
+import {leptop, mobile} from "../responsive";
 import {WhatsApp} from "@mui/icons-material";
 import {Fab} from "@mui/material";
 import MainCategoryItem from "./MainCategoryItem";
@@ -18,7 +18,7 @@ const Container = styled.div`
   background-color: #FFEACA;
   padding-bottom: 60px;
   padding-top: 40px;
-
+  ${leptop({paddingLeft: '170px',paddingRight: '170px',paddingBottom:0})}
 `
 
 const Wrapper = styled.div`

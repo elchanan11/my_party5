@@ -4,7 +4,7 @@ import {Search, ShoppingCartOutlined, WhatsApp} from "@mui/icons-material";
 import {Autocomplete, Badge, CircularProgress, Menu, TextField} from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import Logo from '../logo-text.png'
-import {mobile} from "../responsive";
+import {leptop, mobile} from "../responsive";
 import {useDispatch, useSelector} from "react-redux";
 import {Link, Redirect, useHistory} from "react-router-dom";
 import { Navigate } from 'react-router-dom';
@@ -87,6 +87,7 @@ const Right = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  ${leptop({justifyContent:"flex-end"})}
   ${mobile({flex:1,alignItems:"right"})}
 `;
 
@@ -111,6 +112,7 @@ const WhatsappLink = styled.div`
   justify-content: space-between;
   cursor: pointer;
   margin-right: 7px;
+  ${leptop({justifyContent:"flexEnd"})}
   ${mobile({fontsize: '12px',marginRight:"0px" })}
 `
 

@@ -91,7 +91,7 @@ const Container = styled.div`
   padding: 0;
 
   ${tablet({height: "175px"})}
-  ${leptop({height: "205px"})}
+  ${leptop({height: "175px"})}
   ${mobile({height: "115px", marginBottom: "15px"})}
 `
 
@@ -108,7 +108,7 @@ const ImageContainer = styled.div`
   display: flex;
   flex: 1;
   ${tablet({height: "120px", width: "120px"})}
-  ${leptop({height: "150px", width: "150px"})}
+  ${leptop({height: "120px", width: "120px"})}
   ${mobile({height: "100px", width: "100px"})}
 `
 
@@ -120,7 +120,7 @@ const Image = styled.img`
   bottom: 0;
   
   ${tablet({height: "70px", width:"70px"})}
-  ${leptop({height:"100px",width:"100px"})}
+  ${leptop({height: "70px", width:"70px"})}
   ${mobile({height:"50px",width:"50px"})}
 `
 

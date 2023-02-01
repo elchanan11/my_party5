@@ -10,7 +10,7 @@ import {
     Twitter, WhatsApp,
 } from "@mui/icons-material";
 import styled from "styled-components";
-import {mobile, mobileMini, tablet} from "../responsive";
+import {leptop, mobile, mobileMini, tablet} from "../responsive";
 import {Link} from "react-router-dom";
 import {deleteProducts} from "../redux/cartRedux";
 import {logOut} from "../redux/userRedux";
@@ -66,6 +66,7 @@ const SocialIcon = styled.div`
   margin-right: 8px;
   margin-left: 8px;
   cursor: pointer;
+  ${leptop({marginLeft:0})}
   ${mobileMini({width: "32px", height: "32px", marginLeft: "5px", marginRight: "5px"})}
 `;
 
