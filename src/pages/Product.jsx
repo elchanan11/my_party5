@@ -91,7 +91,7 @@ const InfoContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 0px 50px;
+  
   ${mobile({padding: '10px'})}
   ${tablet({padding:0})}
 
