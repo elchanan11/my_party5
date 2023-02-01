@@ -119,7 +119,7 @@ export const subCategiries = [
     {
         id:3,
         img:CategoryItem,
-        title:"בללונים לניפוח עצמי",
+        title:"בלונים לניפוח עצמי",
         cat: "SelfInflatingBalloons",
         subCat: "MainBalloonsEvents"
     },

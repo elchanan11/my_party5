@@ -189,22 +189,22 @@ const Footer = () => {
                         בימים אלו ניתן לבצע הזמנה דרך הטלפון הוואצאפ או המייל, יש אפשרות להגיע לאסוף מהחנות, בנוסף יש אפשרות למשלוח עד לבית! באיזור ביתר עילית, צור הדסה, מבוא ביתר, ירושלים גילה, בית וגן, בית הכרם, גבעת שאול, קרית משה
                     </Desc>
                     <SocialContainer >
-                        {user && true ?
-                            <SocialIcon color="3B5999">
-                                <PersonRemoveIcon onClick={handleLogOut} aria-label={'logout'}>
-                                    התנתק
-                                </PersonRemoveIcon>
-                            </SocialIcon>
+                        {/*{user && true ?*/}
+                        {/*    <SocialIcon color="3B5999">*/}
+                        {/*        <PersonRemoveIcon onClick={handleLogOut} aria-label={'logout'}>*/}
+                        {/*            התנתק*/}
+                        {/*        </PersonRemoveIcon>*/}
+                        {/*    </SocialIcon>*/}
 
-                            :
-                            <SocialIcon color="3B5999">
-                                <Link to={'/login'} aria-label={'log in'}>
-                                    <PersonAddIcon >
-                                        התחבר
-                                    </PersonAddIcon>
-                                </Link>
-                            </SocialIcon>
-                        }
+                        {/*    :*/}
+                        {/*    <SocialIcon color="3B5999">*/}
+                        {/*        <Link to={'/login'} aria-label={'log in'}>*/}
+                        {/*            <PersonAddIcon >*/}
+                        {/*                התחבר*/}
+                        {/*            </PersonAddIcon>*/}
+                        {/*        </Link>*/}
+                        {/*    </SocialIcon>*/}
+                        {/*}*/}
                         <SocialIcon color="3B5999">
                             <a target={"blank"}
                                aria-label={'facebook link'}

@@ -13,7 +13,7 @@ const Container = styled.div`
   align-items: center;
   padding: 0;
   margin: 0;
-  background-color: rgb(248, 248, 223);
+  background-color: #F9F3DF;
   padding-bottom: 60px;
   padding-top: 40px;
 
@@ -23,7 +23,7 @@ const Wrapper = styled.div`
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   text-align: center;
   
   ${mobile({padding: '0px'})}
