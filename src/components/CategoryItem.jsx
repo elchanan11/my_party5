@@ -103,8 +103,6 @@ const ImageContainer = styled.div`
   box-shadow: 0px 0px 8px 1px rgb(196 196 196 / 50%);
   border-radius: 50%;
   justify-content: center;
-  align-items: center;
-  text-align: center;
   display: flex;
   direction: rtl;
   flex: 1;
@@ -126,7 +124,7 @@ const Image = styled.img`
 `
 
 const Title = styled.span`
-  padding: 0;
+  
   margin: 0;
   height: 15px;
   line-height: 1;
@@ -134,6 +132,8 @@ const Title = styled.span`
   text-align: center;
   bottom: 0;
   right: 0;
+  padding: 15px;
+  padding-top: 35px;
   font-weight: 600;
   ${tablet({fontSize:"20px"})}
   ${leptop({fontSize:"20px"})}
