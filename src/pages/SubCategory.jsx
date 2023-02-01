@@ -9,8 +9,14 @@ import Footer from "../components/Footer";
 import {Fab} from "@mui/material";
 import {WhatsApp} from "@mui/icons-material";
 import Categories from "../components/Categories";
+import {useLocation} from "react-router-dom";
 
 export default function SubCategory(){
+
+    const location = useLocation()
+    const subCategory = location.pathname.split('/')[2]
+    console.log(subCategory)
+
     useEffect(()=>{
         window.scrollTo({
             top: 0,
