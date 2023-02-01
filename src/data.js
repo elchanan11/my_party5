@@ -4,7 +4,12 @@ import girlsGift from '../src/images/girlsGift.jpg'
 import choklates from '../src/images/cokolates.jpg'
 import baloons from '../src/images/baloons.jpg'
 import gift from './Giftim.jpg'
-
+import presentIcon from '../src/icons/172472_gift_present_icon (3).png'
+import baloonIcon from '../src/icons/baloonsIcon2.png'
+import partyIcon from '../src/icons/partyIcon.png'
+import cakeIcon from '../src/icons/cake.png'
+import choklateIcon from '../src/icons/choklate.png'
+import boxesIcon from '../src/icons/boxes.png'
 
 
 
@@ -38,37 +43,37 @@ export const slideImages = [
 export const mainCategories = [
     {
         id:1,
-        img:baloons,
+        img:baloonIcon,
         title:"בלונים",
         cat: "MainBalloonsEvents"
     },
     {
         id:2,
-        img:CategoryItem,
+        img:presentIcon,
         title:"מתנות",
         cat: "MainGifts"
     },
     {
         id:3,
-        img:CategoryItem,
+        img:partyIcon,
         title:"הכל למסיבה",
         cat: "MainForParty"
     },
     {
         id:4,
-        img:CategoryItem,
+        img:cakeIcon,
         title:"הכל לעוגה",
         cat: "MainForCake"
     },
     {
         id:5,
-        img:CategoryItem,
+        img:choklateIcon,
         title:"פרלינים שוקולד",
         cat: "MainChokolates"
     },
     {
         id:6,
-        img:CategoryItem,
+        img:boxesIcon,
         title:"מארזים",
         cat: "MBoxes"
     },
@@ -80,6 +85,12 @@ export const mainCategories = [
     },
     {
         id:8,
+        img:CategoryItem,
+        title:"שונות",
+        cat: "MainExtra"
+    },
+    {
+        id:9,
         img:CategoryItem,
         title:"שונות",
         cat: "MainExtra"
