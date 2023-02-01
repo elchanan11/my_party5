@@ -10,7 +10,8 @@ import './newsLetter.css'
 const Container = styled.div`
   height: 60vh;
   //background-color: #fdfdfd;
-  background-color: #DAEAF1;
+  //background-color: #DAEAF1;
+  background-color: #f0f4fa;
   display: flex;
   align-items: center;
   justify-content: center;

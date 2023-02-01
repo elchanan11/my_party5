@@ -6,6 +6,7 @@ import {mobile} from "../responsive";
 import {WhatsApp} from "@mui/icons-material";
 import {Fab} from "@mui/material";
 import MainCategoryItem from "./MainCategoryItem";
+import './newsLetter.css'
 
 const Container = styled.div`
 
@@ -41,9 +42,9 @@ const CategoryTitle = styled.h1`
 
 export default function MainCategories(){
     return(
-        <Container>
+        <Container >
 
-            <CategoryTitle>
+            <CategoryTitle >
                 קטגוריות מוצרים
             </CategoryTitle>
             <Wrapper>

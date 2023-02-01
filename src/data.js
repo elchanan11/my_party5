@@ -10,6 +10,9 @@ import partyIcon from '../src/icons/partyIcon.png'
 import cakeIcon from '../src/icons/cake.png'
 import choklateIcon from '../src/icons/choklate.png'
 import boxesIcon from '../src/icons/boxes.png'
+import saleIcon from '../src/icons/sale.png'
+import extraIcon from '../src/icons/extra.png'
+import holydaysIcon from '../src/icons/holydays.png'
 
 
 
@@ -79,21 +82,21 @@ export const mainCategories = [
     },
     {
         id:7,
-        img:CategoryItem,
+        img:saleIcon,
         title:"מבצעים",
         cat: "MainSales"
     },
     {
         id:8,
-        img:CategoryItem,
+        img:extraIcon,
         title:"שונות",
         cat: "MainExtra"
     },
     {
         id:9,
-        img:CategoryItem,
-        title:"שונות",
-        cat: "MainExtra"
+        img:holydaysIcon,
+        title:"חגים",
+        cat: "MainHolydays"
     },
 ]
 

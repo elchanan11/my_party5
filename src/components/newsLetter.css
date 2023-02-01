@@ -8,7 +8,7 @@
 }
 
 .lineUp{
-    animation: 5s anim-lineUp ease-out infinite;
+    animation: 5s anim-lineUp ease-out;
 }
 @keyframes anim-lineUp {
     0% {

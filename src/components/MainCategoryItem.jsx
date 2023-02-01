@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import {leptop, mobile, tablet} from "../responsive";
 import {Link} from "react-router-dom";
+import './newsLetter.css'
 //
 // const Container = styled.div`
 //   width: 150px;
@@ -99,16 +100,16 @@ const ImageContainer = styled.div`
   height: 150px;
   max-height: 100%;
   border-radius: 10px 10px 10px 10px;
-  background-color: #fae8e8;
+  background-color: #f6ebeb;
   box-shadow: 0px 0px 8px 1px rgb(196 196 196 / 50%);
   border-radius: 50%;
   justify-content: center;
   align-items: center;
   display: flex;
   flex: 1;
-  ${tablet({height: "120px", width:"120px"})}
-  ${leptop({height:"150px",width:"150px"})}
-  ${mobile({height:"100px",width:"100px"})}
+  ${tablet({height: "120px", width: "120px"})}
+  ${leptop({height: "150px", width: "150px"})}
+  ${mobile({height: "100px", width: "100px"})}
 `
 
 const Image = styled.img`
@@ -144,7 +145,7 @@ const Title = styled.div`
 export default function MainCategoryItem(props){
     console.log(props.item.cat)
     return(
-        <Container>
+        <Container className={"lineUp"}>
             <Link to={
                 '/subCategory/'+props.item.cat}
                   state={{title: props.item.title}}
@@ -154,7 +155,7 @@ export default function MainCategoryItem(props){
                     <Image src={props.item.img} alt={props.item.title}/>
                 </ImageContainer>
                 {/*<Info>*/}
-                    <Title>{props.item.title}</Title>
+                    <Title className={"lineUp"}>{props.item.title}</Title>
 
                 {/*</Info>*/}
             </Link>
