@@ -3,8 +3,9 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
-  background-color: #DC0000;
-  color: white;
+  background-color: #FFF9B6;
+  color: black;
+  
   height: 30px;
   display: flex;
   align-items: center;

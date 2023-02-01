@@ -22,7 +22,7 @@ const Container = styled.div`
   z-index: 4;
   // background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.9)),
     // url(${backgroundLogo}) center;
-  background-color: #D6E4E5;
+  background-color: #F9F3DF;
   ${tablet({flexDirection: 'column'})}
   ${mobile({flexDirection: 'column'})}
 `;
@@ -58,14 +58,15 @@ const SocialIcon = styled.div`
   height: 35px;
   border-radius: 50%;
   color: white;
-  background-color: #${(props) => props.color};
+    // background-color: #${(props) => props.color};
+  background-color: #f3d1aa;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: 8px;
   margin-left: 8px;
   cursor: pointer;
-  ${mobileMini({width:"32px",height:"32px",marginLeft:"5px",marginRight:"5px"})}
+  ${mobileMini({width: "32px", height: "32px", marginLeft: "5px", marginRight: "5px"})}
 `;
 
 const Center = styled.div`
@@ -124,7 +125,7 @@ const DeveloperDetails = styled.div`
   justify-content: center;
   direction: rtl;
   border-top: 1.5px lightgray solid;
-  background-color: #D6E4E5;
+  background-color: #F9F3DF;
 `;
 
 const DeveloperDetailsTitle = styled.h2`
@@ -146,7 +147,7 @@ const DevIcon = styled.div`
   height: 35px;
   border-radius: 50%;
   color: white;
-  background-color: #57b9ba;
+  background-color: #F3D1AAFF;
   display: flex;
   align-items: center;
   justify-content: center;
