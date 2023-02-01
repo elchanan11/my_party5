@@ -62,13 +62,13 @@ flex-direction: column;
   position: relative;
 
   ${mobile({minWidth:"280px"})}
-  &:hover ${Info} {
-    opacity: 1;
-  }
-  &:hover ${TitleContainer} {
-    opacity: 1;
-
-  }
+  // &:hover ${Info} {
+  //   opacity: 1;
+  // }
+  // &:hover ${TitleContainer} {
+  //   opacity: 1;
+  //
+  // }
 `;
 
 const Wrapper = styled.div`
@@ -89,6 +89,13 @@ const Image = styled.img`
   width: 75%;
   max-width: 300px;
   z-index: 2;
+  &:hover ${Info} {
+    opacity: 1;
+  }
+  &:hover ${TitleContainer} {
+    opacity: 1;
+
+  }
 `;
 
 const Icon = styled.div`
