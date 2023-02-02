@@ -99,6 +99,8 @@ const WhatsappLink = styled.div`
 const ReasultContainer = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+ 
 `
 
 export default function Navbar(props){
@@ -113,6 +115,7 @@ export default function Navbar(props){
     const [badgeAnimation,setBadgeAnimation] = useState("medium")
     const [isSearchFieldOpen, setIsSearchFiledOpen] = useState(false)
     const [isSearchResult, setIsSearchResult] = useState(false)
+    const [textSearch,setTextSearch] = useState("")
 
 
     useEffect(() => {
@@ -182,6 +185,10 @@ export default function Navbar(props){
             };
         }, []);
 
+        useEffect(()=>{
+          console.log("reloaded")
+        },[])
+
         const handleMediaQueryChange = (mediaQuery) => {
             if (mediaQuery.matches) {
                 setIsSmallScreen(true);
@@ -206,8 +213,18 @@ export default function Navbar(props){
         window.open(url);
     }
 
+    const handleSearchClicked = (e) => {
+        if (isSearchFieldOpen){
+            setIsSearchFiledOpen(!isSearchFieldOpen)
+            setIsSearchResult(false)
+            setTextSearch("")
+        }else {
+            setIsSearchFiledOpen(!isSearchFieldOpen)
+        }
+    }
+
     const handleSearchChanged = (e) => {
-        console.log(e.target.value)
+        setTextSearch(e.target.value)
         if (e.target.value.length > 1){
             setIsSearchResult(true)
         }else {
@@ -216,7 +233,7 @@ export default function Navbar(props){
     }
     return(
         <Container
-             style={{position:isNavVisible===true ? "absolute" : "sticky"}}
+             style={{position:isNavVisible===true || isSearchFieldOpen === true ? "absolute" : "sticky"}}
         >
             <Wrapper>
                 <Left>
@@ -233,7 +250,7 @@ export default function Navbar(props){
                         }
                         </MenuLink>
                     </Link>
-                        <MenuLink style={{marginLeft:"10px"}} onClick={()=>{setIsSearchFiledOpen(!isSearchFieldOpen)}}>
+                        <MenuLink style={{marginLeft:"10px"}} onClick={handleSearchClicked}>
                             {
                                 !isSearchFieldOpen ?
                                     <Search /> :
@@ -296,11 +313,11 @@ export default function Navbar(props){
                     <TextField onChange={handleSearchChanged}
                                fullWidth label="חפש מוצר"
                                id="fullWidth"
-                               style={{backgroundColor:"white",direction:"rtl",textAlign:"right"}}
+                               style={{backgroundColor:"whitesmoke",direction:"rtl",textAlign:"right"}}
                     />
                     {
                         isSearchResult &&
-                        <SearchReasult />
+                        <SearchReasult serchText={textSearch}/>
                     }
                 </ReasultContainer>
             }
