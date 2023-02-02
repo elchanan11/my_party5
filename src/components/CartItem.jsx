@@ -1,9 +1,11 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {deleteOneProduct} from "../redux/cartRedux";
-import {DeleteOutline} from "@mui/icons-material";
+import {DeleteOutline, WhatsApp} from "@mui/icons-material";
 import styled from "styled-components";
 import {mobile} from "../responsive";
 import {useDispatch} from "react-redux";
+import {useState} from "react";
+import {BASE_URL} from "../requestMethods";
 
 const Product = styled.div`
   display: flex;
@@ -82,16 +84,40 @@ const Button = styled.button`
   font-weight: 600;
 `;
 
+const ProductNumContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  
+`
+
 const ProductNum = styled.div`
+  width: 50px;
   display: flex;
   justify-content: flex-end;
   color: gray;
+  cursor: pointer;
 `
 export default function CartItem(props){
 
     const dispatch = useDispatch()
+    let postMessageToWatapp = "שלום אני מהאתר ואני מעוניין ב "
+    const [productName,setProductName] = useState("")
+    const [pageLink,setPageLink] = useState(null)
 
+    useEffect(()=>{
+        setProductName(props.cartItem.title)
+        let baseUrl = window.location.origin
+        setPageLink( baseUrl+ '/api/product/' + props.cartItem._id)
+    },[props.cartItem])
 
+    const handleWhatsAppClick = () => {
+
+        let url = `https://wa.me/+972539323849?text=${postMessageToWatapp+ productName +`  \n` + pageLink}`
+
+        window.open(url);
+
+        setProductName("")
+    }
 
     return(
         <Product >
@@ -114,22 +140,27 @@ export default function CartItem(props){
                 </ProductAmountContainer>
                 <ProductPrice>₪ {props.cartItem?.price}</ProductPrice>
             </PriceDetail>
-            <ProductNum >
-                <DeleteOutline
-                    onClick={()=>{
-                        dispatch(
-                            deleteOneProduct(
-                                {product:props.cartItem,
-                                    index:props.index,
-                                    price: parseInt(props.cartItem.price
-                                    )
-                                }
+            <ProductNumContainer>
+                <ProductNum onClick={handleWhatsAppClick}>
+                    <WhatsApp />
+                </ProductNum>
+                <ProductNum >
+                    <DeleteOutline
+                        onClick={()=>{
+                            dispatch(
+                                deleteOneProduct(
+                                    {product:props.cartItem,
+                                        index:props.index,
+                                        price: parseInt(props.cartItem.price
+                                        )
+                                    }
+                                )
                             )
-                        )
-                    }}
-                    style={{cursor:"pointer"}}
-                />
-            </ProductNum>
+                        }}
+                        style={{cursor:"pointer"}}
+                    />
+                </ProductNum>
+            </ProductNumContainer>
         </Product>
     )
 }
