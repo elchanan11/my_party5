@@ -10,12 +10,13 @@ const Container = styled.div`
   display: flex;
   position: relative;
   overflow: hidden;
-  max-height: 300px;
+  
 
   
   ${tablet({height: '300px',width: "100%"})}
-  ${leptop({height: '450px',width: "100%"})}
-  ${mobile({height: '150px'})}
+  
+  ${mobile({height: '300px'})}
+  ${leptop({height: '500px',width: "100%"})}
 `
 
 const Arrow = styled.div`
@@ -61,8 +62,8 @@ const Image = styled.img`
   object-fit:cover;
   width: 100%;
   ${tablet({height: '300px',width: "100%",objectFit:"fill"})}
-  ${leptop({height: '450px',objectFit:"fill",width: "100%"})}
-  ${mobile({objectFit:"cover",height: '150px',width: "100%"})}
+  ${leptop({height: '500px',objectFit:"fill",width: "100%"})}
+  ${mobile({objectFit:"cover",height: '300px',width: "100%"})}
 `
 
 const InfoContainer = styled.div`
