@@ -250,16 +250,6 @@ export default function Navbar(props){
                         }
                         </MenuLink>
                     </Link>
-                        <MenuLink style={{marginLeft:"10px"}} onClick={handleSearchClicked}>
-                            {
-                                !isSearchFieldOpen ?
-                                    <Search /> :
-                                    <Clear />
-                            }
-
-                        </MenuLink>
-
-
                 </Left>
                 <Center>
                     <Link to={"/"} aria-label='Back to home page'>
@@ -272,6 +262,15 @@ export default function Navbar(props){
                     >
                         <WhatsApp style={{color:"green"}} aria-label={'whatsapp link'} />
                     </WhatsappLink>
+
+                    <MenuLink style={{marginLeft:"10px",justifyContent:"flex-end"}} onClick={handleSearchClicked}>
+                        {
+                            !isSearchFieldOpen ?
+                                <Search /> :
+                                <Clear />
+                        }
+
+                    </MenuLink>
 
                     <MenuLink>
                         <MenuIcon
