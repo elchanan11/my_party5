@@ -12,18 +12,45 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   background-color: whitesmoke;
+  text-align: center;
+`
+const NoProducts = styled.div`
+  margin: 0;
+  padding: 0;
+  display: flex;
+  
+  background-color: whitesmoke;
+  text-align: center;
+  direction: rtl;
+  font-weight: 600;
+`
+const NoProductsReasult = styled.div`
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: whitesmoke;
+  text-align: center;
+  direction: rtl;
+  font-weight: 300;
 `
 
 export default function SearchReasult(props){
 
     const cart = useSelector(state=>state.cart)
     const [searchedProducts,setSearchedProducts] = useState([])
+    const [noProducts,setNoProducts] = useState(true)
 
     useEffect(()=>{
         const handleSearch = async () =>{
             const res = await publicRequest.get('product/search?filter='+props.serchText)
             console.log(res.data)
             setSearchedProducts(res.data)
+            if (res.data.length === 0){
+                setNoProducts(false)
+            }else {
+                setNoProducts(true)
+            }
         }
         if (props.serchText.length > 1){
             handleSearch()
@@ -31,6 +58,15 @@ export default function SearchReasult(props){
     },[props.serchText])
     return(
         <Container>
+            {
+                !noProducts &&
+                <NoProducts>
+                    לא הצלחנו למצוא פריטים התואמים:
+                    <NoProductsReasult>
+                        {"  ` "+props.serchText+" ` "}
+                    </NoProductsReasult>
+                </NoProducts>
+            }
             {searchedProducts.map((productItem,index)=>(
                 <SearchItems cartItem={productItem} key={index} index={index}/>
             ))}
