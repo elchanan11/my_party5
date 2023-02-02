@@ -25,8 +25,7 @@ export default function Home(){
         <div >
             <Announcment />
             <Navbar home={"home"}/>
-            {/*<Slider />*/}
-            <BgImage />
+            <Slider />
             <MainCategories  />
             <Products cat={"Reccomanded"} from={'home'}/>
             <Newsletter />

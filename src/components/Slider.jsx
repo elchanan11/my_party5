@@ -1,18 +1,21 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import { ArrowLeftOutlined, ArrowRightOutlined} from "@mui/icons-material";
  import {slideImages} from '../data'
-import {mobile} from "../responsive";
+import {leptop, mobile, tablet} from "../responsive";
 
 const Container = styled.div`
   width: 100%;
-  height: 100%;
+  height: 400px;
   display: flex;
   position: relative;
   overflow: hidden;
   max-height: 300px;
-  ${mobile({height: '250px'})}
-  box-shadow: 0 4px 2px -3px gray;
+
+  
+  ${tablet({height: '300px',width: "100%"})}
+  ${leptop({height: '450px',width: "100%"})}
+  ${mobile({height: '150px'})}
 `
 
 const Arrow = styled.div`
@@ -55,10 +58,11 @@ const ImageContainer = styled.div`
 `
 
 const Image = styled.img`
-  height: 100%;
+  object-fit:cover;
   width: 100%;
-  
-  ${mobile({height: '250px',width: "100%", objectFit:"cover"})}
+  ${tablet({height: '300px',width: "100%",objectFit:"fill"})}
+  ${leptop({height: '450px',objectFit:"fill",width: "100%"})}
+  ${mobile({objectFit:"cover",height: '150px',width: "100%"})}
 `
 
 const InfoContainer = styled.div`
@@ -88,6 +92,23 @@ const Button = styled.button`
 export default function Slider(){
 
     const [slideIndex,setSlideIndex] = useState(0)
+    const [count,setCount] = useState(0)
+
+    // useEffect(() => {
+    //     const timerId = setInterval(() => {
+    //         // Use a functional state update to correctly increment the count
+    //         setCount(count => count + 1);
+    //     }, 3000));
+
+    useEffect(() => {
+        setTimeout(() => {
+            setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0)
+            setCount(count+1)
+            console.log(count)
+        }, 2000);
+    }, [count]);
+
+
     const handleClick = (direction)=>{
         if (direction === 'left'){
             setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2)
