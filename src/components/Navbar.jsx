@@ -1,6 +1,6 @@
 import React, {useEffect, useMemo, useState} from "react";
 import styled from "styled-components";
-import {Search, ShoppingCartOutlined, WhatsApp} from "@mui/icons-material";
+import {Clear, Search, ShoppingCartOutlined, WhatsApp} from "@mui/icons-material";
 import {Autocomplete, Badge, CircularProgress, Menu, TextField} from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import Logo from '../logo-text.png'
@@ -9,6 +9,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {Link, Redirect, useHistory} from "react-router-dom";
 import { Navigate } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import './newsLetter.css'
 
 import {publicRequest} from "../requestMethods";
 import './navBar.css'
@@ -16,6 +17,7 @@ import {deleteProducts} from "../redux/cartRedux";
 import {logOut} from "../redux/userRedux";
 import {CSSTransition} from "react-transition-group";
 import {categoryData, mainCategories} from "../data";
+import SearchReasult from "./SearchReasult";
 
 const Container = styled.div`
   width: 100%;
@@ -38,34 +40,12 @@ const Wrapper = styled.div`
 `;
 const Left = styled.div`
   flex: 1;
-  height: 30px;
   display: flex;
-  padding: 1px;
   align-items: center;
-  
   justify-content: flex-start;
+  ${leptop({justifyContent:"flex-start"})}
+  ${mobile({flex:1,alignItems:"left"})}
 `;
-
-const Language = styled.span`
-  font-size: 14px;
-  cursor: pointer;
-  ${mobile({display: 'none'})}
-`
-
-const SearchContainer = styled.div`
-  border: 0.5px solid lightgrey;
-  display: flex;
-  align-items: center;
-  margin-left: 25px;
-  ${mobile({marginLeft: '7px'})}
-  padding: 5px;
-`
-
-const Input = styled.input`
-  border: none;
-  ${mobile({width: '50px'})};
-  text-align: right;
-`
 
 const Center = styled.div`
   flex: 1;
@@ -116,6 +96,11 @@ const WhatsappLink = styled.div`
   ${mobile({fontsize: '12px',marginRight:"0px" })}
 `
 
+const ReasultContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
 export default function Navbar(props){
     // const navigate = useNavigate();
 
@@ -123,6 +108,12 @@ export default function Navbar(props){
     const [quantityValue,setQuanValue] = useState(quantity)
     const [loding,setLoading] = useState(false)
     let postMessageToWatapp = "שלום אני מהאתר "
+    const [isNavVisible, setNavVisibility] = useState(false);
+    const [isSmallScreen, setIsSmallScreen] = useState(false);
+    const [badgeAnimation,setBadgeAnimation] = useState("medium")
+    const [isSearchFieldOpen, setIsSearchFiledOpen] = useState(false)
+    const [isSearchResult, setIsSearchResult] = useState(false)
+
 
     useEffect(() => {
         const makeAnimation = () =>{
@@ -180,9 +171,6 @@ export default function Navbar(props){
 
     /////////////////////////////////for Drop down menu/////////////////////////
 
-        const [isNavVisible, setNavVisibility] = useState(false);
-        const [isSmallScreen, setIsSmallScreen] = useState(false);
-        const [badgeAnimation,setBadgeAnimation] = useState("medium")
 
         useEffect(() => {
             const mediaQuery = window.matchMedia("(max-width: 700px)");
@@ -218,6 +206,14 @@ export default function Navbar(props){
         window.open(url);
     }
 
+    const handleSearchChanged = (e) => {
+        console.log(e.target.value)
+        if (e.target.value.length > 1){
+            setIsSearchResult(true)
+        }else {
+            setIsSearchResult(false)
+        }
+    }
     return(
         <Container
              style={{position:isNavVisible===true ? "absolute" : "sticky"}}
@@ -237,6 +233,15 @@ export default function Navbar(props){
                         }
                         </MenuLink>
                     </Link>
+                        <MenuLink style={{marginLeft:"10px"}} onClick={()=>{setIsSearchFiledOpen(!isSearchFieldOpen)}}>
+                            {
+                                !isSearchFieldOpen ?
+                                    <Search /> :
+                                    <Clear />
+                            }
+
+                        </MenuLink>
+
 
                 </Left>
                 <Center>
@@ -285,6 +290,20 @@ export default function Navbar(props){
 
                 </nav>
             </CSSTransition>
+            {
+                isSearchFieldOpen &&
+                <ReasultContainer>
+                    <TextField onChange={handleSearchChanged}
+                               fullWidth label="חפש מוצר"
+                               id="fullWidth"
+                               style={{backgroundColor:"white",direction:"rtl",textAlign:"right"}}
+                    />
+                    {
+                        isSearchResult &&
+                        <SearchReasult />
+                    }
+                </ReasultContainer>
+            }
         </Container>
     )
 }
