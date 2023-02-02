@@ -220,6 +220,11 @@ export default function Navbar(props){
             setTextSearch("")
         }else {
             setIsSearchFiledOpen(!isSearchFieldOpen)
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: "smooth"
+            });
         }
     }
 

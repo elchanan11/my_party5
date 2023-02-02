@@ -25,8 +25,8 @@ const ProductDetail = styled.div`
 `;
 
 const Image = styled.img`
-  width: 200px;
-  max-height: 200px;
+  width: 100px;
+  max-height: 100px;
   cursor: pointer;
 `;
 
