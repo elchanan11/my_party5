@@ -105,7 +105,7 @@ export default function Slider(){
             setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0)
             setCount(count+1)
             console.log(count)
-        }, 2000);
+        }, 5000);
     }, [count]);
 
 
