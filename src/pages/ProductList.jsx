@@ -139,7 +139,7 @@ export default function ProductList(){
             </FilterContainer>
             <Products cat={cat} sort={sort} fromProductsList={"fromProductsList"}/>
             <Footer />
-            <Fab size="large" color="secondary" aria-label="add"  style={{background:"white",color:"green",cursor:"pointer",zIndex:100, position:"fixed",bottom: 40,right:10}}>
+            <Fab size="large" color="secondary" aria-label="add"  style={{background:"white",color:"green",cursor:"pointer",zIndex:100, position:"fixed",bottom: 40,left:10}}>
                 <WhatsApp style={{width:"70%",height:"70%"}} onClick={()=>{
                     let postMessageToWatapp = "שלום אני מהאתר"
                     let url = `https://wa.me/+972539323849?text=${postMessageToWatapp}`;

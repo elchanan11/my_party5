@@ -42,13 +42,13 @@ const Left = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  ${leptop({justifyContent:"flex-start"})}
+  justify-content: space-between;
   ${mobile({flex:1,alignItems:"left"})}
 `;
 
 const Center = styled.div`
   flex: 1;
+  max-width: 200px;
   text-align: center;
 `;
 
@@ -66,7 +66,7 @@ const Right = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   ${leptop({justifyContent:"flex-end"})}
   ${mobile({flex:1,alignItems:"right"})}
 `;
@@ -88,12 +88,13 @@ const WhatsappLink = styled.div`
   align-items: center;
   border-radius: 50%;
   padding: 7px;
+  padding-right: 0;
+  padding-top: 0;
   background-color: #fff;
   justify-content: space-between;
   cursor: pointer;
   margin-right: 7px;
-  ${leptop({justifyContent:"flexEnd"})}
-  ${mobile({fontsize: '12px',marginRight:"0px" })}
+  ${mobile({fontsize: '22px',marginRight:"0px" })}
 `
 
 const ReasultContainer = styled.div`
@@ -255,6 +256,11 @@ export default function Navbar(props){
                         }
                         </MenuLink>
                     </Link>
+                    <WhatsappLink
+                        onClick={handleWhatsappClick}
+                    >
+                        <WhatsApp fontSize={"large"} style={{color:"green"}} aria-label={'whatsapp link'} />
+                    </WhatsappLink>
                 </Left>
                 <Center>
                     <Link to={"/"} aria-label='Back to home page'>
@@ -262,12 +268,6 @@ export default function Navbar(props){
                     </Link>
                 </Center>
                 <Right>
-                    <WhatsappLink
-                        onClick={handleWhatsappClick}
-                    >
-                        <WhatsApp style={{color:"green"}} aria-label={'whatsapp link'} />
-                    </WhatsappLink>
-
                     <MenuLink style={{marginLeft:"10px",justifyContent:"flex-end"}} onClick={handleSearchClicked}>
                         {
                             !isSearchFieldOpen ?

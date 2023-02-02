@@ -8,10 +8,7 @@ import './blackLink.css'
 
 import {
     BrowserRouter as Router,
-    Switch,
     Route,
-
-    Redirect,
     Routes, Navigate,
 } from 'react-router-dom'
 import {useSelector} from "react-redux";
@@ -62,13 +59,6 @@ const App = () => {
                 </Routes>
             </Router>
         </Container>
-
-      {/*<Home />*/}
-      {/* <ProductList />*/}
-      {/* <Product />*/}
-      {/*  {<Login />}*/}
-      {/*{<Register />}*/}
-      {/*{<Cart />}*/}
     </>
   )
 };
