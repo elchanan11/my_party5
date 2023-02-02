@@ -6,6 +6,7 @@ import {mobile} from "../responsive";
 import {useDispatch} from "react-redux";
 import {useState} from "react";
 import {BASE_URL} from "../requestMethods";
+import {useNavigate} from "react-router-dom";
 
 const Product = styled.div`
   display: flex;
@@ -25,7 +26,7 @@ const ProductDetail = styled.div`
 const Image = styled.img`
   width: 200px;
   max-height: 300px;
-  
+  cursor: pointer;
 `;
 
 const Details = styled.div`
@@ -99,6 +100,7 @@ const ProductNum = styled.div`
 `
 export default function CartItem(props){
 
+    const navigate = useNavigate()
     const dispatch = useDispatch()
     let postMessageToWatapp = "שלום אני מהאתר ואני מעוניין ב "
     const [productName,setProductName] = useState("")
@@ -107,7 +109,7 @@ export default function CartItem(props){
     useEffect(()=>{
         setProductName(props.cartItem.title)
         let baseUrl = window.location.origin
-        setPageLink( baseUrl+ '/api/product/' + props.cartItem._id)
+        setPageLink( baseUrl+ '/product/' + props.cartItem._id)
     },[props.cartItem])
 
     const handleWhatsAppClick = () => {
@@ -119,11 +121,16 @@ export default function CartItem(props){
         setProductName("")
     }
 
+    const handleToProductClick = () =>{
+        navigate(`/product/${props.cartItem._id}`)
+    }
+
     return(
         <Product >
 
             <ProductDetail>
                 <Image
+                    onClick={handleToProductClick}
                     src={props.cartItem?.img}/>
                 <Details>
                     <ProductName>
