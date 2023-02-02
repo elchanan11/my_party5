@@ -22,7 +22,7 @@ const Container = styled.div`
   z-index: 4;
   // background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.9)),
     // url(${backgroundLogo}) center;
-  background-color: #F9F3DF;
+  background-color: #e5d7b1;
   ${tablet({flexDirection: 'column'})}
   ${mobile({flexDirection: 'column'})}
 `;
@@ -58,8 +58,8 @@ const SocialIcon = styled.div`
   height: 35px;
   border-radius: 50%;
   color: white;
-    // background-color: #${(props) => props.color};
-  background-color: #f3d1aa;
+    background-color: #${(props) => props.color};
+  //background-color: #f3d1aa;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -116,7 +116,7 @@ const ContactItem = styled.div`
   text-align: right;
   font-size: 20px;
 `;
-const DeveloperDetails = styled.div`
+const DeveloperDetailsContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -126,7 +126,7 @@ const DeveloperDetails = styled.div`
   justify-content: center;
   direction: rtl;
   border-top: 1.5px lightgray solid;
-  background-color: #F9F3DF;
+  background-color: #e5d7b1;
 `;
 
 const DeveloperDetailsTitle = styled.h2`
@@ -148,7 +148,7 @@ const DevIcon = styled.div`
   height: 35px;
   border-radius: 50%;
   color: white;
-  background-color: #F3D1AAFF;
+  background-color: #4c8eca;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -267,7 +267,7 @@ const Footer = () => {
                     </ContactItem>
                 </Right>
             </Container>
-            <DeveloperDetails>
+            <DeveloperDetailsContainer>
                 <DeveloperDetailsTitle >
                     האתר נבנה ועוצב ב ❤️ על ידי WebEL
                 </DeveloperDetailsTitle>
@@ -289,7 +289,7 @@ const Footer = () => {
                     </DevIcon>
                 </DevIconContainer>
 
-            </DeveloperDetails>
+            </DeveloperDetailsContainer>
         </>
 
     );

@@ -71,7 +71,7 @@ const Info = styled.div`
 
 const Container = styled.div`
   //background-color: rgb(248, 248, 223);
-  background-color: #FFEACA;
+  background-color: #f3f1ef;
   flex-direction: column;
   flex-basis: 30.333333%;
   position: relative;
@@ -81,7 +81,7 @@ const Container = styled.div`
   height: 200px;
   border-style: solid;
   border-width: 1px;
-  border-color: #FFEACA;
+  border-color: #f3f1ef;
   //border-radius: 10px 10px 10px 10px;
   //box-shadow: 0px 0px 8px 1px rgb(196 196 196 / 50%);
   transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
@@ -100,7 +100,7 @@ const ImageContainer = styled.div`
   height: 150px;
   max-height: 100%;
   border-radius: 10px 10px 10px 10px;
-  background-color: #F9F3DF;
+  background-color: #F2CD5C;
   box-shadow: 0px 0px 8px 1px rgb(196 196 196 / 50%);
   border-radius: 50%;
   justify-content: center;

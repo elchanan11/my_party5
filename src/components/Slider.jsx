@@ -101,11 +101,13 @@ export default function Slider(){
     //     }, 3000));
 
     useEffect(() => {
+        let isActive = true;
         setTimeout(() => {
             setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0)
             setCount(count+1)
             console.log(count)
         }, 5000);
+        return () => { isActive = false };
     }, [count]);
 
 

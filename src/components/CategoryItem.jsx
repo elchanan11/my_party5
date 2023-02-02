@@ -99,7 +99,7 @@ const ImageContainer = styled.div`
   height: 150px;
   max-height: 100%;
   display: flex;
-  background-color: #f1d7b1;
+  background-color: #F2CD5C;
   box-shadow: 0px 0px 8px 1px rgb(196 196 196 / 50%);
   border-radius: 50%;
   justify-content: center;

@@ -11,7 +11,7 @@ const Container = styled.div`
   height: 60vh;
   //background-color: #fdfdfd;
   //background-color: #DAEAF1;
-  background-color: #FFEACA;
+  background-color: #f3f1ef;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -54,7 +54,7 @@ const Button = styled.button`
   flex: 1;
   border: none;
   cursor: pointer;
-  background-color: #F3D1AAFF;
+  background-color: #F2CD5C;
   color: white;
 `;
 const IconContainer = styled.button`

@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
-  background-color: #FFF9B6;
+  background-color: #F2CD5C;
   color: black;
   
   height: 30px;
