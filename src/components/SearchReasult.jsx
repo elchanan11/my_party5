@@ -43,13 +43,17 @@ export default function SearchReasult(props){
 
     useEffect(()=>{
         const handleSearch = async () =>{
-            const res = await publicRequest.get('product/search?filter='+props.serchText)
-            console.log(res.data)
-            setSearchedProducts(res.data)
-            if (res.data.length === 0){
-                setNoProducts(false)
-            }else {
-                setNoProducts(true)
+            try {
+                const res = await publicRequest.get('product/search?filter='+props.serchText)
+                console.log(res.data)
+                setSearchedProducts(res.data)
+                if (res.data.length === 0){
+                    setNoProducts(false)
+                }else {
+                    setNoProducts(true)
+                }
+            }catch (e) {
+                console.log(e)
             }
         }
         if (props.serchText.length > 1){

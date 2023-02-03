@@ -10,6 +10,7 @@ import {Link, useNavigate} from "react-router-dom";
 
 const Product = styled.div`
   display: flex;
+  max-height: 100px;
   justify-content: space-between;
   margin-bottom: 25px;
   width: 100%;
@@ -33,6 +34,7 @@ const Image = styled.img`
 const Details = styled.div`
   width: 100%;
   padding: 20px;
+  max-height: 100px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -80,9 +82,6 @@ export default function SearchItems(props){
     return(
         <Link reloadDocument to={`/product/${props.cartItem._id}`}  style={{ textDecoration: 'none' }} >
             <Product
-            //     onClick={()=>{
-            //     window.location.reload()
-            // }}
             >
                 <ProductDetail>
                     <Image
@@ -93,7 +92,7 @@ export default function SearchItems(props){
                             {props.cartItem?.title}
                         </ProductName>
                         <ProductId >
-                            {props.cartItem?.desc.substring(0,50)+"..."}
+                            {props.cartItem?.desc?.substring(0,100)}
                         </ProductId>
                     </Details>
                 </ProductDetail>
