@@ -10,9 +10,6 @@ const Container = styled.div`
   display: flex;
   position: relative;
   overflow: hidden;
-  
-
-  
   ${tablet({height: '450px',width: "100%"})}
   
   ${mobile({height: '300px'})}
