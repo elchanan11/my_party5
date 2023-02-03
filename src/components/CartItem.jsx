@@ -67,6 +67,8 @@ const ProductAmountContainer = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  font-size: 22px;
+  text-decoration: line-through;
 `;
 
 const ProductAmount = styled.div`
@@ -147,10 +149,13 @@ export default function CartItem(props){
                 </Details>
             </ProductDetail>
             <PriceDetail>
-                <ProductAmountContainer>
-
-                </ProductAmountContainer>
-                <ProductPrice>₪ {props.cartItem?.price}</ProductPrice>
+                {
+                    props.cartItem?.price !== props.cartItem?.updatedPrice &&
+                    <ProductAmountContainer>
+                        ₪{props.cartItem?.price}
+                    </ProductAmountContainer>
+                }
+                <ProductPrice>₪ {props.cartItem?.updatedPrice}</ProductPrice>
             </PriceDetail>
             <ProductNumContainer>
                 <ProductNum onClick={handleWhatsAppClick}>

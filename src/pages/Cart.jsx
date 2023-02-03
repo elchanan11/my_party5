@@ -198,13 +198,14 @@ const Cart = () => {
                     <Summary>
                         <SummaryTitle>סיכום הזמנה</SummaryTitle>
                         <SummaryItem>
-                            <SummaryItemText>Subtotal</SummaryItemText>
-                            <SummaryItemPrice>₪ {cart.total > 0 ? cart.total : 0}</SummaryItemPrice>
+
+                            <SummaryItemPrice>₪ {cart.totalDiscount }</SummaryItemPrice>
+                            <SummaryItemText>:הנחה</SummaryItemText>
                         </SummaryItem>
 
                         <SummaryItem type="total">
-                            <SummaryItemText>Total</SummaryItemText>
                             <SummaryItemPrice>₪ {cart.total > 0 ? cart.total : 0}</SummaryItemPrice>
+                            <SummaryItemText>:סך הכל</SummaryItemText>
                         </SummaryItem>
                         <IconConainer>
                             <Icon color={'82CD47'} onClick={handleWhatsAppClick}>
