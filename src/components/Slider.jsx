@@ -13,7 +13,7 @@ const Container = styled.div`
   
 
   
-  ${tablet({height: '300px',width: "100%"})}
+  ${tablet({height: '450px',width: "100%"})}
   
   ${mobile({height: '300px'})}
   ${leptop({height: '500px',width: "100%"})}
@@ -61,7 +61,7 @@ const ImageContainer = styled.div`
 const Image = styled.img`
   object-fit:cover;
   width: 100%;
-  ${tablet({height: '300px',width: "100%",objectFit:"fill"})}
+  ${tablet({height: '450px',width: "100%",objectFit:"fill"})}
   ${leptop({height: '500px',objectFit:"fill",width: "100%"})}
   ${mobile({objectFit:"cover",height: '300px',width: "100%"})}
 `

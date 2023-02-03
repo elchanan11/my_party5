@@ -7,7 +7,9 @@ import sliderBaloon from '../src/images/sliderBaloons.jpg'
 import sliderBaloon3 from '../src/images/slider3.jpg'
 import sliderBaloon4 from '../src/images/slider4.jpg'
 import choklates from '../src/images/cokolates.jpg'
+import ballon from '../src/bgImg.jpg'
 import baloons from '../src/images/baloons.jpg'
+import baloon2 from '../src/bglogo2.jpg'
 import gift from './Giftim.jpg'
 import presentIcon from '../src/icons/172472_gift_present_icon (3).png'
 import baloonIcon from '../src/icons/baloonsIcon2.png'
@@ -27,7 +29,7 @@ import holydaysIcon from '../src/icons/holydays.png'
 export const slideImages = [
     {
         id:1,
-        img:   sliderBaloon4,
+        img:   baloon2,
         title: "בובת ברבי",
         desc: "אל תפספס את המוצר הזה!!",
         bg: "F5EDDC" ,
