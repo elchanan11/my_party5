@@ -89,13 +89,13 @@ const Image = styled.img`
   width: 75%;
   max-width: 300px;
   z-index: 2;
-  &:hover ${Info} {
-    opacity: 1;
-  }
-  &:hover ${TitleContainer} {
-    opacity: 1;
-
-  }
+  // &:hover ${Info} {
+  //   opacity: 1;
+  // }
+  // &:hover ${TitleContainer} {
+  //   opacity: 1;
+  //
+  // }
 `;
 
 const Icon = styled.div`
@@ -167,19 +167,19 @@ export default function ProductItem(props){
         <Container onClick={handleImageClicked}>
             <Circle />
             <Image loading="lazy" src={props.item.img} onLoad={handleImageLoded} alt={`${props.item.title}`}/>
-            <Info>
-                <Icon onClick={handleAddTOCartClick}>
-                    <ShoppingCartOutlined />
-                </Icon>
+            {/*<Info>*/}
+            {/*    <Icon onClick={handleAddTOCartClick}>*/}
+            {/*        <ShoppingCartOutlined />*/}
+            {/*    </Icon>*/}
 
-                <Icon >
-                    <Search onClick={handleSearchClick}/>
-                </Icon>
+            {/*    <Icon >*/}
+            {/*        <Search onClick={handleSearchClick}/>*/}
+            {/*    </Icon>*/}
 
-                <Icon onClick={handleWhatsappClick}>
-                    <WhatsApp />
-                </Icon>
-            </Info>
+            {/*    <Icon onClick={handleWhatsappClick}>*/}
+            {/*        <WhatsApp />*/}
+            {/*    </Icon>*/}
+            {/*</Info>*/}
             {/*<TitleContainer>*/}
             {/*    /!*<Title>*!/*/}
             {/*    {product.title}*/}

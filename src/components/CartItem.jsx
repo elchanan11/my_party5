@@ -30,16 +30,20 @@ const Image = styled.img`
 `;
 
 const Details = styled.div`
-  padding: 20px;
+  width: 100%;
+  padding-left: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
 `;
 
-const ProductName = styled.span``;
+const ProductName = styled.div`
+  font-weight: 600;
+  text-align: center;
+`;
 
-const ProductId = styled.span`
- 
+const ProductId = styled.div`
+  text-align: center;
 `;
 
 const ProductColor = styled.div`
@@ -79,6 +83,7 @@ const ProductPrice = styled.div`
 
 const Button = styled.button`
   width: 100%;
+  height: 100%;
   padding: 10px;
   background-color: black;
   color: white;
@@ -134,10 +139,10 @@ export default function CartItem(props){
                     src={props.cartItem?.img}/>
                 <Details>
                     <ProductName>
-                        <b>Product:</b> {props.cartItem?.title}
+                        {props.cartItem?.title}
                     </ProductName>
                     <ProductId>
-                        <b>ID:</b> <div style={{width:"3px"}}>{props.cartItem?._id.substring(0,8)}...</div>
+                         {props.cartItem?.desc?.substring(0,100)}
                     </ProductId>
                 </Details>
             </ProductDetail>
