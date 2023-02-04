@@ -221,11 +221,11 @@ export default function Navbar(props){
             setTextSearch("")
         }else {
             setIsSearchFiledOpen(!isSearchFieldOpen)
-            window.scrollTo({
-                top: 0,
-                left: 0,
-                behavior: "smooth"
-            });
+            // window.scrollTo({
+            //     top: 0,
+            //     left: 0,
+            //     behavior: "smooth"
+            // });
         }
     }
 
@@ -239,7 +239,7 @@ export default function Navbar(props){
     }
     return(
         <Container
-             style={{position:isNavVisible===true || isSearchFieldOpen === true ? "absolute" : "sticky"}}
+             style={{position:"sticky"}}
         >
             <Wrapper>
                 {
@@ -247,14 +247,11 @@ export default function Navbar(props){
                     <ReasultContainer>
                         <input onChange={handleSearchChanged}
                                    placeholder={"חפש מוצרים"}
-                                   id="fullWidth"
-                                   inputProps={{min: 0, style: { textAlign: 'center' }}}
-                                   variant="standard"
-                                   style={{backgroundColor:"whitesmoke",
+                                   style={{backgroundColor:"white",
                                        width :" 100%",
                                        height:"50px",
                                        boxSizing: "border-box",
-                                       border: "2px solid #ccc",
+                                       border:"none",
                                        borderRadius: "2px",
 
 
