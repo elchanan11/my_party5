@@ -62,7 +62,7 @@ const Container = styled.div`
   flex: 1;
   margin: 5px;
   min-width: 350px;
-flex-direction: column;
+  flex-direction: column;
   height: 350px;
   display: flex;
   align-items: center;
@@ -70,14 +70,17 @@ flex-direction: column;
   background-color: #f3ecec;
   position: relative;
 
-  ${mobile({minWidth:"280px"})}
-  // &:hover ${Info} {
-  //   opacity: 1;
-  // }
-  // &:hover ${TitleContainer} {
-  //   opacity: 1;
-  //
-  // }
+  &:hover {
+    background-color: #e6dada;
+  }
+
+  ${mobile({minWidth: "280px"})} // &:hover ${Info} {
+          //   opacity: 1;
+          // }
+                  // &:hover ${TitleContainer} {
+          //   opacity: 1;
+          //
+          // }
 `;
 
 const Wrapper = styled.div`
