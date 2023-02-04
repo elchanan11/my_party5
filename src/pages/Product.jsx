@@ -285,6 +285,7 @@ const Product = () => {
     const handleAddTOCartClick = () => {
         const itemFound = cart.products.some(item=> item._id === product._id)
         if (!itemFound){
+            console.log(product)
             dispatch(
                 addProduct({product, quantity,price: parseInt(product.price)})
             )

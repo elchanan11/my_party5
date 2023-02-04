@@ -14,7 +14,7 @@ const cartSlice = createSlice({
             state.quantity = state.quantity + action.payload.quantity;
             state.productQuantity = action.payload.quantity;
             state.products.push(action.payload.product);
-            state.total += action.payload.price * action.payload.quantity
+            state.total += parseInt(action.payload.product.updatedPrice) * action.payload.quantity
             state.totalDiscount += action.payload.product.price - action.payload.product.updatedPrice
         },
         deleteProducts: (state)=>{
@@ -22,13 +22,15 @@ const cartSlice = createSlice({
             state.productQuantity = 0;
             state.products = [];
             state.total = 0;
+            state.totalDiscount = 0;
             state.index = 0;
         },
         deleteOneProduct: (state,action)=>{
             state.quantity = state.quantity - 1;
             state.productQuantity = state.quantity - 1;
             state.products.splice(action.payload.index,1);
-            state.total = state.total - action.payload.product.price;
+            state.total = state.total - action.payload.product.updatedPrice;
+            state.totalDiscount = state.totalDiscount - (action.payload.product.price - action.payload.product.updatedPrice);
         },
     },
 })

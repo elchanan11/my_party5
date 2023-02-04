@@ -101,7 +101,7 @@ const ReasultContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
- 
+ flex: 3;
 `
 
 export default function Navbar(props){
@@ -242,49 +242,88 @@ export default function Navbar(props){
              style={{position:isNavVisible===true || isSearchFieldOpen === true ? "absolute" : "sticky"}}
         >
             <Wrapper>
-                <Left>
-                    <Link to={"/cart"}>
-                        <MenuLink style={{marginLeft:"20px"}}>
-                        {
-                            // !loding ?
-                                    <Badge style={{marginRight:4}} color="primary" badgeContent={quantityValue} aria-label='Go to cart'>
-                                        <ShoppingCartOutlined fontSize={badgeAnimation} />
-                                    </Badge>
-                                // :
-                                // <CircularProgress size="2rem" />
+                {
+                    isSearchFieldOpen ?
+                    <ReasultContainer>
+                        <input onChange={handleSearchChanged}
+                                   placeholder={"חפש מוצרים"}
+                                   id="fullWidth"
+                                   inputProps={{min: 0, style: { textAlign: 'center' }}}
+                                   variant="standard"
+                                   style={{backgroundColor:"whitesmoke",
+                                       width :" 100%",
+                                       height:"50px",
+                                       boxSizing: "border-box",
+                                       border: "2px solid #ccc",
+                                       borderRadius: "2px",
 
-                        }
-                        </MenuLink>
-                    </Link>
-                    <WhatsappLink
-                        onClick={handleWhatsappClick}
-                    >
-                        <WhatsApp fontSize={"large"} style={{color:"green"}} aria-label={'whatsapp link'} />
-                    </WhatsappLink>
-                </Left>
-                <Center>
-                    <Link to={"/"} aria-label='Back to home page'>
-                        <Logo1 src={Logo} style={{marginRight:"5px"}} alt={"לוגו"}/>
-                    </Link>
-                </Center>
-                <Right>
-                    <MenuLink style={{marginLeft:"10px",justifyContent:"flex-end"}} onClick={handleSearchClicked}>
-                        {
-                            !isSearchFieldOpen ?
-                                <Search /> :
-                                <Clear />
-                        }
 
-                    </MenuLink>
 
-                    <MenuLink>
-                        <MenuIcon
-                            onClick={toggleNav}
-                            className="Burger"
-                            aria-label='open navigation bar'
+                                       direction:"rtl"
+                                       ,textAlign:"right",
+                                       paddingRight : "3 px",
+                                       alignItems:"center",
+                                       display:"flex",
+                                       fontSize:"20px"
+                                    }}
                         />
-                    </MenuLink>
-                </Right>
+                        {
+                            isSearchResult &&
+                            <SearchReasult serchText={textSearch}/>
+                        }
+                        <Clear
+                            onClick={handleSearchClicked}
+                            fontSize={"large"}
+                            style={{position:"absolute",top:16}}
+                        />
+                    </ReasultContainer> :
+                        <>
+                            <Left>
+                                <Link to={"/cart"}>
+                                    <MenuLink style={{marginLeft:"20px"}}>
+                                        {
+                                            // !loding ?
+                                            <Badge style={{marginRight:4}} color="primary" badgeContent={quantityValue} aria-label='Go to cart'>
+                                                <ShoppingCartOutlined fontSize={badgeAnimation} />
+                                            </Badge>
+                                            // :
+                                            // <CircularProgress size="2rem" />
+
+                                        }
+                                    </MenuLink>
+                                </Link>
+                                <WhatsappLink
+                                    onClick={handleWhatsappClick}
+                                >
+                                    <WhatsApp fontSize={"large"} style={{color:"green"}} aria-label={'whatsapp link'} />
+                                </WhatsappLink>
+                            </Left>
+                            <Center>
+                                <Link to={"/"} aria-label='Back to home page'>
+                                    <Logo1 src={Logo} style={{marginRight:"5px"}} alt={"לוגו"}/>
+                                </Link>
+                            </Center>
+                            <Right>
+                                <MenuLink style={{marginLeft:"10px",justifyContent:"flex-end"}} onClick={handleSearchClicked}>
+                                    {
+                                        // !isSearchFieldOpen ?
+                                            <Search />
+                                        // :
+                                            // <Clear />
+                                    }
+
+                                </MenuLink>
+
+                                <MenuLink>
+                                    <MenuIcon
+                                        onClick={toggleNav}
+                                        className="Burger"
+                                        aria-label='open navigation bar'
+                                    />
+                                </MenuLink>
+                            </Right>
+                        </>
+                }
             </Wrapper>
             <CSSTransition
                 in={isNavVisible}
@@ -311,20 +350,20 @@ export default function Navbar(props){
 
                 </nav>
             </CSSTransition>
-            {
-                isSearchFieldOpen &&
-                <ReasultContainer>
-                    <TextField onChange={handleSearchChanged}
-                               fullWidth label="חפש מוצר"
-                               id="fullWidth"
-                               style={{backgroundColor:"whitesmoke",direction:"rtl",textAlign:"right"}}
-                    />
-                    {
-                        isSearchResult &&
-                        <SearchReasult serchText={textSearch}/>
-                    }
-                </ReasultContainer>
-            }
+            {/* {*/}
+            {/*    isSearchFieldOpen &&*/}
+            {/*    <ReasultContainer>*/}
+            {/*        <TextField onChange={handleSearchChanged}*/}
+            {/*                   fullWidth label="חפש מוצר"*/}
+            {/*                   id="fullWidth"*/}
+            {/*                   style={{backgroundColor:"whitesmoke",direction:"rtl",textAlign:"right"}}*/}
+            {/*        />*/}
+            {/*        {*/}
+            {/*            isSearchResult &&*/}
+            {/*            <SearchReasult serchText={textSearch}/>*/}
+            {/*        }*/}
+            {/*    </ReasultContainer>*/}
+            {/*}*/}
         </Container>
     )
 }

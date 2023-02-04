@@ -27,7 +27,7 @@ const ProductDetail = styled.div`
 
 const Image = styled.img`
   width: 100px;
-  max-height: 100px;
+  height: 100px;
   cursor: pointer;
 `;
 

@@ -43,10 +43,19 @@ const TitleContainer = styled.div`
 
 const Title = styled.h2`
   font-weight: 500;
-  font-size: 20px;
+  font-size: 21px;
 `
-const Price = styled.div`
-  font-size: 15px;
+
+
+const Price = styled.span`
+  font-weight: 100;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: line-through;
+`;
+
+const UpdatedPrice = styled.div`
+  font-size: 18px;
 `
 
 const Container = styled.div`
@@ -188,9 +197,15 @@ export default function ProductItem(props){
             <Title>
                 {product.title}
             </Title>
-            <Price>
-                {product.price}₪
-            </Price>
+            {
+                product?.price !== product?.updatedPrice &&
+                    <Price>
+                        {product?.price}₪
+                    </Price>
+            }
+            <UpdatedPrice>
+                {product?.updatedPrice}₪
+            </UpdatedPrice>
         </Container>
     )
 }
