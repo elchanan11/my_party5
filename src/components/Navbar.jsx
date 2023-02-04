@@ -250,9 +250,9 @@ export default function Navbar(props){
                                    style={{backgroundColor:"white",
                                        width :" 100%",
                                        height:"50px",
-                                       boxSizing: "border-box",
+
                                        border:"none",
-                                       borderRadius: "2px",
+
 
 
 
