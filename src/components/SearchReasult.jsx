@@ -7,7 +7,7 @@ import SearchItems from "./SearchItems";
 import {publicRequest} from "../requestMethods";
 
 const Container = styled.div`
-  margin: 0;
+  margin-top: 10px;
   padding: 0;
   display: flex;
   flex-direction: column;
