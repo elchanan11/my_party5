@@ -86,7 +86,7 @@ const InfoAndIconContainer = styled.div`
 `
 
 const InfoContainer = styled.div`
-  flex: 0.5;
+  flex: 2;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -197,7 +197,8 @@ const IconContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 1;
+  flex: 0.5;
+  bottom: 0;
   padding-top: 20px;
   ${mobile({justifyContent: "center"})}
 `
