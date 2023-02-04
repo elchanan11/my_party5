@@ -98,10 +98,10 @@ const WhatsappLink = styled.div`
 `
 
 const ReasultContainer = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
- flex: 3;
 `
 
 export default function Navbar(props){
@@ -247,8 +247,8 @@ export default function Navbar(props){
                     <ReasultContainer>
                         <input onChange={handleSearchChanged}
                                    placeholder={"חפש מוצרים"}
-                                   style={{backgroundColor:"white",
-                                       width :" 100%",
+                                   style={{
+                                       backgroundColor:"white",
                                        height:"50px",
 
                                        border:"none",
@@ -258,7 +258,7 @@ export default function Navbar(props){
 
                                        direction:"rtl"
                                        ,textAlign:"right",
-                                       paddingRight : "3 px",
+                                       marginRight : "3 px",
                                        alignItems:"center",
                                        display:"flex",
                                        fontSize:"20px"
