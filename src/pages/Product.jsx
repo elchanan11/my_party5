@@ -72,8 +72,8 @@ const ImageNote = styled.span`
 const Image = styled.img`
   width: 100%;
   max-width: 400px;
-  max-height: 450px;
-  height: 90vh;
+  height: 400px;
+  
   ${mobile({height: '80%'})}
 `;
 const InfoAndIconContainer = styled.div`
