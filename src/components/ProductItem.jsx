@@ -25,7 +25,7 @@ const Info = styled.div`
 const TitleContainer = styled.div`
   opacity: 0;
   width: 100%;
-  height: 60px;
+  height: 40px;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -49,7 +49,7 @@ const Title = styled.h2`
 
 const Price = styled.span`
   font-weight: 100;
-  font-size: 14px;
+  font-size: 12px;
   text-align: center;
   text-decoration: line-through;
 `;
@@ -93,6 +93,7 @@ const Circle = styled.div`
   height: 200px;
   border-radius: 50%;
   background-color: white;
+  margin-bottom:5px ;
   position: absolute;
 `;
 
