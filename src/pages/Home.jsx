@@ -11,6 +11,7 @@ import {WhatsApp} from "@mui/icons-material";
 import BgImage from "../components/BgImage";
 import Newsletter from "../components/NewsLetter";
 import MainCategories from "../components/MainCategories";
+import SliderEx from "../components/SliderEx";
 
 export default function Home(){
     useEffect(()=>{
@@ -25,7 +26,8 @@ export default function Home(){
         <div >
             <Announcment />
             <Navbar home={"home"}/>
-            <Slider />
+            {/*<Slider />*/}
+            <SliderEx />
             <MainCategories  />
             <Products cat={"Reccomanded"} from={'home'}/>
             <Newsletter />

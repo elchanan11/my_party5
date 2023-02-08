@@ -3,6 +3,8 @@ import CategoryItem from './img_25.png';
 import girlsGift from '../src/images/girlsGift.jpg'
 import Gift from '../src/images/cokolates.jpg'
 import bg from '../src/bglogo3r.jpg'
+import important from '../src/imm.jpg'
+
 import sliderBaloon from '../src/images/sliderBaloons.jpg'
 import sliderBaloon3 from '../src/images/slider3.jpg'
 import sliderBaloon4 from '../src/images/slider4.jpg'
@@ -30,21 +32,21 @@ import holydaysIcon from '../src/icons/holydays.png'
 export const slideImages = [
     {
         id:1,
-        img:   bbb,
+        img:   important,
         title: "בובת ברבי",
         desc: "אל תפספס את המוצר הזה!!",
         bg: "F5EDDC" ,
     },
     {
         id:2,
-        img:   sliderBaloon,
+        img:   important,
         title: "בובת ברבי",
         desc: "בוובת ברבי ייחודית!!",
         bg: "F5EDDC" ,
     },
     {
         id:3,
-        img:   sliderBaloon3,
+        img:   important,
         title: "בובת ברבי",
         desc: "בוובת ברבי ייחודית!!",
         bg: "fff" ,
