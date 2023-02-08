@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import {mobile} from "../responsive";
-import bg2 from '../bglogo2.jpg'
 
 const Container = styled.div`
   width: 100%;
@@ -16,9 +15,7 @@ const Container = styled.div`
 `
 
 const ImageContainer = styled.img`
-   //
-   // background: repeating-linear-gradient(rgb(255, 245, 210,0.1), rgba(248, 248, 223,0.7)),
-   // url(${bg2}) center;
+   
   
   height: 400px;
   object-fit: cover;
@@ -32,7 +29,7 @@ export default function BgImage(){
   return(
         <>
           <Container>
-            <ImageContainer src={bg2} alt={"תמונת מסך בית"}>
+            <ImageContainer src={""} alt={"תמונת מסך בית"}>
 
             </ImageContainer>
           </Container>

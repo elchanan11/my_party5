@@ -1,20 +1,11 @@
 
-import CategoryItem from './img_25.png';
-import girlsGift from '../src/images/girlsGift.jpg'
-import Gift from '../src/images/cokolates.jpg'
-import bg from '../src/bglogo3r.jpg'
-import important from '../src/imm.jpg'
+import CategoryItem from './images/img_25.png';
 
-import sliderBaloon from '../src/images/sliderBaloons.jpg'
-import sliderBaloon3 from '../src/images/slider3.jpg'
-import sliderBaloon4 from '../src/images/slider4.jpg'
-import choklates from '../src/images/cokolates.jpg'
-import ballon from '../src/bgImg.jpg'
-import bbb from '../src/n.jpg'
+import important from './images/imm.jpg'
 
-import baloons from '../src/images/baloons.jpg'
-import baloon2 from '../src/bglogo2.jpg'
-import gift from './Giftim.jpg'
+
+import bbb from './images/n.jpg'
+
 import presentIcon from '../src/icons/172472_gift_present_icon (3).png'
 import baloonIcon from '../src/icons/baloonsIcon2.png'
 import partyIcon from '../src/icons/partyIcon.png'
@@ -35,21 +26,21 @@ export const slideImages = [
         id:1,
         img:   important,
         title: "בובת ברבי",
-        desc: "אל תפספס את המוצר הזה!!",
+        desc: "תמונה מתחלפת",
         bg: "F5EDDC" ,
     },
     {
         id:2,
         img:   important,
         title: "בובת ברבי",
-        desc: "בוובת ברבי ייחודית!!",
+        desc: "תמונה מתחלפת",
         bg: "F5EDDC" ,
     },
     {
         id:3,
         img:   important,
         title: "בובת ברבי",
-        desc: "בוובת ברבי ייחודית!!",
+        desc: "תמונה מתחלפת",
         bg: "fff" ,
     },
     {
@@ -63,21 +54,21 @@ export const slideImages = [
         id:5,
         img:   important,
         title: "בובת ברבי",
-        desc: "בוובת ברבי ייחודית!!",
+        desc: "תמונה מתחלפת",
         bg: "fff" ,
     },
     {
         id:6,
         img:   important,
         title: "בובת ברבי",
-        desc: "בוובת ברבי ייחודית!!",
+        desc: "תמונה מתחלפת",
         bg: "F5EDDC" ,
     },
     {
         id:7,
         img:   important,
         title: "בובת ברבי",
-        desc: "בוובת ברבי ייחודית!!",
+        desc: "תמונה מתחלפת",
         bg: "fff" ,
     },
 ]
@@ -143,7 +134,6 @@ export const mainCategories = [
 export const subCategiries = [
     {
         id:1,
-        img:baloons,
         title:"זרי בלוני הליום",
         cat: "HeliumBalloonGarlands",
         subCat: "MainBalloonsEvents"
@@ -199,7 +189,6 @@ export const subCategiries = [
     },
     {
         id:9,
-        img:girlsGift,
         title:"מתנות לנערות",
         cat: "GiftsForGirls",
         subCat: "MainGifts"
@@ -346,7 +335,6 @@ export const subCategiries = [
     },
     {
         id:30,
-        img:baloons,
         title:`פרלינים "פרלין"`,
         cat: "pralinesPraline",
         subCat: "MainChokolates"
@@ -389,7 +377,6 @@ export const subCategiries = [
 export const categoryData = [
     {
         id:1,
-        img:baloons,
         title:"בלונים לאירועים",
         cat: "BalloonsEvents"
     },
@@ -437,7 +424,6 @@ export const categoryData = [
     },
     {
         id:9,
-        img:girlsGift,
         title:"מתנות לילדות/נערות",
         cat: "GiftsForGirls"
     },
@@ -491,7 +477,6 @@ export const categoryData = [
     },
     {
         id:18,
-        img:choklates,
         title:"שוקולדים",
         cat: "Chocolates"
     },

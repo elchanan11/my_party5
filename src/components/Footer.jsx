@@ -1,5 +1,3 @@
-import logo from '../logo.png'
-import backgroundLogo from '../img_23.png'
 import {
     Facebook,
     Instagram, LocationOnOutlined, Mail,
@@ -9,6 +7,7 @@ import {
     Room,
     Twitter, WhatsApp,
 } from "@mui/icons-material";
+import logo from '../images/logo.png'
 import styled from "styled-components";
 import {leptop, mobile, mobileMini, tablet} from "../responsive";
 import {Link} from "react-router-dom";
@@ -20,8 +19,7 @@ import PersonAddIcon from '@mui/icons-material/PersonAdd';
 const Container = styled.div`
   display: flex;
   z-index: 4;
-  // background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.9)),
-    // url(${backgroundLogo}) center;
+  
   background-color: #e5d7b1;
   ${tablet({flexDirection: 'column'})}
   ${mobile({flexDirection: 'column'})}

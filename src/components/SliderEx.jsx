@@ -47,7 +47,7 @@ const SliderEx = () => {
                 {slideImages.map((img, i) => {
                     return (
                         <SwiperSlide key={i}>
-                            <img src={img.img} alt="" />
+                            <img src={img.img} alt={img.desc} />
                         </SwiperSlide>
                     );
                 })}

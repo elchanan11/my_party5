@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {Clear, Search, ShoppingCartOutlined, WhatsApp} from "@mui/icons-material";
 import {Autocomplete, Badge, CircularProgress, Menu, TextField} from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
-import Logo from '../logo-text.png'
+import Logo from '../images/logo-text.png'
 import {leptop, mobile} from "../responsive";
 import {useDispatch, useSelector} from "react-redux";
 import {Link, Redirect, useHistory} from "react-router-dom";
@@ -142,35 +142,6 @@ export default function Navbar(props){
         }
     }
     , [quantity]);
-
-    // const [query,setQuery] = useState("")
-    // const [products,setProducts] = useState([])
-
-
-
-    // useEffect(()=>{
-    //     const fetchUsers = async ()=>{
-    //         try {
-    //             const res =  await publicRequest.get(`/product`)
-    //             setProducts(res.data)
-    //         }catch (e) {
-    //             console.log(e)
-    //         }
-    //     }
-    //     fetchUsers()
-    // },[])
-
-    // useEffect(()=>{
-    //     const getProduct = async () => {
-    //         // const res =  await publicRequest.get(`/product/find/${query._id}`)
-    //          console.log(query)
-    //          navigate(`/product/${query._id}`)
-    //     }
-    //     if (query !== "") {
-    //         getProduct()
-    //     }
-    //
-    // },[query])
 
 
     /////////////////////////////////for Drop down menu/////////////////////////
