@@ -10,7 +10,8 @@ import sliderBaloon3 from '../src/images/slider3.jpg'
 import sliderBaloon4 from '../src/images/slider4.jpg'
 import choklates from '../src/images/cokolates.jpg'
 import ballon from '../src/bgImg.jpg'
-import bbb from '../src/bb1.jpg'
+import bbb from '../src/n.jpg'
+
 import baloons from '../src/images/baloons.jpg'
 import baloon2 from '../src/bglogo2.jpg'
 import gift from './Giftim.jpg'
@@ -46,6 +47,34 @@ export const slideImages = [
     },
     {
         id:3,
+        img:   important,
+        title: "בובת ברבי",
+        desc: "בוובת ברבי ייחודית!!",
+        bg: "fff" ,
+    },
+    {
+        id:4,
+        img:   bbb,
+        title: "בובת ברבי",
+        desc: "בוובת ברבי ייחודית!!",
+        bg: "F5EDDC" ,
+    },
+    {
+        id:5,
+        img:   important,
+        title: "בובת ברבי",
+        desc: "בוובת ברבי ייחודית!!",
+        bg: "fff" ,
+    },
+    {
+        id:6,
+        img:   important,
+        title: "בובת ברבי",
+        desc: "בוובת ברבי ייחודית!!",
+        bg: "F5EDDC" ,
+    },
+    {
+        id:7,
         img:   important,
         title: "בובת ברבי",
         desc: "בוובת ברבי ייחודית!!",
