@@ -69,7 +69,7 @@ const Container = styled.div`
   justify-content: center;
   background-color: #f3ecec;
   position: relative;
-
+  cursor: pointer;
   &:hover {
     background-color: #e6dada;
   }

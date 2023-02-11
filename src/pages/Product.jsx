@@ -123,6 +123,14 @@ const UpdatedPrice = styled.span`
   
 `;
 
+
+const UpdatedPriceText = styled.span`
+  font-weight: 100;
+  font-size: 15px;
+  text-align: center;
+  direction: rtl;
+`;
+
 const PriceContainer = styled.span`
   display: flex;
   flex-direction: column;
@@ -133,40 +141,6 @@ const PriceContainer = styled.span`
   padding: 0;
 `;
 
-
-const FilterContainer = styled.div`
-  width: 50%;
-  margin: 30px 0px;
-  display: flex;
-  justify-content: space-between;
-  ${mobile({width: '100%'})}
-`;
-
-const Filter = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-const FilterTitle = styled.span`
-  font-size: 20px;
-  font-weight: 200;
-`;
-
-const FilterColor = styled.div`
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: ${(props) => props.color};
-  margin: 0px 5px;
-  cursor: pointer;
-`;
-
-const FilterSize = styled.select`
-  margin-left: 10px;
-  padding: 5px;
-`;
-
-const FilterSizeOption = styled.option``;
 
 const AddContainer = styled.div`
   width: 50%;
@@ -339,6 +313,13 @@ const Product = () => {
                                         <UpdatedPrice>₪ {product?.updatedPrice}</UpdatedPrice>
                                     </PriceContainer>
 
+                            }
+
+                            {
+                                product?.price !== product.updatedPrice &&
+                                    <UpdatedPriceText>
+                                        שימו ❤️ מוצר במבצע!
+                                    </UpdatedPriceText>
                             }
                             <AddContainer>
                                 <AmountContainer>
