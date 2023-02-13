@@ -46,6 +46,9 @@ export default function Categories(){
 
 
     useEffect(()=>{
+        window.scrollTo(
+            0,0
+        )
             setSubCategories(subCategiries.filter(item=>{
                 return(
                     item.subCat === subCategory
