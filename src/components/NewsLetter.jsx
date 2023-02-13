@@ -121,7 +121,7 @@ const Newsletter = () => {
                         <IconContainer >
                             < DoneOutlineIcon />
                         </IconContainer> :
-                        <InputContainer style={{fontSize :"60px"}}>
+                        <InputContainer style={{fontSize :"20px"}}>
                             <Input
                                 value={email}
                                 onChange={e=>setEmail(e.target.value)}

@@ -18,6 +18,7 @@ import {logOut} from "../redux/userRedux";
 import {CSSTransition} from "react-transition-group";
 import {categoryData, mainCategories} from "../data";
 import SearchReasult from "./SearchReasult";
+import {Offcanvas} from "react-bootstrap";
 
 const Container = styled.div`
   width: 100%;
@@ -104,6 +105,56 @@ const ReasultContainer = styled.div`
   justify-content: center;
 `
 
+const OffCanvasBodyContainer = styled.div`
+  direction: rtl;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const CategoryList = styled.ul`
+  direction: rtl;
+  list-style: none;
+  padding: 0;
+`;
+
+const CategoryItem = styled.li`
+  direction: rtl;
+  margin: 10px 0;
+  text-align: center;
+`;
+
+const CategoryLink = styled.span`
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+const OffCanvasLogo = styled.img`
+  direction: rtl;
+  max-height: 100px;
+  max-width: 200px;
+  font-weight: bold;
+  color: blue;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  bottom: 0;
+  right: 0;
+  //text-decoration: underline;
+  font-family: 'Noto Serif Hebrew', serif;
+  ${mobile({height: '40px'})}
+`;
+
+
 export default function Navbar(props){
     // const navigate = useNavigate();
 
@@ -117,6 +168,11 @@ export default function Navbar(props){
     const [isSearchFieldOpen, setIsSearchFiledOpen] = useState(false)
     const [isSearchResult, setIsSearchResult] = useState(false)
     const [textSearch,setTextSearch] = useState("")
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const toggleShow = () => setShow((s) => !s);
 
 
     useEffect(() => {
@@ -284,7 +340,7 @@ export default function Navbar(props){
 
                                 <MenuLink>
                                     <MenuIcon
-                                        onClick={toggleNav}
+                                        onClick={toggleShow}
                                         className="Burger"
                                         aria-label='open navigation bar'
                                     />
@@ -293,31 +349,71 @@ export default function Navbar(props){
                         </>
                 }
             </Wrapper>
-            <CSSTransition
-                in={isNavVisible}
-                timeout={350}
-                classNames="NavAnimation"
-                unmountOnExit
-            >
-                <nav className="Nav">
-                    {
-                        mainCategories.map(catItem=>(
-                            <Link
-                                key={catItem.id}
-                                to={
-                                    '/subCategory/'+catItem.cat}
-                                  state={{title: catItem.title}}
-                                  style={{textDecoration: 'none'}}
-                                  onClick={toggleNav}
-                                aria-label={`${catItem.title}`}
-                            >
-                                {catItem.title}
-                            </Link>
-                        ))
-                    }
+            {/*<CSSTransition*/}
+            {/*    in={isNavVisible}*/}
+            {/*    timeout={350}*/}
+            {/*    classNames="NavAnimation"*/}
+            {/*    unmountOnExit*/}
+            {/*>*/}
+            {/*    <nav className="Nav">*/}
+            {/*        {*/}
+            {/*            mainCategories.map(catItem=>(*/}
+            {/*                <Link*/}
+            {/*                    key={catItem.id}*/}
+            {/*                    to={*/}
+            {/*                        '/subCategory/'+catItem.cat}*/}
+            {/*                      state={{title: catItem.title}}*/}
+            {/*                      style={{textDecoration: 'none'}}*/}
+            {/*                      onClick={toggleNav}*/}
+            {/*                    aria-label={`${catItem.title}`}*/}
+            {/*                >*/}
+            {/*                    {catItem.title}*/}
+            {/*                </Link>*/}
+            {/*            ))*/}
+            {/*        }*/}
 
-                </nav>
-            </CSSTransition>
+            {/*    </nav>*/}
+            {/*</CSSTransition>*/}
+
+            <Offcanvas show={show} onHide={handleClose} {...props}>
+                <Offcanvas.Header closeButton>
+                    <Offcanvas.Title>
+                        <OffCanvasBodyContainer>
+
+                        </OffCanvasBodyContainer>
+                    </Offcanvas.Title>
+                </Offcanvas.Header>
+                <Offcanvas.Body>
+                    <OffCanvasBodyContainer>
+                        <CategoryList>
+                            <Link to={"/"} aria-label='Back to home page'>
+                                <OffCanvasLogo src={Logo} style={{marginRight:"5px"}} alt={"לוגו"}/>
+                            </Link>
+                            {
+                                mainCategories.map(catItem=>(
+                                    <CategoryItem key={catItem.id}>
+                                        <Link
+                                            to={
+                                            '/subCategory/'+catItem.cat}
+                                            state={{title: catItem.title}}
+                                            style={{textDecoration: 'none'}}
+                                            onClick={toggleShow}
+                                            aria-label={`${catItem.title}`}
+                                        >
+                                            <CategoryLink
+                                            >
+                                                {
+                                                    catItem.title
+                                                }
+                                            </CategoryLink>
+                                        </Link>
+                                    </CategoryItem>
+                                ))
+                            }
+                        </CategoryList>
+                    </OffCanvasBodyContainer>
+                </Offcanvas.Body>
+            </Offcanvas>
             {/* {*/}
             {/*    isSearchFieldOpen &&*/}
             {/*    <ReasultContainer>*/}
