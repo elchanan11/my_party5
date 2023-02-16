@@ -2,6 +2,13 @@
 import CategoryItem from './images/img_25.png';
 
 import important from './images/imm.jpg'
+import slideChoklate from './images/slideChoklate.jpg'
+import slideHartBaloon from './images/slideHartBaloon.jpg'
+
+import slideBottle from './images/slideBottle.jpg'
+import slidePinkBaloon from './images/slideImPinkBaloon.jpg'
+import slidePillow from './images/slideImagePillow.jpg'
+import slideNumBaloon from './images/slideNumBaloon.jpg'
 
 
 import bbb from './images/n.jpg'
@@ -31,14 +38,14 @@ export const slideImages = [
     },
     {
         id:2,
-        img:   important,
+        img:   slideChoklate,
         title: "בובת ברבי",
         desc: "תמונה מתחלפת",
         bg: "F5EDDC" ,
     },
     {
         id:3,
-        img:   important,
+        img:   slideHartBaloon,
         title: "בובת ברבי",
         desc: "תמונה מתחלפת",
         bg: "fff" ,
@@ -52,21 +59,28 @@ export const slideImages = [
     },
     {
         id:5,
-        img:   important,
+        img:   slideBottle,
         title: "בובת ברבי",
         desc: "תמונה מתחלפת",
         bg: "fff" ,
     },
     {
         id:6,
-        img:   important,
+        img:   slidePinkBaloon,
         title: "בובת ברבי",
         desc: "תמונה מתחלפת",
         bg: "F5EDDC" ,
     },
     {
         id:7,
-        img:   important,
+        img:   slideNumBaloon,
+        title: "בובת ברבי",
+        desc: "תמונה מתחלפת",
+        bg: "fff" ,
+    },
+    {
+        id:8,
+        img:   slidePillow,
         title: "בובת ברבי",
         desc: "תמונה מתחלפת",
         bg: "fff" ,
