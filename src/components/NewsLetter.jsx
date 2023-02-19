@@ -56,6 +56,10 @@ const Button = styled.button`
   cursor: pointer;
   background-color: #F2CD5C;
   color: white;
+  transition: transform 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+  }
 `;
 const IconContainer = styled.button`
   font-size: 60px;

@@ -36,6 +36,10 @@ const Left = styled.div`
 
 const Logo = styled.img`
   width: 200px;
+  transition: transform 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+  }
   ${tablet({marginBottom: '20px'})}
   ${mobile({marginBottom: '20px'})}
 `;
@@ -64,6 +68,10 @@ const SocialIcon = styled.div`
   margin-right: 8px;
   margin-left: 8px;
   cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+  }
   ${leptop({marginLeft:0})}
   ${mobileMini({width: "32px", height: "32px", marginLeft: "5px", marginRight: "5px"})}
 `;
@@ -153,6 +161,11 @@ const DevIcon = styled.div`
   margin-right: 8px;
   margin-left: 8px;
   cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
   ${mobileMini({width: "32px", height: "32px", marginLeft: "5px", marginRight: "5px"})}
 `
 

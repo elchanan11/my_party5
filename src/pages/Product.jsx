@@ -187,9 +187,9 @@ const Icon = styled.div`
   justify-content: center;
   background-color: #${props=>props.color};
   border-radius: 50%;
+  transition: transform 0.2s ease-in-out;
   &:hover {
-    border: black 1px solid;
-    transform: scale(1.01);
+    transform: scale(1.1);
   }
 `;
 

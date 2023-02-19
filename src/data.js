@@ -1,7 +1,7 @@
 
 import CategoryItem from './images/img_25.png';
 
-import important from './images/imm.jpg'
+import important from './images/slideColorBaloons.jpg'
 import slideChoklate from './images/slideChoklate.jpg'
 import slideHartBaloon from './images/slideHartBaloon.jpg'
 

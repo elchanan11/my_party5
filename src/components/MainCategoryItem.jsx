@@ -107,6 +107,10 @@ const ImageContainer = styled.div`
   align-items: center;
   display: flex;
   flex: 1;
+  transition: transform 0.5s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+  }
   ${tablet({height: "120px", width: "120px"})}
   ${leptop({height: "120px", width: "120px"})}
   ${mobile({height: "100px", width: "100px"})}

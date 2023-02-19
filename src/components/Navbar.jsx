@@ -79,6 +79,10 @@ const MenuLink = styled.div`
   justify-content: space-between;
   cursor: pointer;
   margin-right: 7px;
+  transition: transform 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+  }
   ${mobile({fontsize: '12px',marginRight:"0px" })}
 `
 
@@ -95,6 +99,10 @@ const WhatsappLink = styled.div`
   justify-content: space-between;
   cursor: pointer;
   margin-right: 7px;
+  transition: transform 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+  }
   ${mobile({fontsize: '22px',marginRight:"0px" })}
 `
 
@@ -298,7 +306,7 @@ export default function Navbar(props){
                         <Clear
                             onClick={handleSearchClicked}
                             fontSize={"large"}
-                            style={{position:"absolute",top:16}}
+                            style={{cursor:"pointer",position:"absolute",top:16}}
                         />
                     </ReasultContainer> :
                         <>

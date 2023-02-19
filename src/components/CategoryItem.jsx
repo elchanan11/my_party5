@@ -72,7 +72,8 @@ const Container = styled.div`
   //background-color: rgb(248, 248, 223);
   background-color: #F9F3DF;
   flex-direction: column;
-  flex-basis: 30.333333%;
+  flex-basis: 33.333333%;
+  
   position: relative;
 
   display: flex;
@@ -103,9 +104,15 @@ const ImageContainer = styled.div`
   box-shadow: 0px 0px 8px 1px rgb(196 196 196 / 50%);
   border-radius: 50%;
   justify-content: center;
-  display: flex;
   direction: rtl;
   flex: 1;
+
+  transition: transform 0.4s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
   ${tablet({height: "120px", width: "120px"})}
   ${leptop({height: "120px", width: "120px"})}
   ${mobile({height: "100px", width: "100px"})}

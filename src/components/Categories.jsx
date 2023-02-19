@@ -8,7 +8,6 @@ import {Fab} from "@mui/material";
 import {useLocation} from "react-router-dom";
 
 const Container = styled.div`
-
   text-align: center;
   align-items: center;
   padding: 0;
@@ -61,6 +60,9 @@ export default function Categories(){
                 )
             }))
         console.log(subCategoryTitle)
+
+
+
         }
         , [subCategory])
 

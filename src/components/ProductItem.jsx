@@ -70,6 +70,7 @@ const Container = styled.div`
   background-color: #f3ecec;
   position: relative;
   cursor: pointer;
+  transition: transform 0.9s ease-in-out;
   &:hover {
     background-color: #e6dada;
   }
