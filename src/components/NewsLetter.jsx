@@ -109,15 +109,20 @@ const Newsletter = () => {
 
     return (
         <Container>
-            <Title className={"lineUp"} style={{marginBottom:"0"}}>
+            <label htmlFor='promo'>
                 {
-                    isSubmitted ? "אנחנו מודים לך על הצטרפותך!" : "התעדכנו במבצעים החמים שלנו"
+                    <Title className={"lineUp"} style={{marginBottom:"0"}}>
+                        {
+                            isSubmitted ? "אנחנו מודים לך על הצטרפותך!" : "התעדכנו במבצעים החמים שלנו"
+                        }
+                    </Title>
                 }
-            </Title>
-            {
-                !isSubmitted && <Desc className={"lineUp"}>{desc}</Desc>
-            }
+                {
+                    !isSubmitted && <Desc className={"lineUp"}>{desc}</Desc>
+                }
+            </label>
             <form
+                id='promo'
                 onSubmit={handleSubmit}
                 style={{border:"0.5px solid lightgray"}}>
                 {

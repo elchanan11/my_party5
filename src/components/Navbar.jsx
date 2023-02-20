@@ -418,6 +418,15 @@ export default function Navbar(props){
                                     </CategoryItem>
                                 ))
                             }
+                            <CategoryItem >
+                                <Link
+                                    to={"/accessibility"}
+                                >
+                                    <CategoryLink>
+                                        הצהרת נגישות
+                                    </CategoryLink>
+                                </Link>
+                            </CategoryItem>
                         </CategoryList>
                     </OffCanvasBodyContainer>
                 </Offcanvas.Body>

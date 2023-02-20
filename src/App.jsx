@@ -14,6 +14,7 @@ import {
 import {useSelector} from "react-redux";
 import styled from "styled-components";
 import SubCategory from "./pages/SubCategory";
+import AccibilityPage from "./pages/AccibilityPage";
 
 const Container = styled.div`
   height: 100%;
@@ -54,6 +55,10 @@ const App = () => {
                     />
                     <Route path="/register" element={
                         user ? <Navigate to={'/'}/> : <Register />
+                    }
+                    />
+                    <Route path="/accessibility" element={
+                        <AccibilityPage />
                     }
                     />
                 </Routes>
