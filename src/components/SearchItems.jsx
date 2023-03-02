@@ -50,6 +50,14 @@ const ProductId = styled.div`
  width: 100%;
   direction: rtl;
 `;
+const Title = styled.h2`
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+`;
 
 
 export default function SearchItems(props){
@@ -80,13 +88,26 @@ export default function SearchItems(props){
     }
 
     return(
-        <Link reloadDocument to={`/product/${props.cartItem._id}`}  style={{ textDecoration: 'none' }} >
+        <Link
+            lang={"he"}
+            tabIndex={'0'}
+            reloadDocument
+            aria-label="לחץ למעבר לדף המוצר"
+            to={`/product/${props.cartItem._id}`}
+            style={{ textDecoration: 'none' }}
+        >
+            <Title>
+                פרטים על מוצר שנמצא בחיפוש
+            </Title>
             <Product
             >
+
                 <ProductDetail>
                     <Image
                         onClick={handleToProductClick}
-                        src={props.cartItem?.img}/>
+                        src={props.cartItem?.img}
+                        alt={""}
+                    />
                     <Details>
                         <ProductName >
                             {props.cartItem?.title}

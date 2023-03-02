@@ -35,6 +35,15 @@ const NoProductsReasult = styled.div`
   font-weight: 300;
 `
 
+const Title = styled.h1`
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+`;
+
 export default function SearchReasult(props){
 
     const cart = useSelector(state=>state.cart)
@@ -62,6 +71,9 @@ export default function SearchReasult(props){
     },[props.serchText])
     return(
         <Container>
+            <Title>
+                תוצאות החיפוש
+            </Title>
             {
                 !noProducts &&
                 <NoProducts>

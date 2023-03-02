@@ -2,7 +2,7 @@ import Navbar from "./Navbar";
 import React from "react";
 import styled from "styled-components";
 
-const Container = styled.div`
+const Container = styled.h1`
   background-color: #F2CD5C;
   color: black;
   
@@ -20,7 +20,7 @@ const Container = styled.div`
 
 export default function Announcment(){
     return(
-        <Container>
+        <Container aria-level="1" lang="he">
           !ניתן להזמין בלונים מראש ולבוא לאסוף
         </Container>
     )

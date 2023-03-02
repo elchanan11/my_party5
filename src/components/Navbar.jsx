@@ -80,8 +80,8 @@ const MenuLink = styled.div`
   cursor: pointer;
   margin-right: 7px;
   transition: transform 0.2s ease-in-out;
-  &:hover {
-    transform: scale(1.1);
+  &:hover,&:focus {
+    transform: scale(1.2);
   }
   ${mobile({fontsize: '12px',marginRight:"0px" })}
 `
@@ -100,7 +100,7 @@ const WhatsappLink = styled.div`
   cursor: pointer;
   margin-right: 7px;
   transition: transform 0.2s ease-in-out;
-  &:hover {
+  &:hover,&:focus {
     transform: scale(1.1);
   }
   ${mobile({fontsize: '22px',marginRight:"0px" })}
@@ -135,12 +135,12 @@ const CategoryItem = styled.li`
   text-align: center;
 `;
 
-const CategoryLink = styled.span`
+const CategoryLink = styled.p`
   font-size: 1.2rem;
   font-weight: bold;
   text-decoration: none;
   cursor: pointer;
-  &:hover {
+  &:hover,&:focus {
     text-decoration: underline;
   }
 `;
@@ -256,11 +256,6 @@ export default function Navbar(props){
             setTextSearch("")
         }else {
             setIsSearchFiledOpen(!isSearchFieldOpen)
-            // window.scrollTo({
-            //     top: 0,
-            //     left: 0,
-            //     behavior: "smooth"
-            // });
         }
     }
 
@@ -279,110 +274,104 @@ export default function Navbar(props){
             <Wrapper>
                 {
                     isSearchFieldOpen ?
+
                     <ReasultContainer>
-                        <input onChange={handleSearchChanged}
-                                   placeholder={"חפש מוצרים"}
-                                   style={{
-                                       backgroundColor:"white",
-                                       height:"50px",
-
-                                       border:"none",
-
-
-
-
-                                       direction:"rtl"
-                                       ,textAlign:"right",
-                                       marginRight : "3 px",
-                                       alignItems:"center",
-                                       display:"flex",
-                                       fontSize:"20px"
-                                    }}
+                        <input
+                            onChange={handleSearchChanged}
+                            placeholder={"חפש מוצרים"}
+                            aria-label="הקלד טקסט וחפש מוצרים לפי כותרת"
+                            style={{
+                                backgroundColor:"white",
+                                height:"50px",
+                                border:"none",
+                                direction:"rtl"
+                                ,textAlign:"right",
+                                marginRight : "3 px",
+                                alignItems:"center",
+                                display:"flex",
+                                fontSize:"20px"
+                            }}
                         />
                         {
                             isSearchResult &&
-                            <SearchReasult serchText={textSearch}/>
+                            <SearchReasult
+                                serchText={textSearch}
+                                aria-label={` ${textSearch} תוצאות עבור: `}
+                            />
                         }
                         <Clear
+                            lang={"he"}
                             onClick={handleSearchClicked}
                             fontSize={"large"}
-                            style={{cursor:"pointer",position:"absolute",top:16}}
+                            role={"button"}
+                            tabIndex={'0'}
+                            aria-label='לחץ לסגירת פאנל החיפוש'
+                            aria-expanded={isSearchFieldOpen}
+                            style={{
+                                cursor:"pointer",
+                                position:"absolute",
+                                top:16
+                            }}
                         />
                     </ReasultContainer> :
                         <>
                             <Left>
-                                <Link to={"/cart"}>
+                                <Link to={"/cart"}
+                                      aria-label='עבור לעמוד סל המוצרים'
+                                      tabIndex={'0'}
+                                >
                                     <MenuLink style={{marginLeft:"20px"}}>
                                         {
-                                            // !loding ?
-                                            <Badge style={{marginRight:4}} color="primary" badgeContent={quantityValue} aria-label='Go to cart'>
+                                            <Badge
+                                                aria-label={`כמות המוצרים היא${quantityValue}`}
+                                                style={{marginRight:4}}
+                                                color="primary" badgeContent={quantityValue} >
                                                 <ShoppingCartOutlined fontSize={badgeAnimation} />
                                             </Badge>
-                                            // :
-                                            // <CircularProgress size="2rem" />
-
                                         }
                                     </MenuLink>
                                 </Link>
                                 <WhatsappLink
                                     onClick={handleWhatsappClick}
+                                    role={"link"}
+                                    aria-label='לחץ ליצירת קשר בווצאפ'
+                                    tabIndex={'0'}
                                 >
-                                    <WhatsApp fontSize={"large"} style={{color:"green"}} aria-label={'whatsapp link'} />
+                                    <WhatsApp fontSize={"large"} style={{color:"green"}}  />
                                 </WhatsappLink>
                             </Left>
                             <Center>
-                                <Link to={"/"} aria-label='Back to home page'>
-                                    <Logo1 src={Logo} style={{marginRight:"5px"}} alt={"לוגו"}/>
+                                <Link to={"/"} role={"link"} aria-label='לחץ לחזרה לעמוד הבית'>
+                                    <Logo1 src={Logo} style={{marginRight:"5px"}} alt={""}/>
                                 </Link>
                             </Center>
                             <Right>
-                                <MenuLink style={{marginLeft:"10px",justifyContent:"flex-end"}} onClick={handleSearchClicked}>
+                                <MenuLink
+                                    style={{marginLeft:"10px",justifyContent:"flex-end"}}
+                                    onClick={handleSearchClicked}
+                                    role={"button"}
+                                    tabIndex={'0'}
+                                    aria-label='לחץ לפתיחת פאנל חיפוש'
+                                    aria-expanded={isSearchFieldOpen}
+                                >
                                     {
-                                        // !isSearchFieldOpen ?
-                                            <Search />
-                                        // :
-                                            // <Clear />
+                                        <Search />
                                     }
 
                                 </MenuLink>
 
-                                <MenuLink>
-                                    <MenuIcon
-                                        onClick={toggleShow}
-                                        className="Burger"
-                                        aria-label='open navigation bar'
-                                    />
+                                <MenuLink
+                                    role={"button"}
+                                    onClick={toggleShow}
+                                    tabIndex={'0'}
+                                    aria-label='לחץ לפתיחת פאנל הניווט'
+                                    aria-expanded={show}>
+                                    <MenuIcon/>
                                 </MenuLink>
                             </Right>
                         </>
                 }
             </Wrapper>
-            {/*<CSSTransition*/}
-            {/*    in={isNavVisible}*/}
-            {/*    timeout={350}*/}
-            {/*    classNames="NavAnimation"*/}
-            {/*    unmountOnExit*/}
-            {/*>*/}
-            {/*    <nav className="Nav">*/}
-            {/*        {*/}
-            {/*            mainCategories.map(catItem=>(*/}
-            {/*                <Link*/}
-            {/*                    key={catItem.id}*/}
-            {/*                    to={*/}
-            {/*                        '/subCategory/'+catItem.cat}*/}
-            {/*                      state={{title: catItem.title}}*/}
-            {/*                      style={{textDecoration: 'none'}}*/}
-            {/*                      onClick={toggleNav}*/}
-            {/*                    aria-label={`${catItem.title}`}*/}
-            {/*                >*/}
-            {/*                    {catItem.title}*/}
-            {/*                </Link>*/}
-            {/*            ))*/}
-            {/*        }*/}
-
-            {/*    </nav>*/}
-            {/*</CSSTransition>*/}
-
             <Offcanvas show={show} onHide={handleClose} {...props}>
                 <Offcanvas.Header closeButton>
                     <Offcanvas.Title>
@@ -391,60 +380,41 @@ export default function Navbar(props){
                         </OffCanvasBodyContainer>
                     </Offcanvas.Title>
                 </Offcanvas.Header>
-                <Offcanvas.Body>
+                <Offcanvas.Body lang="he">
                     <OffCanvasBodyContainer>
                         <CategoryList>
-                            <Link to={"/"} aria-label='Back to home page'>
-                                <OffCanvasLogo src={Logo} style={{marginRight:"5px"}} alt={"לוגו"}/>
-                            </Link>
-                            {
-                                mainCategories.map(catItem=>(
-                                    <CategoryItem key={catItem.id}>
-                                        <Link
-                                            to={
-                                            '/subCategory/'+catItem.cat}
-                                            state={{title: catItem.title}}
-                                            style={{textDecoration: 'none'}}
-                                            onClick={toggleShow}
-                                            aria-label={`${catItem.title}`}
-                                        >
-                                            <CategoryLink
-                                            >
-                                                {
-                                                    catItem.title
-                                                }
-                                            </CategoryLink>
-                                        </Link>
-                                    </CategoryItem>
-                                ))
-                            }
-                            <CategoryItem >
-                                <Link
-                                    to={"/accessibility"}
-                                >
-                                    <CategoryLink>
-                                        הצהרת נגישות
-                                    </CategoryLink>
+                            <nav>
+                                <Link to={"/"} aria-label='לחץ לחזרה לדף הבית'>
+                                    <OffCanvasLogo src={Logo} style={{marginRight:"5px"}} alt={""}/>
                                 </Link>
-                            </CategoryItem>
+                                {mainCategories.map((catItem) => (
+                                    <CategoryItem key={catItem.id}>
+                                        <CategoryLink
+                                            as={Link}
+                                            to={`/subCategory/${catItem.cat}`}
+                                            state={{ title: catItem.title }}
+                                            role="link"
+                                            aria-label={` לחץ למעבר לתת קטגוריה`}
+                                        >
+                                            {catItem.title}
+                                        </CategoryLink>
+                                    </CategoryItem>
+                                ))}
+                                <CategoryItem >
+                                    <CategoryLink
+                                        as={Link}
+                                        to={`/accessibility`}
+                                        role="link"
+                                        aria-label={` לחץ למעבר ל`}
+                                    >
+                                        הצהרת הנגישות
+                                    </CategoryLink>
+                                </CategoryItem>
+                            </nav>
                         </CategoryList>
                     </OffCanvasBodyContainer>
                 </Offcanvas.Body>
             </Offcanvas>
-            {/* {*/}
-            {/*    isSearchFieldOpen &&*/}
-            {/*    <ReasultContainer>*/}
-            {/*        <TextField onChange={handleSearchChanged}*/}
-            {/*                   fullWidth label="חפש מוצר"*/}
-            {/*                   id="fullWidth"*/}
-            {/*                   style={{backgroundColor:"whitesmoke",direction:"rtl",textAlign:"right"}}*/}
-            {/*        />*/}
-            {/*        {*/}
-            {/*            isSearchResult &&*/}
-            {/*            <SearchReasult serchText={textSearch}/>*/}
-            {/*        }*/}
-            {/*    </ReasultContainer>*/}
-            {/*}*/}
         </Container>
     )
 }
