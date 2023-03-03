@@ -6,6 +6,8 @@ import {useDispatch, useSelector} from "react-redux";
 import {publicRequest} from "../requestMethods";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import {Helmet} from "react-helmet";
+import React from "react";
 
 const Container = styled.div`
   width: 100%;
@@ -39,6 +41,9 @@ const Desc  = styled.span`
 const AccibilityPage = () => {
     return (
         <Container>
+            <Helmet>
+                <title>המסיבה שלי - הצהרת נגישות</title>
+            </Helmet>
             <Navbar />
             <Title>
                 נגישות

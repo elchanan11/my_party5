@@ -70,7 +70,7 @@ export default function SearchReasult(props){
         }
     },[props.serchText])
     return(
-        <Container>
+        <Container aria-live={"assertive"}>
             <Title>
                 תוצאות החיפוש
             </Title>

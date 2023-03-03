@@ -72,6 +72,9 @@ const SocialIcon = styled.div`
   &:hover {
     transform: scale(1.1);
   }
+  &:focus {
+    transform: scale(1.1);
+  }
   ${leptop({marginLeft:0})}
   ${mobileMini({width: "32px", height: "32px", marginLeft: "5px", marginRight: "5px"})}
 `;
@@ -166,9 +169,22 @@ const DevIcon = styled.div`
   &:hover {
     transform: scale(1.1);
   }
+  &:focus {
+    transform: scale(1.1);
+  }
   ${mobileMini({width: "32px", height: "32px", marginLeft: "5px", marginRight: "5px"})}
 `
 
+
+//tile for screeen reader
+const TitleForScreenReader = styled.h2`
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+`;
 
 
 const Footer = () => {
@@ -190,117 +206,147 @@ const Footer = () => {
 
     return (
         <>
-            <Container>
-                <Left>
-                    <Link to={'/'} aria-label='to Home page'>
-                        <Logo src={logo} alt={"logo"}/>
-                    </Link>
-                    <Desc>
-                        לקהל לקוחותינו היקרים
-                        בימים אלו ניתן לבצע הזמנה דרך הטלפון הוואצאפ או המייל, יש אפשרות להגיע לאסוף מהחנות, בנוסף יש אפשרות למשלוח עד לבית! באיזור ביתר עילית, צור הדסה, מבוא ביתר, ירושלים גילה, בית וגן, בית הכרם, גבעת שאול, קרית משה
-                    </Desc>
-                    <SocialContainer >
-                        {/*{user && true ?*/}
-                        {/*    <SocialIcon color="3B5999">*/}
-                        {/*        <PersonRemoveIcon onClick={handleLogOut} aria-label={'logout'}>*/}
-                        {/*            התנתק*/}
-                        {/*        </PersonRemoveIcon>*/}
-                        {/*    </SocialIcon>*/}
+            <footer>
+                <Container>
+                    <Left>
+                        <Link to={'/'} aria-label='לחץ  לחזרה לדף הבית'>
+                            <Logo src={logo} alt={""}/>
+                        </Link>
+                        <Desc>
+                            לקהל לקוחותינו היקרים
+                            בימים אלו ניתן לבצע הזמנה דרך הטלפון הוואצאפ או המייל, יש אפשרות להגיע לאסוף מהחנות, בנוסף יש אפשרות למשלוח עד לבית! באיזור ביתר עילית, צור הדסה, מבוא ביתר, ירושלים גילה, בית וגן, בית הכרם, גבעת שאול, קרית משה
+                        </Desc>
+                        <SocialContainer >
+                            {/*{user && true ?*/}
+                            {/*    <SocialIcon color="3B5999">*/}
+                            {/*        <PersonRemoveIcon onClick={handleLogOut} aria-label={'logout'}>*/}
+                            {/*            התנתק*/}
+                            {/*        </PersonRemoveIcon>*/}
+                            {/*    </SocialIcon>*/}
 
-                        {/*    :*/}
-                        {/*    <SocialIcon color="3B5999">*/}
-                        {/*        <Link to={'/login'} aria-label={'log in'}>*/}
-                        {/*            <PersonAddIcon >*/}
-                        {/*                התחבר*/}
-                        {/*            </PersonAddIcon>*/}
-                        {/*        </Link>*/}
-                        {/*    </SocialIcon>*/}
-                        {/*}*/}
-                        <SocialIcon color="3B5999">
-                            <a target={"blank"}
-                               aria-label={'facebook link'}
-                               href={"https://www.facebook.com/pages/category/art/%D7%94%D7%9E%D7%A1%D7%99%D7%91%D7%94-%D7%A9%D7%9C%D7%99-2197659190450858/"}
-                               style={{color:"#fff"}}
+                            {/*    :*/}
+                            {/*    <SocialIcon color="3B5999">*/}
+                            {/*        <Link to={'/login'} aria-label={'log in'}>*/}
+                            {/*            <PersonAddIcon >*/}
+                            {/*                התחבר*/}
+                            {/*            </PersonAddIcon>*/}
+                            {/*        </Link>*/}
+                            {/*    </SocialIcon>*/}
+                            {/*}*/}
+                            <SocialIcon color="3B5999">
+                                <a target={"blank"}
+                                   aria-label={'לחץ לעמוד הפייסבוק שלנו'}
+                                   href={"https://www.facebook.com/pages/category/art/%D7%94%D7%9E%D7%A1%D7%99%D7%91%D7%94-%D7%A9%D7%9C%D7%99-2197659190450858/"}
+                                   style={{color:"#fff"}}
+                                >
+                                    <Facebook />
+                                </a>
+                            </SocialIcon>
+                            <SocialIcon color="A4BE7B">
+                                <a style={{color:"#fff"}} href="tel:+972542595225" aria-label={'לחץ לשיחת טלפון איתנו'}>
+                                    <Phone />
+                                </a>
+                            </SocialIcon>
+                            <SocialIcon
+                                color="E60023"
                             >
-                                <Facebook />
-                            </a>
-                        </SocialIcon>
-                        <SocialIcon color="A4BE7B">
-                            <a style={{color:"#fff"}} href="tel:+972542595225" aria-label={'our telephone'}>
-                                <Phone />
-                            </a>
-                        </SocialIcon>
-                        <SocialIcon
-                            color="E60023"
-                        >
-                            <a style={{color:"#fff"}} href="mailto:Mypartybb@gmail.com" aria-label={'our mail'}>
-                                <Mail />
-                            </a>
-                        </SocialIcon>
-                        <SocialIcon color="54B435">
-                            <WhatsApp aria-label={'whatsapp link'} onClick={()=>{
-                                let postMessageToWatapp = "שלום אני מהאתר"
+                                <a style={{color:"#fff"}} href="mailto:Mypartybb@gmail.com" aria-label={'לחץ לשליחת אימייל אלינו'}>
+                                    <Mail />
+                                </a>
+                            </SocialIcon>
+                            <SocialIcon color="54B435">
+                                <WhatsApp
+                                    aria-label={'לחץ לשיחה איתנו בווצאפ'}
+                                    role={"link"}
+                                    aria-hidden={false}
+                                    tabIndex={'0'}
+                                    onClick={()=>{
+                                    let postMessageToWatapp = "שלום אני מהאתר"
+                                    let url = `https://wa.me/+972539323849?text=${postMessageToWatapp}`;
+                                    window.open(url);}}
+                                />
+                            </SocialIcon>
+                            <SocialIcon color="E26868">
+                                <Instagram
+                                    aria-hidden={false}
+                                    role={"link"}
+                                    aria-label={'קישור לאינסטגרם'}
+                                    tabIndex={'0'}
+                                    onClick={()=>{
+                                    let url = `https://instagram.com/hamesibasheli?igshid=NTdlMDg3MTY=`;
+                                    window.open(url);}}
+                                />
+                            </SocialIcon>
+                            <SocialIcon
+                                color="665A48" >
+                                <a target={"blank"}
+                                   aria-label={'לחץ לפתיחת גוגל מפות על מנת לראות איפה אנחנו ממוקמים - העמוד ייפתח בדף חדש'}
+                                   href={"https://www.google.com/maps/place/%D7%94%D7%9E%D7%A1%D7%99%D7%91%D7%94+%D7%A9%D7%9C%D7%99%E2%80%AD/@31.7031666,35.1201339,17z/data=!3m1!4b1!4m5!3m4!1s0x1502db8f10675105:0x8c5f377bd6bf6a3a!8m2!3d31.7031666!4d35.1179452"}
+                                   style={{color:"#fff"}}
+                                >
+                                    <LocationOnOutlined />
+                                </a>
+                            </SocialIcon>
+                        </SocialContainer>
+                    </Left>
+                    <Center>
+
+                    </Center>
+                    <Right>
+                        <Title>צור קשר</Title>
+                        <ContactItem >
+                            <TitleForScreenReader>
+                                הכתובת שלנו
+                            </TitleForScreenReader>
+                            <Room style={{marginRight:"10px",fontSize:"30px"}}/> הר"ן 20 ,ביתר עילית
+                        </ContactItem>
+                        <ContactItem >
+                            <TitleForScreenReader>
+                                מספר הטלפון שלנו
+                            </TitleForScreenReader>
+                            <Phone style={{marginRight:"10px",fontSize:"30px"}}/> 054-259-5225
+                        </ContactItem>
+                        <ContactItem >
+                            <TitleForScreenReader>
+                                 האימייל שלנו
+                            </TitleForScreenReader>
+                            <MailOutline style={{marginRight:"10px",fontSize:"30px"}} /> Mypartybb@gmail.com
+                        </ContactItem>
+                    </Right>
+                </Container>
+                <DeveloperDetailsContainer>
+                    <DeveloperDetailsTitle >
+                        האתר נבנה ועוצב ב ❤️ על ידי WebEL
+                    </DeveloperDetailsTitle>
+                    <DeveloperDetailsDets>
+                        לשיחת ייעוץ ראשונית לחץ:
+                    </DeveloperDetailsDets>
+                    <DevIconContainer>
+                        <DevIcon>
+                            <WhatsApp
+                                aria-label={'לחץ ליצירת קשר עם המפתח בווצאפ'}
+                                tabIndex={'0'}
+                                aria-hidden={false}
+                                onClick={()=>{
+                                let postMessageToWatapp = "שלום אני מאתר המסיבה שלי ורציתי לשוחח בנושא.."
                                 let url = `https://wa.me/+972539323849?text=${postMessageToWatapp}`;
 
                                 window.open(url);}}  />
-                        </SocialIcon>
-                        <SocialIcon color="E26868">
-                            <Instagram aria-label={'instagram link'} onClick={()=>{
-                                let url = `https://instagram.com/hamesibasheli?igshid=NTdlMDg3MTY=`;
-
-                                window.open(url);}}  />
-                        </SocialIcon>
-                        <SocialIcon
-                            color="665A48" >
-                            <a target={"blank"}
-                               aria-label={'location link'}
-                               href={"https://www.google.com/maps/place/%D7%94%D7%9E%D7%A1%D7%99%D7%91%D7%94+%D7%A9%D7%9C%D7%99%E2%80%AD/@31.7031666,35.1201339,17z/data=!3m1!4b1!4m5!3m4!1s0x1502db8f10675105:0x8c5f377bd6bf6a3a!8m2!3d31.7031666!4d35.1179452"}
-                               style={{color:"#fff"}}
+                        </DevIcon>
+                        <DevIcon>
+                            <a
+                                aria-label={'call the developer'}
+                                tabIndex={'0'}
+                                style={{color:"#fff"}}
+                                href="tel:+972539323849"
                             >
-                                <LocationOnOutlined />
+                                <Phone />
                             </a>
-                        </SocialIcon>
-                    </SocialContainer>
-                </Left>
-                <Center>
+                        </DevIcon>
+                    </DevIconContainer>
 
-                </Center>
-                <Right>
-                    <Title>צור קשר</Title>
-                    <ContactItem>
-                        <Room style={{marginRight:"10px",fontSize:"30px"}}/> הר"ן 20 ,ביתר עילית
-                    </ContactItem>
-                    <ContactItem>
-                        <Phone style={{marginRight:"10px",fontSize:"30px"}}/> 054-259-5225
-                    </ContactItem>
-                    <ContactItem>
-                        <MailOutline style={{marginRight:"10px",fontSize:"30px"}} /> Mypartybb@gmail.com
-                    </ContactItem>
-                </Right>
-            </Container>
-            <DeveloperDetailsContainer>
-                <DeveloperDetailsTitle >
-                    האתר נבנה ועוצב ב ❤️ על ידי WebEL
-                </DeveloperDetailsTitle>
-                <DeveloperDetailsDets>
-                    לשיחת ייעוץ ראשונית לחץ:
-                </DeveloperDetailsDets>
-                <DevIconContainer>
-                    <DevIcon>
-                        <WhatsApp aria-label={'whatsapp link'} onClick={()=>{
-                            let postMessageToWatapp = "שלום אני מאתר המסיבה שלי ורציתי לשוחח בנושא.."
-                            let url = `https://wa.me/+972539323849?text=${postMessageToWatapp}`;
-
-                            window.open(url);}}  />
-                    </DevIcon>
-                    <DevIcon>
-                        <a style={{color:"#fff"}} href="tel:+972539323849" aria-label={'our telephone'}>
-                            <Phone />
-                        </a>
-                    </DevIcon>
-                </DevIconContainer>
-
-            </DeveloperDetailsContainer>
+                </DeveloperDetailsContainer>
+            </footer>
         </>
 
     );

@@ -10,6 +10,7 @@ import {useLocation, useNavigate} from "react-router-dom";
 import {WhatsApp} from "@mui/icons-material";
 import {Autocomplete, Fab, TextField} from "@mui/material";
 import {subCategiries} from "../data";
+import {Helmet} from "react-helmet";
 
 const Container = styled.div`
   background-color: #fae8e8;
@@ -110,6 +111,9 @@ export default function ProductList(){
 
     return(
         <Container>
+            <Helmet>
+                <title>המסיבה שלי - דף רשימת מוצרים</title>
+            </Helmet>
             <Announcment />
             <Navbar />
             <Title style={{direction:"rtl"}}>

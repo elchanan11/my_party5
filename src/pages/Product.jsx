@@ -14,6 +14,7 @@ import Loading from "../components/Loading";
 import {useMemo} from "react";
 import ProductItem from "../components/ProductItem";
 import React from "react";
+import {Helmet} from "react-helmet";
 
 const Container = styled.div`
   background-color: #f3ecec;
@@ -286,6 +287,9 @@ const Product = () => {
     return (
         <>
             <Container>
+                <Helmet>
+                    <title>המסיבה שלי - עמוד מוצר</title>
+                </Helmet>
                 <Announcement />
                 <Navbar />
                 {!imageIsLoaded && <Loading color={"f3ecec"}/>}

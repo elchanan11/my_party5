@@ -12,6 +12,8 @@ import {deleteProducts,deleteOneProduct} from "../redux/cartRedux";
 import {useEffect, useState} from "react";
 import {addProduct} from "../redux/cartRedux";
 import CartItem from "../components/CartItem";
+import {Helmet} from "react-helmet";
+import React from "react";
 
 const Container = styled.div`
   background-color: #f3ecec;
@@ -173,6 +175,9 @@ const Cart = () => {
 
     return (
         <Container>
+            <Helmet>
+                <title>המסיבה שלי - עמוד סל קניות</title>
+            </Helmet>
             <Announcment />
             <Navbar />
             <Wrapper>

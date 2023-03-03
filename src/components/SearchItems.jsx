@@ -50,6 +50,8 @@ const ProductId = styled.div`
  width: 100%;
   direction: rtl;
 `;
+
+//tile for screeen reader
 const Title = styled.h2`
   position: absolute;
   left: -9999px;

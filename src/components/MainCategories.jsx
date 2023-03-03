@@ -47,11 +47,11 @@ export default function MainCategories(){
             <CategoryTitle >
                 קטגוריות מוצרים
             </CategoryTitle>
-            <Wrapper>
-                { mainCategories.map(item=>(
-                    <MainCategoryItem item={item} key={item.id} />
-                ))}
-            </Wrapper>
+                <Wrapper>
+                    { mainCategories.map(item=>(
+                        <MainCategoryItem item={item} key={item.id} />
+                    ))}
+                </Wrapper>
         </Container>
 
     )

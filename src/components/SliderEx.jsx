@@ -29,11 +29,12 @@ const SliderEx = () => {
                 }}
                 pagination={true}
                 className="mySwiper"
+                aria-label="Image Slider"
             >
                 {/* using array */}
                 {slideImages.map((img, i) => {
                     return (
-                        <SwiperSlide key={i}>
+                        <SwiperSlide key={i} aria-label="Image Slider">
                             <img src={img.img} alt={img.desc} />
                         </SwiperSlide>
                     );

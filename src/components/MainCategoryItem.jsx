@@ -154,12 +154,13 @@ export default function MainCategoryItem(props){
                 '/subCategory/'+props.item.cat}
                   state={{title: props.item.title}}
                   style={{textDecoration: 'none'}}
+                  aria-label={`קטגוריה ${props.item.title} `}
             >
                 <ImageContainer>
-                    <Image src={props.item.img} alt={props.item.title}/>
+                    <Image src={props.item.img} alt={""}/>
                 </ImageContainer>
                 {/*<Info>*/}
-                    <Title className={"lineUp"}>{props.item.title}</Title>
+                    <Title className={"lineUp"} >{props.item.title}</Title>
 
                 {/*</Info>*/}
             </Link>

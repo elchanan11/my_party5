@@ -108,8 +108,8 @@ const Newsletter = () => {
 
 
     return (
-        <Container>
-            <label htmlFor='promo'>
+        <Container aria-label={"הצטרף לניוז לטר שלנו"}>
+            <label htmlFor='promo' aria-live={"assertive"}>
                 {
                     <Title className={"lineUp"} style={{marginBottom:"0"}}>
                         {
@@ -135,9 +135,10 @@ const Newsletter = () => {
                                 value={email}
                                 onChange={e=>setEmail(e.target.value)}
                                 placeholder="email.email@gmail.com"
+                                aria-label={"הכנס אימייל והצטרף לאימייל שלנו"}
                                 type={"email"}
                             />
-                            <Button type={"submit"} enabled={isSubmitted} aria-label={'submit email'}>
+                            <Button type={"submit"} enabled={isSubmitted} aria-label={'שלח אימייל ותהיה חלק מרשימת הניוז לטר שלנו'}>
                                 {
                                     !isSubmitted ? <Send color="neutral"/> :
                                         <CircularProgress color={"inherit"}/>

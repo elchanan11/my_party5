@@ -12,6 +12,32 @@ import BgImage from "../components/BgImage";
 import Newsletter from "../components/NewsLetter";
 import MainCategories from "../components/MainCategories";
 import SliderEx from "../components/SliderEx";
+import {Helmet} from "react-helmet";
+import styled from "styled-components";
+
+const MainContent = styled.main`
+
+`
+
+const SkipTOMainContent = styled.div`
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  background:white;
+  font-weight: bold;
+  display: block;
+  padding: 10px;
+  &:focus{
+    position: static;
+    z-index: 101;
+    width: 100px;
+    height: 100px;
+    overflow: visible;
+  }
+`
 
 export default function Home(){
     useEffect(()=>{
@@ -24,14 +50,26 @@ export default function Home(){
 
     return(
         <div >
+            <Helmet>
+                <title>המסיבה שלי - עמוד הבית</title>
+            </Helmet>
             <Announcment />
-            <Navbar home={"home"}/>
+            <header>
+                <SkipTOMainContent>
+                    <a href={"#content"}>לחץ למעבר מהיר לרשימת הקטגוריות</a>
+                </SkipTOMainContent>
+                <Navbar home={"home"}/>
+            </header>
             {/*<Slider />*/}
             <SliderEx />
-            <MainCategories  />
+            <MainContent id={"content"}>
+                <MainCategories  />
+            </MainContent>
             <Products cat={"Reccomanded"} from={'home'}/>
             <Newsletter />
-            <Footer />
+            <footer>
+                <Footer />
+            </footer>
             <Fab size="large" color="secondary" aria-label="add"  style={{background:"white",color:"green",cursor:"pointer",zIndex:100, position:"fixed",bottom: 40,left:10}}>
                 <WhatsApp style={{width:"70%",height:"70%"}} onClick={()=>{
                     let postMessageToWatapp = "שלום אני מהאתר"

@@ -20,7 +20,7 @@ const Container = styled.h1`
 
 export default function Announcment(){
     return(
-        <Container aria-level="1" lang="he">
+        <Container  lang="he">
           !ניתן להזמין בלונים מראש ולבוא לאסוף
         </Container>
     )
